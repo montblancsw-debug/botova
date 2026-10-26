@@ -1,0 +1,81 @@
+
+/* ====================================================== */
+/*          GLOBAL VARIABLES / VARIABLES GLOBALES         */
+/* ====================================================== */
+
+:root
+{
+    --color-background: #F1E8E8;
+    --color-dark: #0A111F;
+    --color-card: #F5F5F5;
+    --color-border: #D9D9D9;
+    --color-title: #171717;
+    --color-text: #596579;
+    --color-primary: #00B5AC;
+    --color-primary-dark: #006E68;
+    --color-link: #0066A6;
+    --color-white: #FFFFFF;
+    --color-selection: #F1F5F9;
+    --color-disabled: #8C95A4;
+}
+
+/* ====================================================== */
+/*            GLOBAL STYLES / STYLES GENERAUX             */
+/* ====================================================== */
+
+*
+{
+    box-sizing: border-box;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, p
+{
+    margin-top: 0;
+}
+
+h1, h2, h3
+{
+    color: var(--color-title);
+}
+
+a
+{
+    text-decoration: none;
+}
+
+button, input, textarea, select
+{
+    font: inherit;
+}
+
+/* ====================================================== */
+/*           ACCESSIBILITY / ACCESSIBILITE                */
+/* ====================================================== */
+
+a:focus-visible
+{
+    outline: 3px solid var(--color-primary-dark);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    html
+    {
+        scroll-behavior: auto;
+    }
+}

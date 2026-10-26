@@ -1,0 +1,131 @@
+
+/* ====================================================== */
+/*               HOME PAGE / PAGE ACCUEIL                 */
+/* ====================================================== */
+
+.home
+{
+    min-height: 900px;
+    padding: 300px 40px 80px;
+}
+
+.home-content
+{
+    max-width: 1080px;
+    margin: auto;
+}
+
+.home h1
+{
+    margin-bottom: 25px;
+    font-size: 44px;
+    font-weight: 700;
+}
+
+.home-description
+{
+    margin-bottom: 45px;
+    color: #263957;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ====================================================== */
+/*              HOME CARD / CARTE D'ACCUEIL               */
+/* ====================================================== */
+
+.home-card
+{
+    min-height: 300px;
+    padding: 25px 40px;
+    background-color: var(--color-selection);
+}
+
+.home-card h2
+{
+    margin-bottom: 35px;
+    color: var(--color-dark);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.home-domains
+{
+    margin-bottom: 25px;
+    color: var(--color-primary);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.home-button
+{
+    display: inline-block;
+    padding: 13px 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.home-button:hover
+{
+    background-color: var(--color-primary-dark);
+}
+
+/* ====================================================== */
+/*          TABLET AND MOBILE / TABLETTE ET MOBILE        */
+/* ====================================================== */
+
+@media (max-width: 900px)
+{
+    .home
+    {
+        min-height: 700px;
+        padding: 150px 25px 60px;
+    }
+    .home h1
+    {
+        font-size: 34px;
+    }
+    .home-card h2
+    {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .home
+    {
+        min-height: 600px;
+        padding: 100px 20px 50px;
+    }
+    .home h1
+    {
+        font-size: 28px;
+    }
+    .home-description
+    {
+        font-size: 16px;
+    }
+    .home-description br,
+    .home-card h2 br
+    {
+        display: none;
+    }
+    .home-card
+    {
+        min-height: auto;
+        padding: 25px;
+    }
+    .home-card h2
+    {
+        font-size: 25px;
+    }
+    .home-domains
+    {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
