@@ -1,10 +1,11 @@
 /* ====================================================== */
-/*                    FOOTER / PIED DE PAGE               */
+/*               FOOTER / PIED DE PAGE                    */
+/*               All widths / Toutes largeurs             */
 /* ====================================================== */
 
     .site-footer
     {
-        min-height: 90px;
+        min-height: 100px;
         background-color: var(--color-dark);
         color: var(--color-white);
     }
@@ -12,14 +13,16 @@
     .footer-content
     {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 1120px minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1120px) minmax(0, 1fr);
         align-items: center;
-        min-height: 90px;
-        padding: 0 40px;
+        column-gap: 0;
+        min-height: 100px;
+        padding: 10px 40px;
     }
 
 /* ====================================================== */
-/*             FOOTER BRAND / IDENTITE DU FOOTER          */
+/*          FOOTER BRAND / IDENTITE DU FOOTER             */
+/*          Width / Largeur : 1800 px et plus             */
 /* ====================================================== */
 
     .footer-brand
@@ -28,84 +31,92 @@
         grid-row: 1;
         display: flex;
         align-items: center;
-        gap: 15px;
+        justify-content: flex-start;
+        gap: 12px;
         min-width: 0;
     }
 
-    /* Same logo as header / Meme logo que l'en-tete */
+    /* Logo matching header / Logo identique a l'en-tete */
     .footer-brand img
     {
         display: block;
-        width: 255px;
+        width: clamp(155px, 9vw, 255px);
         height: 72px;
         max-width: none;
-        max-height: none;
         object-fit: cover;
         object-position: center;
         flex-shrink: 0;
     }
 
+    /* Brand description / Description de l'identite */
     .footer-brand p
     {
         flex: 1;
         min-width: 0;
+        max-width: 240px;
         margin: 0;
         color: #D0D5DF;
-        font-size: 14px;
-        line-height: 1.4;
+        font-size: 12px;
+        line-height: 1.35;
         text-align: center;
     }
 
 /* ====================================================== */
-/*           FOOTER NAVIGATION / NAVIGATION FOOTER        */
+/*         FOOTER NAVIGATION / NAVIGATION FOOTER          */
+/*         Width / Largeur : 1800 px et plus              */
 /* ====================================================== */
 
     .footer-navigation
     {
-        grid-column: 2 / 4;
+        grid-column: 2;
         grid-row: 1;
         display: grid;
-        grid-template-columns: 1120px minmax(0, 1fr) 115px;
+        grid-template-columns: minmax(0, 1fr) 190px;
         align-items: center;
+        column-gap: 12px;
+        width: 100%;
         min-width: 0;
     }
 
+    /* Shared lists / Listes partagees */
     .footer-main-list,
     .footer-secondary-list
     {
-        display: flex;
         align-items: center;
+        min-width: 0;
         margin: 0;
         padding: 0;
         list-style: none;
     }
 
-    /* Main links / Liens principaux */
+    /* Six main links / Six liens principaux */
     .footer-main-list
     {
         grid-column: 1;
-        justify-content: space-between;
-        gap: 20px;
-        width: calc(100% - clamp(90px, 8vw, 240px));
-        padding-left: clamp(50px, 2.5vw, 90px);
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
     }
 
     /* About and contact / A propos et contact */
     .footer-secondary-list
     {
         grid-column: 2;
-        justify-content: flex-start;
-        gap: clamp(25px, 2.3vw, 55px);
-        padding-left: clamp(50px, 3.2vw, 110px);
-        min-width: 0;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
     }
 
+    /* Footer links / Liens du footer */
     .footer-navigation a,
     .footer-navigation span
     {
         display: inline-block;
         color: #D0D5DF;
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.4;
         white-space: nowrap;
     }
 
@@ -116,7 +127,7 @@
         cursor: default;
     }
 
-    /* Active links / Liens actifs */
+    /* Active and hovered links / Liens actifs et survoles */
     .footer-navigation a:hover,
     .footer-navigation a:focus-visible,
     .footer-navigation .footer-active
@@ -129,21 +140,24 @@
         font-weight: 700;
     }
 
+    /* Pressed link / Lien maintenu appuye */
     .footer-navigation a:active
     {
         color: var(--color-primary-dark);
     }
 
 /* ====================================================== */
-/*             FOOTER CONTACT / CONTACT FOOTER            */
+/*           FOOTER CONTACT / CONTACT FOOTER              */
+/*           Width / Largeur : 1800 px et plus            */
 /* ====================================================== */
 
     .footer-contact
     {
         grid-column: 3;
         grid-row: 1;
-        z-index: 1;
         justify-self: end;
+        min-width: 0;
+        max-width: 100%;
         text-align: right;
     }
 
@@ -169,11 +183,12 @@
     {
         margin: 5px 0;
         color: #D0D5DF;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.4;
     }
 
     .footer-contact small
     {
         color: #D0D5DF;
-        font-size: 13px;
+        font-size: 12px;
     }
