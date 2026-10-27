@@ -1,4 +1,3 @@
-
 /* ====================================================== */
 /*                HOME PAGE / PAGE ACCUEIL                */
 /* ====================================================== */
@@ -61,7 +60,7 @@
     }
 
 /* ====================================================== */
-/*                  HOME BUTTON / BOUTON                  */
+/*                 HOME BUTTON / BOUTON ACCUEIL           */
 /* ====================================================== */
 
     .home-button
@@ -77,115 +76,4 @@
     .home-button:hover
     {
         background-color: var(--color-primary-dark);
-    }
-
-/* ====================================================== */
-/*             LARGE SCREENS / GRANDS ECRANS              */
-/* ====================================================== */
-
-    @media (min-width: 2000px)
-    {
-        .home
-        {
-            min-height: 1440px;
-            padding-top: 380px;
-        }
-
-        .home-content
-        {
-            max-width: 1900px;
-        }
-
-        .home h1
-        {
-            font-size: 60px;
-        }
-
-        .home-description
-        {
-            font-size: 24px;
-        }
-
-        .home-card h2
-        {
-            font-size: 48px;
-        }
-
-        .home-domains
-        {
-            font-size: 25px;
-        }
-
-        .home-button
-        {
-            font-size: 20px;
-        }
-    }
-
-/* ====================================================== */
-/*             TABLET LAYOUT / VERSION TABLETTE           */
-/* ====================================================== */
-
-    @media (max-width: 900px)
-    {
-        .home
-        {
-            min-height: 700px;
-            padding: 150px 25px 60px;
-        }
-
-        .home h1
-        {
-            font-size: 34px;
-        }
-
-        .home-card h2
-        {
-            font-size: 28px;
-        }
-    }
-
-/* ====================================================== */
-/*             MOBILE LAYOUT / VERSION MOBILE             */
-/* ====================================================== */
-
-    @media (max-width: 600px)
-    {
-        .home
-        {
-            min-height: 600px;
-            padding: 100px 20px 50px;
-        }
-
-        .home h1
-        {
-            font-size: 28px;
-        }
-
-        .home-description
-        {
-            font-size: 16px;
-        }
-
-        .home-description br, .home-card h2 br
-        {
-            display: none;
-        }
-
-        .home-card
-        {
-            min-height: auto;
-            padding: 25px;
-        }
-
-        .home-card h2
-        {
-            font-size: 25px;
-        }
-
-        .home-domains
-        {
-            font-size: 16px;
-            line-height: 1.6;
-        }
     }

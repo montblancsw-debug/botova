@@ -1,0 +1,77 @@
+/* ====================================================== */
+/*           MAIN NAVIGATION / NAVIGATION PRINCIPALE      */
+/* ====================================================== */
+
+    .navigation-list
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .navigation-item
+    {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        min-height: 80px;
+    }
+
+    .navigation-link
+    {
+        color: var(--color-white);
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .navigation-link:hover
+    {
+        color: var(--color-primary);
+    }
+
+    .navigation-active
+    {
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    .navigation-muted, .navigation-label
+    {
+        color: var(--color-disabled);
+    }
+
+    .navigation-label
+    {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .navigation-bold
+    {
+        font-weight: 700;
+    }
+
+    .navigation-disabled
+    {
+        cursor: default;
+    }
+
+    .dropdown-button
+    {
+        padding: 5px;
+        color: var(--color-white);
+        background-color: transparent;
+        border: none;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .dropdown-button:hover
+    {
+        color: var(--color-primary);
+    }

@@ -15,15 +15,121 @@
 
     <!-- Stylesheets / Feuilles de style -->
     <link rel="stylesheet" href="css/base/global.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/navbar.css">
+    <link rel="stylesheet" href="css/components/dropdown.css">
     <link rel="stylesheet" href="css/pages/home.css">
+    <link rel="stylesheet" href="css/base/responsive.css">
+
+    <!-- JavaScript / Scripts -->
+    <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
+    <!-- Header / En-tête -->
+    <header class="site-header">
+        <div class="header-content">
+            <a class="site-logo" href="index.html" aria-label="Accueil Botova">Botova</a>
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="main-navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
+
+            <!-- Main navigation / Navigation principale -->
+            <nav class="main-navigation" id="main-navigation" aria-label="Navigation principale">
+                <ul class="navigation-list">
+                    <li class="navigation-item">
+                        <a class="navigation-link navigation-active" href="index.html" aria-current="page">Accueil</a>
+                    </li>
+
+                    <!-- Services menu / Menu services -->
+                    <li class="navigation-item">
+                        <a class="navigation-link navigation-muted" href="html/services.html">Services</a>
+                        <button class="dropdown-button" type="button" aria-label="Ouvrir le menu Services" aria-controls="services-menu" aria-expanded="false">▾</button>
+                        <ul class="dropdown-menu" id="services-menu">
+                            <li><span class="dropdown-heading">Scripts OBS</span></li>
+                            <li><span class="dropdown-disabled">Serveurs Discord</span></li>
+                            <li><span class="dropdown-disabled">Scripts Logiciels</span></li>
+                            <li><span class="dropdown-disabled">Automatisations</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Web menu / Menu web -->
+                    <li class="navigation-item navigation-disabled">
+                        <span class="navigation-label">Web ▾</span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-heading">Sites web</span></li>
+                            <li><span class="dropdown-disabled">Bases de données</span></li>
+                            <li><span class="dropdown-disabled">Maquettes</span></li>
+                            <li><span class="dropdown-disabled">UI/UX Design</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Tools menu / Menu outils -->
+                    <li class="navigation-item navigation-disabled">
+                        <span class="navigation-label">Outils ▾</span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-heading">Applications</span></li>
+                            <li><span class="dropdown-disabled">Logiciels</span></li>
+                            <li><span class="dropdown-disabled">Widgets</span></li>
+                            <li><span class="dropdown-disabled">Plugins</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- Bots menu / Menu bots -->
+                    <li class="navigation-item">
+                        <a class="navigation-link navigation-bold" href="html/services.html#platforms">Bots</a>
+                        <button class="dropdown-button" type="button" aria-label="Ouvrir le menu Bots" aria-controls="bots-menu" aria-expanded="false">▾</button>
+                        <ul class="dropdown-menu" id="bots-menu">
+                            <li><a class="dropdown-heading" href="html/services.html#discord">Discord</a></li>
+                            <li><a href="html/services.html#twitch">Twitch</a></li>
+                            <li><a href="html/services.html#youtube">YouTube</a></li>
+                            <li><a href="html/services.html#whatsapp">WhatsApp</a></li>
+                            <li><a href="html/services.html#linkedin">LinkedIn</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Graphics menu / Menu graphismes -->
+                    <li class="navigation-item navigation-disabled">
+                        <span class="navigation-label">Graphismes ▾</span>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-heading">Logos</span></li>
+                            <li><span class="dropdown-disabled">Overlays</span></li>
+                            <li><span class="dropdown-disabled">Flyers</span></li>
+                            <li><span class="dropdown-disabled">Cartes de visite</span></li>
+                            <li><span class="dropdown-disabled">Affiches</span></li>
+                        </ul>
+                    </li>
+
+                    <!-- About / A propos -->
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="html/about.html">À propos</a>
+                    </li>
+
+                    <!-- Contact -->
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="html/contact.html">Contact</a>
+                    </li>
+
+                    <!-- Account menu / Menu compte -->
+                    <li class="navigation-item">
+                        <a class="navigation-link navigation-bold" href="html/login.html">Compte</a>
+                        <button class="dropdown-button" type="button" aria-label="Ouvrir le menu Compte" aria-controls="account-menu" aria-expanded="false">▾</button>
+                        <ul class="dropdown-menu dropdown-account" id="account-menu">
+                            <li><a class="dropdown-heading" href="html/login.html">Connexion</a></li>
+                            <li><a href="html/register.html">Inscription</a></li>
+                            <li><a href="html/profile.html">Profil</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <!-- Main content / Contenu principal -->
     <main id="main-content">
 
         <!-- Home section / Section d'accueil -->
         <section class="home" id="home" aria-labelledby="home-title">
+
             <div class="home-content">
                 <h1 id="home-title">Des idées aux solutions numériques.</h1>
                 <p class="home-description">
@@ -43,6 +149,7 @@
                     <a class="home-button" href="html/services.html#discord">Découvrir les bots</a>
                 </div>
             </div>
+
         </section>
     </main>
 </body>
