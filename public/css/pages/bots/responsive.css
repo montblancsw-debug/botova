@@ -1,0 +1,353 @@
+/* ====================================================== */
+/*        BOTS RESPONSIVE / RESPONSIVE DES BOTS           */
+/*        Width / Largeur : 1201 px et plus               */
+/* ====================================================== */
+
+    @media (min-width: 1201px)
+    {
+        .bots-section
+        {
+            padding: 60px 40px;
+        }
+
+        .bots-content
+        {
+            max-width: 1120px;
+        }
+    }
+
+/* ====================================================== */
+/*       BOTS COMPACT / BOTS ECRANS COMPACTS              */
+/*       Width / Largeur : 1200 px maximum                */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        body.section-mode .bots-section:not([hidden])
+        {
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+        }
+
+        .bots-content
+        {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .bots-title
+        {
+            margin-bottom: 8px;
+            font-size: 29px;
+        }
+
+        .bots-description
+        {
+            margin-bottom: 14px;
+            font-size: 15px;
+            line-height: 1.3;
+        }
+
+        .bots-description br
+        {
+            display: none;
+        }
+
+        .bots-grid
+        {
+            gap: 12px;
+        }
+
+        .bots-card
+        {
+            min-height: 0;
+            padding: 14px;
+        }
+
+        .bots-card h2,
+        .bots-card h3
+        {
+            margin-bottom: 7px;
+            font-size: 20px;
+        }
+
+        .bots-card p
+        {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .bots-card-link
+        {
+            font-size: 15px;
+        }
+
+        .bots-slide
+        {
+            min-height: 0;
+            padding: 16px;
+        }
+
+        .bots-slide-layout
+        {
+            grid-template-columns: 30% minmax(0, 1fr);
+            gap: 18px;
+            min-height: 0;
+        }
+
+        .bots-slide-layout img
+        {
+            max-height: 165px;
+        }
+
+        .bots-slide-content
+        {
+            gap: 12px;
+            min-height: 160px;
+        }
+
+        .bots-slide-content h3
+        {
+            font-size: 19px;
+        }
+
+        .bots-slide-content p
+        {
+            font-size: 15px;
+        }
+
+        .bots-slide-link
+        {
+            font-size: 15px;
+        }
+
+        .bots-contact-card
+        {
+            gap: 16px;
+            padding: 18px;
+        }
+
+        .bots-contact-card h3
+        {
+            font-size: 23px;
+        }
+
+        .bots-contact-card p
+        {
+            font-size: 15px;
+        }
+
+        .bots-contact-actions
+        {
+            min-width: 170px;
+        }
+
+        .bots-contact-button
+        {
+            padding: 9px 12px;
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*          BOTS TABLETS / BOTS TABLETTES                 */
+/*          Width / Largeur : 601 a 1200 px               */
+/* ====================================================== */
+
+    @media (min-width: 601px) and (max-width: 1200px)
+    {
+        .bots-grid
+        {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+/* ====================================================== */
+/*          BOTS MOBILE / BOTS SMARTPHONES                */
+/*          Width / Largeur : 600 px maximum              */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        body.section-mode .bots-section:not([hidden])
+        {
+            padding: 8px 14px;
+        }
+
+        .bots-title
+        {
+            font-size: 23px;
+        }
+
+        .bots-description
+        {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .bots-grid
+        {
+            grid-template-columns: 1fr;
+            gap: 9px;
+        }
+
+        .bots-card
+        {
+            padding: 11px 13px;
+        }
+
+        .bots-card h2,
+        .bots-card h3
+        {
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .bots-card p
+        {
+            margin-bottom: 7px;
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .bots-card-link
+        {
+            padding: 3px 0;
+            font-size: 13px;
+        }
+
+        .bots-slide
+        {
+            padding: 12px;
+        }
+
+        .bots-slide-name
+        {
+            margin-bottom: 7px;
+            font-size: 12px;
+        }
+
+        .bots-slide-layout
+        {
+            grid-template-columns: 90px minmax(0, 1fr);
+            gap: 12px;
+        }
+
+        .bots-slide-layout img
+        {
+            max-height: 95px;
+        }
+
+        .bots-slide-content
+        {
+            gap: 8px;
+            min-height: 125px;
+        }
+
+        .bots-slide-content h3
+        {
+            font-size: 15px;
+        }
+
+        .bots-slide-content p
+        {
+            font-size: 12px;
+        }
+
+        .bots-slide-link
+        {
+            font-size: 13px;
+        }
+
+        .bots-carousel-controls
+        {
+            min-height: 38px;
+        }
+
+        .bots-carousel-dots
+        {
+            gap: 12px;
+        }
+
+        .bots-carousel-dot
+        {
+            width: 14px;
+            height: 14px;
+        }
+
+        .bots-pagination
+        {
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .bots-pagination button
+        {
+            padding: 5px 7px;
+            font-size: 11px;
+        }
+
+        .bots-pagination span
+        {
+            font-size: 11px;
+        }
+
+        .bots-contact-card
+        {
+            flex-direction: column;
+            gap: 10px;
+            padding: 12px;
+        }
+
+        .bots-contact-card h3
+        {
+            margin-bottom: 5px;
+            font-size: 19px;
+        }
+
+        .bots-contact-card p
+        {
+            font-size: 12px;
+        }
+
+        .bots-contact-actions
+        {
+            width: 100%;
+            gap: 7px;
+        }
+
+        .bots-contact-button
+        {
+            padding: 8px;
+            font-size: 12px;
+        }
+    }
+
+/* ====================================================== */
+/*       SMALL MOBILE / PETITS SMARTPHONES                */
+/*       Width / Largeur : 360 px maximum                 */
+/* ====================================================== */
+
+    @media (max-width: 360px)
+    {
+        .bots-title
+        {
+            font-size: 21px;
+        }
+
+        .bots-slide-layout
+        {
+            grid-template-columns: 70px minmax(0, 1fr);
+        }
+
+        .bots-slide-content
+        {
+            min-height: 115px;
+        }
+
+        .bots-slide-layout img
+        {
+            max-height: 78px;
+        }
+    }

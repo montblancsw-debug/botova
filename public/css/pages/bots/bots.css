@@ -1,0 +1,483 @@
+/* ====================================================== */
+/*                 BOTS PAGE / PAGE BOTS                  */
+/* ====================================================== */
+
+    .bots-main
+    {
+        width: 100%;
+    }
+
+    .bots-section
+    {
+        padding: 70px 40px 65px;
+    }
+
+    .bots-content
+    {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+    .bots-title
+    {
+        margin-bottom: 12px;
+        color: var(--color-title);
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .bots-description
+    {
+        margin-bottom: 28px;
+        color: var(--color-text);
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+/* ====================================================== */
+/*                 BOTS CARDS / CARTES BOTS               */
+/* ====================================================== */
+
+    .bots-grid
+    {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 30px;
+    }
+
+    .bots-card
+    {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        min-height: 170px;
+        padding: 22px 24px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(10, 17, 31, 0.10);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .bots-card[hidden]
+    {
+        display: none;
+    }
+
+    .bots-card h2,
+    .bots-card h3
+    {
+        margin-bottom: 12px;
+        color: var(--color-title);
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .bots-card p
+    {
+        margin-bottom: 18px;
+        color: var(--color-text);
+        font-size: 19px;
+        line-height: 1.35;
+    }
+
+    .bots-card-link,
+    .bots-back-link
+    {
+        display: inline-flex;
+        align-items: center;
+        align-self: flex-start;
+        margin-top: auto;
+        padding: 7px 0;
+        background: none;
+        border: none;
+        color: var(--color-primary);
+        font-size: 19px;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        transition: color 0.2s ease, transform 0.2s ease;
+        touch-action: manipulation;
+    }
+
+    .bots-card-link:hover,
+    .bots-card-link:focus-visible,
+    .bots-back-link:hover,
+    .bots-back-link:focus-visible
+    {
+        color: var(--color-primary-dark);
+        transform: translateX(3px);
+    }
+
+    .bots-card-link:active,
+    .bots-back-link:active
+    {
+        color: var(--color-primary-dark);
+        transform: translateY(1px);
+    }
+
+/* ====================================================== */
+/*              BOTS PANELS / PANNEAUX BOTS               */
+/* ====================================================== */
+
+    .bots-panel[hidden]
+    {
+        display: none;
+    }
+
+    .bots-back-link
+    {
+        margin-top: 16px;
+        font-size: 16px;
+    }
+
+/* ====================================================== */
+/*             BOTS CAROUSEL / CARROUSEL BOTS             */
+/* ====================================================== */
+
+    .bots-carousel
+    {
+        width: 100%;
+    }
+
+    .bots-slide
+    {
+        min-height: 345px;
+        padding: 25px 30px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(10, 17, 31, 0.10);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .bots-slide[hidden]
+    {
+        display: none;
+    }
+
+    .bots-slide-name
+    {
+        margin-bottom: 12px;
+        color: var(--color-primary);
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .bots-slide-layout
+    {
+        display: grid;
+        grid-template-columns: 30% minmax(0, 1fr);
+        align-items: center;
+        gap: 30px;
+        min-height: 250px;
+    }
+
+    .bots-slide-layout img
+    {
+        display: block;
+        width: 220px;
+        max-width: 100%;
+        max-height: 220px;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+
+    .bots-slide-content
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        min-height: 230px;
+    }
+
+    .bots-slide-content h3
+    {
+        margin-bottom: 0;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.3;
+    }
+
+    .bots-slide-content p
+    {
+        margin-bottom: 0;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .bots-slide-link
+    {
+        margin-top: auto;
+        color: var(--color-primary);
+        font-size: 19px;
+        font-weight: 500;
+        transition: color 0.2s ease;
+    }
+
+    .bots-slide-link:hover,
+    .bots-slide-link:focus-visible
+    {
+        color: var(--color-primary-dark);
+    }
+
+    .bots-slide-link:active
+    {
+        color: var(--color-primary-dark);
+    }
+
+/* ====================================================== */
+/*          CAROUSEL CONTROLS / COMMANDES CARROUSEL       */
+/* ====================================================== */
+
+    .bots-carousel-controls
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        min-height: 60px;
+    }
+
+    .bots-carousel-arrow
+    {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0;
+        background: none;
+        border: none;
+        color: var(--color-primary);
+        font-size: 38px;
+        line-height: 1;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    .bots-carousel-arrow:hover,
+    .bots-carousel-arrow:focus-visible
+    {
+        color: var(--color-primary-dark);
+    }
+
+    .bots-carousel-arrow:active
+    {
+        color: var(--color-primary-dark);
+        transform: scale(0.9);
+    }
+
+    .bots-carousel-dots
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bots-carousel-dot
+    {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        background-color: transparent;
+        border: 2px solid var(--color-disabled);
+        border-radius: 50%;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    .bots-carousel-dot.is-active
+    {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .bots-carousel-dot:hover,
+    .bots-carousel-dot:focus-visible,
+    .bots-carousel-dot:active
+    {
+        border-color: var(--color-primary);
+    }
+
+/* ====================================================== */
+/*             PAGINATION / PAGINATION CARTES            */
+/* ====================================================== */
+
+    .bots-pagination
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin-top: 16px;
+    }
+
+    .bots-pagination[hidden]
+    {
+        display: none;
+    }
+
+    .bots-pagination button
+    {
+        min-height: 36px;
+        padding: 7px 12px;
+        background-color: var(--color-white);
+        border: 1px solid var(--color-border);
+        border-radius: 5px;
+        box-shadow: 0 3px 8px rgba(10, 17, 31, 0.10);
+        color: var(--color-link);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    .bots-pagination button:hover:not(:disabled),
+    .bots-pagination button:focus-visible:not(:disabled)
+    {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+    }
+
+    .bots-pagination button:active:not(:disabled)
+    {
+        background-color: var(--color-selection);
+    }
+
+    .bots-pagination button:disabled
+    {
+        opacity: 0.45;
+        cursor: default;
+    }
+
+    .bots-pagination span
+    {
+        color: var(--color-text);
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+/* ====================================================== */
+/*             BOTS CONTACT / CONTACT BOTS                */
+/* ====================================================== */
+
+    .bots-contact-card
+    {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 30px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(10, 17, 31, 0.10);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .bots-contact-card h3
+    {
+        margin-bottom: 12px;
+        font-size: 30px;
+    }
+
+    .bots-contact-card p
+    {
+        margin-bottom: 0;
+        color: var(--color-text);
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .bots-contact-actions
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        min-width: 230px;
+    }
+
+    .bots-contact-button
+    {
+        display: block;
+        padding: 12px 20px;
+        border: 1px solid var(--color-border);
+        border-radius: 7px;
+        box-shadow: 0 4px 10px rgba(10, 17, 31, 0.15);
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        touch-action: manipulation;
+    }
+
+    .bots-contact-primary
+    {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+    }
+
+    .bots-contact-secondary
+    {
+        background-color: var(--color-white);
+        color: var(--color-title);
+    }
+
+    .bots-contact-button:hover,
+    .bots-contact-button:focus-visible
+    {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(10, 17, 31, 0.20);
+    }
+
+    .bots-contact-button:active
+    {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
+        transform: translateY(1px);
+    }
+
+/* ====================================================== */
+/*              HOVER EFFECTS / EFFETS DE SURVOL          */
+/* ====================================================== */
+
+    @media (hover: hover)
+    {
+        .bots-card:hover,
+        .bots-slide:hover,
+        .bots-contact-card:hover
+        {
+            transform: translateY(-5px);
+            border-color: rgba(0, 181, 172, 0.40);
+            box-shadow: 0 15px 30px rgba(10, 17, 31, 0.18);
+        }
+    }
+
+    .bots-card:focus-within,
+    .bots-slide:focus-within,
+    .bots-contact-card:focus-within
+    {
+        border-color: var(--color-primary);
+        box-shadow: 0 10px 24px rgba(10, 17, 31, 0.16);
+    }
+
+/* ====================================================== */
+/*           REDUCED MOTION / MOUVEMENT REDUIT            */
+/* ====================================================== */
+
+    @media (prefers-reduced-motion: reduce)
+    {
+        .bots-card,
+        .bots-slide,
+        .bots-contact-card,
+        .bots-card-link,
+        .bots-slide-link,
+        .bots-contact-button
+        {
+            transition: none;
+        }
+    }

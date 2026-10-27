@@ -8,15 +8,18 @@
     {
         const pageSections = document.querySelectorAll(".page-section");
         const anchorLinks = document.querySelectorAll(".anchor-link");
+        const internalLinks = document.querySelectorAll('a[href^="#"]');
         const topAnchor = document.querySelector(".anchor-navigation .anchor-arrow:first-child");
         const bottomAnchor = document.querySelector(".anchor-navigation .anchor-arrow:last-child");
-        const footerHomeLink = document.querySelector(".site-footer a[href='#home']");
         const mobileScreen = window.matchMedia("(max-width: 1200px)");
 
         if (pageSections.length === 0)
         {
             return;
         }
+
+        const firstSectionId = pageSections[0].id;
+        const lastSectionId = pageSections[pageSections.length - 1].id;
 
         let selectedSectionId = window.location.hash.replace("#", "");
 
@@ -36,7 +39,7 @@
 
         if (!sectionExists(selectedSectionId))
         {
-            selectedSectionId = "home";
+            selectedSectionId = firstSectionId;
         }
 
         // Update active anchor / Mettre a jour l'ancre active
@@ -159,14 +162,24 @@
         }
 
         // Section links / Liens des sections
-        for (const anchorLink of anchorLinks)
+        for (const internalLink of internalLinks)
         {
-            anchorLink.addEventListener("click", function(event)
+            if (internalLink.classList.contains("anchor-arrow"))
+            {
+                continue;
+            }
+
+            const href = internalLink.getAttribute("href");
+            const sectionId = href.replace("#", "");
+
+            if (!sectionExists(sectionId))
+            {
+                continue;
+            }
+
+            internalLink.addEventListener("click", function(event)
             {
                 event.preventDefault();
-
-                const sectionId = anchorLink.getAttribute("href").replace("#", "");
-
                 openSection(sectionId);
             });
         }
@@ -177,8 +190,7 @@
             topAnchor.addEventListener("click", function(event)
             {
                 event.preventDefault();
-
-                openSection("home");
+                openSection(firstSectionId);
             });
         }
 
@@ -192,7 +204,7 @@
                 if (mobileScreen.matches)
                 {
                     // Show contact and footer / Afficher contact et footer
-                    openSection("contact");
+                    openSection(lastSectionId);
                 }
                 else
                 {
@@ -210,17 +222,6 @@
             });
         }
 
-        // Footer home link / Lien accueil du footer
-        if (footerHomeLink !== null)
-        {
-            footerHomeLink.addEventListener("click", function(event)
-            {
-                event.preventDefault();
-
-                openSection("home");
-            });
-        }
-
         // Browser history / Historique du navigateur
         function restoreSection()
         {
@@ -232,7 +233,7 @@
             }
             else
             {
-                openSection("home", false);
+                openSection(firstSectionId, false);
             }
         }
 

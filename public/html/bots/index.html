@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les bots, plugins et solutions communautaires de Botova.">
+    <title>Bots et plugins - Botova.dev</title>
+
+    <!-- Fonts / Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets / Feuilles de style -->
+    <link rel="stylesheet" href="../../css/base/global.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/anchors.css">
+    <link rel="stylesheet" href="../../css/components/cards.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/pages/bots/bots.css">
+    <link rel="stylesheet" href="../../css/base/responsive.css">
+    <link rel="stylesheet" href="../../css/pages/bots/responsive.css">
+
+    <!-- JavaScript / Scripts -->
+    <script type="module" src="../../js/bots/bots-page.js"></script>
+</head>
+
+<body data-page="bots">
+
+    <!-- Header / En-tête -->
+    <header class="site-header" id="site-header">
+        <div class="header-content">
+
+            <!-- Logo / Logo -->
+            <a class="site-logo" href="../../index.html" aria-label="Accueil Botova">
+                <img src="../../images/logos/logo-botova.png" alt="Botova">
+            </a>
+            <div class="header-navigation" id="header-navigation">
+
+                <!-- Main navigation / Navigation principale -->
+                <nav class="main-navigation" aria-label="Navigation principale">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                            <a class="navigation-link" data-navigation-page="home" href="../../index.html">Accueil</a>
+                        </li>
+
+                        <!-- Services / Services -->
+                        <li class="navigation-item">
+                            <a class="navigation-link navigation-muted" data-navigation-page="services" href="../services.html">Services</a>
+                            <button class="dropdown-button" type="button" aria-label="Afficher les services" aria-controls="services-menu" aria-expanded="false">▾</button>
+                            <ul class="dropdown-menu" id="services-menu">
+                                <li><span class="dropdown-entry">Scripts OBS</span></li>
+                                <li><span class="dropdown-entry">Serveurs Discord</span></li>
+                                <li><span class="dropdown-entry">Scripts Logiciels</span></li>
+                                <li><span class="dropdown-entry">Automatisations</span></li>
+                            </ul>
+                        </li>
+
+                        <!-- Web / Web -->
+                        <li class="navigation-item">
+                            <button class="navigation-label" type="button" aria-controls="web-menu" aria-expanded="false">Web <span aria-hidden="true">▾</span></button>
+                            <ul class="dropdown-menu" id="web-menu">
+                                <li><span class="dropdown-entry">Sites web</span></li>
+                                <li><span class="dropdown-entry">Bases de données</span></li>
+                                <li><span class="dropdown-entry">Maquettes</span></li>
+                                <li><span class="dropdown-entry">UI/UX Design</span></li>
+                            </ul>
+                        </li>
+
+                        <!-- Tools / Outils -->
+                        <li class="navigation-item">
+                            <button class="navigation-label" type="button" aria-controls="tools-menu" aria-expanded="false">Outils <span aria-hidden="true">▾</span></button>
+                            <ul class="dropdown-menu" id="tools-menu">
+                                <li><span class="dropdown-entry">Applications</span></li>
+                                <li><span class="dropdown-entry">Logiciels</span></li>
+                                <li><span class="dropdown-entry">Widgets</span></li>
+                                <li><span class="dropdown-entry">Plugins</span></li>
+                            </ul>
+                        </li>
+
+                        <!-- Bots / Bots -->
+                        <li class="navigation-item">
+                            <a class="navigation-link navigation-bold" data-navigation-page="bots" href="#offres">Bots</a>
+                            <button class="dropdown-button" type="button" aria-label="Afficher les bots" aria-controls="bots-menu" aria-expanded="false">▾</button>
+                            <ul class="dropdown-menu" id="bots-menu">
+                                <li><a class="dropdown-entry" href="#discord">Discord</a></li>
+                                <li><a class="dropdown-entry" href="#carrousel" data-slide-select="twitch">Twitch</a></li>
+                                <li><a class="dropdown-entry" href="#carrousel" data-slide-select="youtube">YouTube</a></li>
+                                <li><a class="dropdown-entry" href="#carrousel" data-slide-select="whatsapp">WhatsApp</a></li>
+                                <li><a class="dropdown-entry" href="#carrousel" data-slide-select="linkedin">LinkedIn</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Graphics / Graphismes -->
+                        <li class="navigation-item">
+                            <button class="navigation-label" type="button" aria-controls="graphics-menu" aria-expanded="false">Graphismes <span aria-hidden="true">▾</span></button>
+                            <ul class="dropdown-menu" id="graphics-menu">
+                                <li><span class="dropdown-entry">Logos</span></li>
+                                <li><span class="dropdown-entry">Overlays</span></li>
+                                <li><span class="dropdown-entry">Flyers</span></li>
+                                <li><span class="dropdown-entry">Cartes de visite</span></li>
+                                <li><span class="dropdown-entry">Affiches</span></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                <!-- Other pages / Autres pages -->
+                <nav class="secondary-navigation" aria-label="Autres pages">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                            <a class="navigation-link" data-navigation-page="about" href="../about.html">À propos</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a class="navigation-link" data-navigation-page="contact" href="../contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Account navigation / Navigation du compte -->
+                <nav class="account-navigation" aria-label="Navigation du compte">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                            <a class="navigation-link navigation-bold" data-navigation-page="account" href="../login.html">Compte</a>
+                            <button class="dropdown-button" type="button" aria-label="Afficher le compte" aria-controls="account-menu" aria-expanded="false">▾</button>
+                            <ul class="dropdown-menu dropdown-account" id="account-menu">
+                                <li><a class="dropdown-entry" href="../login.html">Connexion</a></li>
+                                <li><a class="dropdown-entry" href="../register.html">Inscription</a></li>
+                                <li><a class="dropdown-entry" href="../profile.html">Profil</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Mobile button / Bouton mobile -->
+            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="header-navigation" aria-expanded="false">Menu ☰</button>
+
+        </div>
+    </header>
+
+    <!-- Section navigation / Navigation par ancres -->
+    <nav class="anchor-navigation" aria-label="Navigation des sections Bots">
+        <a class="anchor-arrow" href="#site-header" aria-label="Retour en haut de la page">↑</a>
+        <a class="anchor-link is-active" href="#offres" aria-current="location">Offres</a>
+        <a class="anchor-link" href="#carrousel">Carrousel</a>
+        <a class="anchor-link" href="#discord">Discord</a>
+        <a class="anchor-link" href="#plugins">Plugins</a>
+        <a class="anchor-link" href="#contact">Contact</a>
+        <a class="anchor-arrow" href="#site-footer" aria-label="Aller en bas de la page">↓</a>
+    </nav>
+
+    <!-- Main content / Contenu principal -->
+    <main class="bots-main" id="main-content">
+
+        <!-- Offers / Offres -->
+        <section class="page-section bots-section" id="offres" aria-labelledby="offres-title">
+            <div class="bots-content">
+                <h1 class="bots-title" id="offres-title">Les offres Botova</h1>
+                <p class="bots-description">Organiser les accès et permissions Discord,<br>et configurer nos outils selon votre contexte.</p>
+                <div class="bots-grid">
+                    <article class="bots-card">
+                        <h2>Bots Discord</h2>
+                        <p>Bot tout-en-un et générateur/configurateur de serveurs Discord.</p>
+                        <a class="bots-card-link" href="#discord">Consulter les bots →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h2>Plugins Discord à l’unité</h2>
+                        <p>Rôles, salons, panneaux interactifs, matchmaking, vocaux, jeux et musique.</p>
+                        <a class="bots-card-link" href="#plugins">Consulter les plugins →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h2>Autres plateformes</h2>
+                        <p>Twitch, YouTube, WhatsApp et LinkedIn.</p>
+                        <a class="bots-card-link" href="#carrousel">Explorer les plateformes →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h2>Serveurs sur mesure</h2>
+                        <p>Nous créons et configurons votre serveur Discord selon vos besoins.</p>
+                        <a class="bots-card-link" href="#contact">Demander un serveur →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel / Carrousel -->
+        <section class="page-section bots-section" id="carrousel" aria-labelledby="carrousel-title">
+            <div class="bots-content">
+                <h2 class="bots-title" id="carrousel-title">Choisissez votre plateforme</h2>
+                <p class="bots-description">Découvrez les solutions et possibilités proposées pour chaque plateforme.</p>
+                <div class="bots-carousel" aria-roledescription="carrousel" aria-label="Plateformes Botova">
+                    <article class="bots-slide" data-slide="discord">
+                        <p class="bots-slide-name">· DISCORD ·</p>
+                        <div class="bots-slide-layout">
+                            <img src="../../images/platforms/discord.png" alt="Logo Discord">
+                            <div class="bots-slide-content">
+                                <h3>Bots, plugins et configuration.</h3>
+                                <p>Rôles, permissions, accueil des membres et outils de gestion communautaire.</p>
+                                <a href="#discord" class="bots-slide-link">Découvrir Discord →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bots-slide" data-slide="twitch" hidden>
+                        <p class="bots-slide-name">· TWITCH ·</p>
+                        <div class="bots-slide-layout">
+                            <img src="../../images/platforms/twitch.png" alt="Logo Twitch">
+                            <div class="bots-slide-content">
+                                <h3>Accompagner les échanges pendant vos directs.</h3>
+                                <p>Animation du chat et échanges avec votre communauté Discord pendant vos directs.</p>
+                                <a href="twitch/" class="bots-slide-link">Découvrir Twitch →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bots-slide" data-slide="youtube" hidden>
+                        <p class="bots-slide-name">· YOUTUBE ·</p>
+                        <div class="bots-slide-layout">
+                            <img src="../../images/platforms/youtube.png" alt="Logo YouTube">
+                            <div class="bots-slide-content">
+                                <h3>Préparer les interactions autour de votre chaîne.</h3>
+                                <p>Des possibilités pour la modération, les commandes et les notifications de votre chaîne.</p>
+                                <a href="youtube/" class="bots-slide-link">Découvrir YouTube →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bots-slide" data-slide="whatsapp" hidden>
+                        <p class="bots-slide-name">· WHATSAPP ·</p>
+                        <div class="bots-slide-layout">
+                            <img src="../../images/platforms/whatsapp.png" alt="Logo WhatsApp">
+                            <div class="bots-slide-content">
+                                <h3>Orienter et préparer des réponses utiles.</h3>
+                                <p>Réponses aux messages et parcours de communication adaptés à votre activité.</p>
+                                <a href="whatsapp/" class="bots-slide-link">Découvrir WhatsApp →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bots-slide" data-slide="linkedin" hidden>
+                        <p class="bots-slide-name">· LINKEDIN ·</p>
+                        <div class="bots-slide-layout">
+                            <img src="../../images/platforms/linkedin.png" alt="Logo LinkedIn">
+                            <div class="bots-slide-content">
+                                <h3>Organiser vos contenus.</h3>
+                                <p>Une assistance à la préparation de vos publications, avec relecture et validation humaine.</p>
+                                <a href="linkedin/" class="bots-slide-link">Découvrir LinkedIn →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                <!-- Carousel controls / Commandes du carrousel -->
+                <div class="bots-carousel-controls">
+                    <button class="bots-carousel-arrow" type="button" data-carousel-prev aria-label="Plateforme précédente">‹</button>
+                    <div class="bots-carousel-dots" aria-label="Choisir une plateforme">
+                        <button class="bots-carousel-dot is-active" type="button" data-carousel-dot="0" aria-label="Discord" aria-current="true"></button>
+                        <button class="bots-carousel-dot" type="button" data-carousel-dot="1" aria-label="Twitch"></button>
+                        <button class="bots-carousel-dot" type="button" data-carousel-dot="2" aria-label="YouTube"></button>
+                        <button class="bots-carousel-dot" type="button" data-carousel-dot="3" aria-label="WhatsApp"></button>
+                        <button class="bots-carousel-dot" type="button" data-carousel-dot="4" aria-label="LinkedIn"></button>
+                    </div>
+                    <button class="bots-carousel-arrow" type="button" data-carousel-next aria-label="Plateforme suivante">›</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Discord / Présentation des bots Discord -->
+        <section class="page-section bots-section" id="discord" aria-labelledby="discord-title">
+            <div class="bots-content">
+                <div class="bots-panel" data-bots-panel="overview">
+                    <h2 class="bots-title" id="discord-title">Bots Discord</h2>
+                    <p class="bots-description">Des bots et modules Discord pour gérer les rôles, organiser vos salons et animer votre communauté.</p>
+                    <div class="bots-grid" data-paginate>
+                        <article class="bots-card">
+                            <h3>Bot Discord tout-en-un</h3>
+                            <p>Un bot modulaire pour gérer votre communauté.</p>
+                            <button class="bots-card-link" type="button" data-panel-target="all-in-one">Voir la fiche →</button>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Générateur de serveurs Discord</h3>
+                            <p>Un outil pour faciliter la préparation des catégories, salons et rôles.</p>
+                            <button class="bots-card-link" type="button" data-panel-target="generator">Voir la fiche →</button>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Choisir ses modules</h3>
+                            <p>Choisissez les modules adaptés aux besoins de votre serveur.</p>
+                            <a class="bots-card-link" href="#plugins">Consulter les plugins →</a>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Être accompagné</h3>
+                            <p>Configuration personnalisée de votre serveur Discord selon votre organisation et vos besoins.</p>
+                            <a class="bots-card-link" href="#contact">Voir les prestations →</a>
+                        </article>
+                    </div>
+
+                    <div class="bots-pagination" data-pagination-controls>
+                        <button type="button" data-pagination-prev>← Précédent</button>
+                        <span data-pagination-status aria-live="polite"></span>
+                        <button type="button" data-pagination-next>Suivant →</button>
+                    </div>
+                </div>
+
+                <!-- All-in-one bot / Bot tout-en-un -->
+                <div class="bots-panel" data-bots-panel="all-in-one" hidden>
+                    <h2 class="bots-title">Bot Discord tout-en-un</h2>
+                    <p class="bots-description">Un bot modulaire pour gérer et animer votre communauté Discord.</p>
+                    <div class="bots-grid" data-paginate>
+                        <article class="bots-card">
+                            <h3>Une solution modulaire</h3>
+                            <p>Un bot prêt à l’emploi. Ajoutez vos plugins dans le dossier Addons pour personnaliser ses fonctionnalités.</p>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Modules</h3>
+                            <p>Rôles, permissions, vérification, mini-jeux et outils communautaires.</p>
+                            <a class="bots-card-link" href="#plugins">Voir les différents modules →</a>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Votre projet Discord</h3>
+                            <p>Présentez-nous votre projet.</p>
+                            <a class="bots-card-link" href="#contact">Nous contacter →</a>
+                        </article>
+                    </div>
+
+                    <div class="bots-pagination" data-pagination-controls>
+                        <button type="button" data-pagination-prev>← Précédent</button>
+                        <span data-pagination-status aria-live="polite"></span>
+                        <button type="button" data-pagination-next>Suivant →</button>
+                    </div>
+
+                    <button class="bots-back-link" type="button" data-panel-target="overview">← Retour aux bots</button>
+                </div>
+
+                <!-- Server generator / Générateur de serveurs -->
+                <div class="bots-panel" data-bots-panel="generator" hidden>
+                    <h2 class="bots-title">Générateur de serveurs Discord</h2>
+                    <p class="bots-description">Un bot pour générer et configurer vos serveurs Discord.</p>
+                    <div class="bots-grid" data-paginate>
+                        <article class="bots-card">
+                            <h3>Configuration</h3>
+                            <p>Préparez vos catégories, salons et rôles à l’aide d’un dashboard.</p>
+                            <a class="bots-card-link" href="#contact">Demander une présentation →</a>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Personnalisation visuelle</h3>
+                            <p>Personnalisez l'organisation et la présentation de votre serveur.</p>
+                            <a class="bots-card-link" href="#contact">Nous contacter →</a>
+                        </article>
+
+                        <article class="bots-card">
+                            <h3>Accompagnement</h3>
+                            <p>Une solution pour organiser votre serveur et personnaliser sa configuration.</p>
+                            <a class="bots-card-link" href="#contact">Nous contacter →</a>
+                        </article>
+                    </div>
+
+                    <div class="bots-pagination" data-pagination-controls>
+                        <button type="button" data-pagination-prev>← Précédent</button>
+                        <span data-pagination-status aria-live="polite"></span>
+                        <button type="button" data-pagination-next>Suivant →</button>
+                    </div>
+
+                    <button class="bots-back-link" type="button" data-panel-target="overview">← Retour aux bots</button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Plugins / Plugins Discord -->
+        <section class="page-section bots-section" id="plugins" aria-labelledby="plugins-title">
+            <div class="bots-content">
+                <h2 class="bots-title" id="plugins-title">Plugins Discord</h2>
+                <p class="bots-description">Découvrez nos plugins pour organiser, administrer et personnaliser votre serveur Discord.</p>
+                <div class="bots-grid" data-paginate>
+                    <article class="bots-card">
+                        <h3>Gestion des rôles</h3>
+                        <p>Attribuez des rôles avec des panneaux interactifs et des menus de sélection.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Gestion des permissions</h3>
+                        <p>Gérez les autorisations des rôles et des salons depuis des commandes dédiées.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Vérification des membres</h3>
+                        <p>Accompagnez l’arrivée des membres avec un parcours de vérification.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Duplication et organisation</h3>
+                        <p>Dupliquez des catégories ou des rôles et leurs paramètres de permissions.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Guides et forums</h3>
+                        <p>Organisez la publication et la validation de guides dans des forums dédiés.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Vocaux temporaires</h3>
+                        <p>Créez des salons vocaux temporaires et personnalisez-les depuis un panneau interactif.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Guides et navigation</h3>
+                        <p>Facilitez l’accès aux salons et aux informations grâce à un panneau de navigation interactif.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Musique</h3>
+                        <p>Écoutez de la musique dans vos salons vocaux Discord à partir de sources prises en charge.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Suggestions</h3>
+                        <p>Recueillez les idées des membres avec des votes et des discussions dédiées.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+
+                    <article class="bots-card">
+                        <h3>Gestion des groupes</h3>
+                        <p>Créez des groupes de joueurs et gérez les inscriptions et les participants.</p>
+                        <a class="bots-card-link" href="#contact">Demander ce plugin →</a>
+                    </article>
+                </div>
+
+                <div class="bots-pagination" data-pagination-controls>
+                    <button type="button" data-pagination-prev>← Précédent</button>
+                    <span data-pagination-status aria-live="polite"></span>
+                    <button type="button" data-pagination-next>Suivant →</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact / Contact Bots -->
+        <section class="page-section bots-section" id="contact" aria-labelledby="bots-contact-title">
+            <div class="bots-content">
+                <h2 class="bots-title" id="bots-contact-title">Contactez-nous :</h2>
+                <p class="bots-description">Besoin d’un bot ?<br>Présentez votre contexte et vos priorités.</p>
+                <div class="bots-contact-card">
+                    <div>
+                        <h3>Un projet ?</h3>
+                        <p>Précisez votre objectif, les contenus disponibles et les contraintes à prendre en compte.</p>
+                    </div>
+
+                    <div class="bots-contact-actions">
+                        <a class="bots-contact-button bots-contact-primary" href="../contact.html">Nous contacter</a>
+                        <a class="bots-contact-button bots-contact-secondary" href="#offres">Revoir les Offres</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Pied de page -->
+    <footer class="site-footer" id="site-footer">
+        <div class="footer-content">
+
+            <!-- Brand / Identité -->
+            <div class="footer-brand">
+                <img src="../../images/logos/logo-botova.png" alt="Botova">
+                <p>Développement et création<br>de solutions numériques.</p>
+            </div>
+
+            <!-- Footer navigation / Navigation du pied de page -->
+            <nav class="footer-navigation" aria-label="Navigation du pied de page">
+                <ul class="footer-main-list">
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><span>Web</span></li>
+                    <li><span>Outils</span></li>
+                    <li><a class="footer-active" href="#offres">Bots</a></li>
+                    <li><span>Graphismes</span></li>
+                </ul>
+
+                <ul class="footer-secondary-list">
+                    <li><a href="../about.html">À propos</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact / Contact -->
+            <div class="footer-contact">
+                <a href="../contact.html">Nous contacter</a>
+                <p>Une idée ou un projet ? Parlons-en.</p>
+                <small>© 2026 Botova</small>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
