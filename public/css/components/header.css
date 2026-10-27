@@ -1,5 +1,5 @@
 /* ====================================================== */
-/*                  HEADER / EN-TETE                      */
+/*                   HEADER / EN-TETE                      */
 /* ====================================================== */
 
     .site-header
@@ -13,26 +13,39 @@
 
     .header-content
     {
-        display: flex;
+        display: grid;
+        grid-template-columns: 180px 1fr;
         align-items: center;
-        justify-content: space-between;
-        max-width: 1600px;
         min-height: 80px;
-        margin: auto;
-        padding: 0 40px;
+        padding: 0 48px;
     }
 
     .site-logo
     {
-        color: var(--color-white);
-        font-size: 24px;
-        font-weight: 700;
-        white-space: nowrap;
+        display: block;
+        width: 150px;
     }
 
-    .site-logo:hover
+    .site-logo img
     {
-        color: var(--color-white);
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 60px;
+        object-fit: contain;
+        object-position: left;
+    }
+
+    .header-navigation
+    {
+        display: grid;
+        grid-template-columns: 1fr 180px;
+        align-items: center;
+    }
+
+    .account-navigation
+    {
+        justify-self: end;
     }
 
     .mobile-menu-button
@@ -41,6 +54,6 @@
         padding: 10px 15px;
         color: var(--color-white);
         background-color: transparent;
-        border: 1px solid var(--color-white);
+        border: 1px solid var(--color-disabled);
         cursor: pointer;
     }

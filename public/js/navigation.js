@@ -1,53 +1,82 @@
 /* ====================================================== */
-/*             MOBILE NAVIGATION / NAVIGATION MOBILE      */
+/*             MAIN NAVIGATION / NAVIGATION PRINCIPALE    */
 /* ====================================================== */
 
-export function initializeNavigation()
-{
-    const menuButton = document.getElementById("mobile-menu-button");
-    const mainNavigation = document.getElementById("main-navigation");
-
-    if (menuButton === null || mainNavigation === null)
+    export function initializeNavigation()
     {
-        return;
+        const siteHeader = document.getElementById("site-header");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const navigationLinks = document.querySelectorAll("[data-navigation-page]");
+
+        // Active page / Page active
+        function updateActiveNavigation()
+        {
+            let currentPage = document.body.getAttribute("data-page");
+            const currentSection = window.location.hash;
+            const botsSections = ["#platforms", "#discord", "#twitch", "#youtube", "#whatsapp", "#linkedin"];
+
+            if (currentPage === "services" && botsSections.includes(currentSection))
+            {
+                currentPage = "bots";
+            }
+            for (const navigationLink of navigationLinks)
+            {
+                navigationLink.classList.remove("is-active");
+                navigationLink.removeAttribute("aria-current");
+                if (navigationLink.getAttribute("data-navigation-page") === currentPage)
+                {
+                    navigationLink.classList.add("is-active");
+                    navigationLink.setAttribute("aria-current", "page");
+                }
+            }
+        }
+
+        updateActiveNavigation();
+        window.addEventListener("hashchange", updateActiveNavigation);
+
+        if (siteHeader === null || mobileMenuButton === null)
+        {
+            return;
+        }
+
+    // Close mobile menu / Fermer le menu mobile
+    function closeMobileMenu()
+    {
+        siteHeader.classList.remove("is-mobile-open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
     }
 
-    // Open or close menu / Ouvrir ou fermer le menu
-    menuButton.addEventListener("click", function()
+    // Open or close mobile menu / Ouvrir ou fermer le menu mobile
+    mobileMenuButton.addEventListener("click", function()
     {
-        const menuIsOpen = mainNavigation.classList.contains("is-open");
+        const menuIsOpen = siteHeader.classList.contains("is-mobile-open");
 
         if (menuIsOpen)
         {
-            mainNavigation.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
+            closeMobileMenu();
         }
         else
         {
-            mainNavigation.classList.add("is-open");
-            menuButton.setAttribute("aria-expanded", "true");
+            siteHeader.classList.add("is-mobile-open");
+            mobileMenuButton.setAttribute("aria-expanded", "true");
         }
     });
 
-    // Close navigation after selecting a link / Fermer après sélection d'un lien
-    const navigationLinks = mainNavigation.querySelectorAll("a");
-
+    // Close after navigation / Fermer après navigation
     for (const navigationLink of navigationLinks)
     {
         navigationLink.addEventListener("click", function()
         {
-            mainNavigation.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
+            closeMobileMenu();
         });
     }
 
-    // Close navigation with Escape / Fermer avec la touche Echap
+    // Close with Escape / Fermer avec Echap
     document.addEventListener("keydown", function(event)
     {
         if (event.key === "Escape")
         {
-            mainNavigation.classList.remove("is-open");
-            menuButton.setAttribute("aria-expanded", "false");
+            closeMobileMenu();
         }
     });
 }

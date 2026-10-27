@@ -9,7 +9,7 @@
         top: 100%;
         left: 50%;
         z-index: 110;
-        width: 175px;
+        width: 180px;
         margin: 0;
         padding: 8px;
         background-color: var(--color-white);
@@ -17,6 +17,7 @@
         box-shadow: 2px 3px 2px var(--color-border);
         list-style: none;
         text-align: center;
+        transform: translateX(-50%);
     }
 
     .dropdown-menu li
@@ -25,32 +26,43 @@
         padding: 0;
     }
 
-    .dropdown-menu a, .dropdown-menu span
+    .dropdown-entry
     {
         display: block;
-        padding: 12px 5px;
+        padding: 11px 5px;
+        background-color: var(--color-white);
         color: var(--color-title);
         font-size: 14px;
+        font-weight: 400;
+        cursor: default;
     }
 
-    .dropdown-menu a:hover
+    a.dropdown-entry
     {
-        color: var(--color-link);
+        cursor: pointer;
     }
 
-    .dropdown-menu .dropdown-heading
+    .dropdown-menu li:first-child .dropdown-entry
     {
-        padding: 10px 5px;
         background-color: var(--color-selection);
         font-weight: 700;
     }
 
-    .dropdown-menu .dropdown-disabled
+    .dropdown-menu:hover li:first-child .dropdown-entry:not(:hover)
     {
-        color: var(--color-title);
-        cursor: default;
+        background-color: var(--color-white);
+        font-weight: 400;
     }
 
+    .dropdown-entry:hover, .dropdown-entry:focus-visible
+    {
+        background-color: var(--color-selection);
+        color: var(--color-title);
+        font-weight: 700;
+    }
+
+    .navigation-item:hover > .dropdown-menu,
+    .navigation-item:focus-within > .dropdown-menu,
     .navigation-item.is-open > .dropdown-menu
     {
         display: block;
@@ -60,4 +72,5 @@
     {
         right: 0;
         left: auto;
+        transform: none;
     }

@@ -1,13 +1,13 @@
 /* ====================================================== */
-/*           MAIN NAVIGATION / NAVIGATION PRINCIPALE      */
+/*          MAIN NAVIGATION / NAVIGATION PRINCIPALE       */
 /* ====================================================== */
 
     .navigation-list
     {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        gap: 26px;
+        justify-content: center;
+        gap: 30px;
         margin: 0;
         padding: 0;
         list-style: none;
@@ -34,21 +34,9 @@
         color: var(--color-primary);
     }
 
-    .navigation-active
-    {
-        color: var(--color-primary);
-        font-weight: 700;
-    }
-
     .navigation-muted, .navigation-label
     {
         color: var(--color-disabled);
-    }
-
-    .navigation-label
-    {
-        font-size: 16px;
-        white-space: nowrap;
     }
 
     .navigation-bold
@@ -56,22 +44,33 @@
         font-weight: 700;
     }
 
-    .navigation-disabled
+    .navigation-link.is-active
     {
-        cursor: default;
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+    .navigation-label
+    {
+        padding: 0;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        white-space: nowrap;
     }
 
     .dropdown-button
     {
         padding: 5px;
-        color: var(--color-white);
-        background-color: transparent;
+        background: none;
         border: none;
+        color: var(--color-white);
         font-size: 14px;
         cursor: pointer;
     }
 
-    .dropdown-button:hover
+    .dropdown-button:hover, .navigation-label:hover
     {
         color: var(--color-primary);
     }
