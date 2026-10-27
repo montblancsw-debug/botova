@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -83,14 +82,14 @@
 
                         <!-- Bots / Bots -->
                         <li class="navigation-item">
-                            <a class="navigation-link navigation-bold" data-navigation-page="bots" href="html/services.html#platforms">Bots</a>
+                            <a class="navigation-link navigation-bold" data-navigation-page="bots" href="html/bots/">Bots</a>
                             <button class="dropdown-button" type="button" aria-label="Afficher les bots" aria-controls="bots-menu" aria-expanded="false">▾</button>
                             <ul class="dropdown-menu" id="bots-menu">
-                                <li><a class="dropdown-entry" href="html/services.html#discord">Discord</a></li>
-                                <li><a class="dropdown-entry" href="html/services.html#twitch">Twitch</a></li>
-                                <li><a class="dropdown-entry" href="html/services.html#youtube">YouTube</a></li>
-                                <li><a class="dropdown-entry" href="html/services.html#whatsapp">WhatsApp</a></li>
-                                <li><a class="dropdown-entry" href="html/services.html#linkedin">LinkedIn</a></li>
+                                <li><a class="dropdown-entry" href="html/bots/discord/">Discord</a></li>
+                                <li><a class="dropdown-entry" href="html/bots/twitch/">Twitch</a></li>
+                                <li><a class="dropdown-entry" href="html/bots/youtube/">YouTube</a></li>
+                                <li><a class="dropdown-entry" href="html/bots/whatsapp/">WhatsApp</a></li>
+                                <li><a class="dropdown-entry" href="html/bots/linkedin/">LinkedIn</a></li>
                             </ul>
                         </li>
 
@@ -126,6 +125,7 @@
                         <li class="navigation-item">
                             <a class="navigation-link navigation-bold" data-navigation-page="account" href="html/login.html">Compte</a>
                             <button class="dropdown-button" type="button" aria-label="Afficher le compte" aria-controls="account-menu" aria-expanded="false">▾</button>
+
                             <ul class="dropdown-menu dropdown-account" id="account-menu">
                                 <li><a class="dropdown-entry" href="html/login.html">Connexion</a></li>
                                 <li><a class="dropdown-entry" href="html/register.html">Inscription</a></li>
@@ -143,16 +143,17 @@
 
     <!-- Section navigation / Navigation par ancres -->
     <nav class="anchor-navigation" aria-label="Navigation des sections">
-        <a class="anchor-arrow" href="#home" aria-label="Retour en haut de la page">↑</a>
+        <a class="anchor-arrow" href="#site-header" aria-label="Retour en haut de la page">↑</a>
         <a class="anchor-link is-active" href="#home" aria-current="location">Accueil</a>
         <a class="anchor-link" href="#expertises">Expertises</a>
         <a class="anchor-link" href="#realisations">Réalisations</a>
         <a class="anchor-link" href="#contact">Contact</a>
-        <a class="anchor-arrow" id="next-anchor" href="#expertises" aria-label="Section suivante">↓</a>
+        <a class="anchor-arrow" href="#site-footer" aria-label="Aller en bas de la page">↓</a>
     </nav>
 
     <!-- Main content / Contenu principal -->
     <main id="main-content">
+
         <!-- Home section / Section d'accueil -->
         <section class="home page-section" id="home" aria-labelledby="home-title">
             <div class="home-content">
@@ -171,8 +172,9 @@
                     <p class="home-domains">
                         Streaming · Sites web · Applications · Logiciels · Widgets · Plugins · Discord · Overlays
                     </p>
-                    <a class="home-button" href="html/services.html#discord">Découvrir les bots</a>
+                    <a class="home-button" href="html/bots/discord/">Découvrir les bots</a>
                 </div>
+
             </div>
         </section>
 
@@ -202,7 +204,7 @@
                     <article class="expertise-card">
                         <h3>Bots et automatisations</h3>
                         <p>Bots Discord, outils communautaires et solutions personnalisées pour vos projets d'automatisation.</p>
-                        <a class="card-link" href="html/services.html#discord">Découvrir →</a>
+                        <a class="card-link" href="html/bots/discord/">Découvrir →</a>
                     </article>
 
                     <article class="expertise-card">
@@ -211,6 +213,7 @@
                         <span class="card-link card-link-disabled">Découvrir →</span>
                     </article>
                 </div>
+
             </div>
         </section>
 
@@ -237,7 +240,7 @@
                         <div class="project-category">BOTS</div>
                         <h3>Bot</h3>
                         <p>Bots Discord et solutions de gestion communautaire personnalisées selon vos besoins.</p>
-                        <a class="card-link" href="html/services.html#discord">Découvrir les Bots →</a>
+                        <a class="card-link" href="html/bots/discord/">Découvrir les Bots →</a>
                     </article>
 
                     <article class="project-card">
@@ -247,6 +250,7 @@
                         <span class="card-link card-link-disabled">Découvrir nos Outils →</span>
                     </article>
                 </div>
+
             </div>
         </section>
 
@@ -265,9 +269,10 @@
                         <h3>Parlons de votre projet :</h3>
                         <p>Un site, une application, un bot ou un visuel en tête ?<br>Présentez-nous vos idées pour en discuter.</p>
                     </div>
+
                     <div class="contact-actions">
                         <a class="contact-button contact-button-primary" href="html/contact.html">Nous contacter</a>
-                        <a class="contact-button contact-button-secondary" href="html/services.html#discord">Découvrir les bots</a>
+                        <a class="contact-button contact-button-secondary" href="html/bots/discord/">Découvrir les bots</a>
                     </div>
                 </div>
             </div>
@@ -277,6 +282,8 @@
     <!-- Footer / Pied de page -->
     <footer class="site-footer" id="site-footer">
         <div class="footer-content">
+
+            <!-- Logo and description / Logo et description -->
             <div class="footer-brand">
                 <img src="images/logos/logo-botova.png" alt="Botova">
                 <p>Développement et création<br>de solutions numériques.</p>
@@ -284,16 +291,26 @@
 
             <!-- Footer navigation / Navigation du pied de page -->
             <nav class="footer-navigation" aria-label="Navigation du pied de page">
-                <a class="footer-active" href="#home">Accueil</a>
-                <a href="html/services.html">Services</a>
-                <span>Web</span>
-                <span>Outils</span>
-                <a href="html/services.html#platforms">Bots</a>
-                <span>Graphismes</span>
-                <a href="html/about.html">À propos</a>
-                <a href="html/contact.html">Contact</a>
+
+                <!-- Main links / Liens principaux -->
+                <ul class="footer-main-list">
+                    <li><a class="footer-active" href="#home">Accueil</a></li>
+                    <li><a href="html/services.html">Services</a></li>
+                    <li><span>Web</span></li>
+                    <li><span>Outils</span></li>
+                    <li><a href="html/bots/">Bots</a></li>
+                    <li><span>Graphismes</span></li>
+                </ul>
+
+                <!-- Secondary links / Liens secondaires -->
+                <ul class="footer-secondary-list">
+                    <li><a href="html/about.html">À propos</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                </ul>
+
             </nav>
 
+            <!-- Footer contact / Contact du pied de page -->
             <div class="footer-contact">
                 <a href="html/contact.html">Nous contacter</a>
                 <p>Une idée ou un projet ? Parlons-en.</p>
@@ -301,5 +318,6 @@
             </div>
         </div>
     </footer>
+
 </body>
 </html>

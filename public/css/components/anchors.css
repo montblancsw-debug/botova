@@ -6,14 +6,15 @@
     {
         position: fixed;
         top: 50%;
-        right: max(20px, calc((100vw - 1120px) / 4 - 75px));
+        right: max(20px, calc((100vw - 1120px) / 4 - 100px));
         z-index: 80;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        gap: 35px;
-        width: 150px;
+        gap: 0;
+        width: 200px;
+        height: min(620px, calc(100vh - 170px));
         transform: translateY(-50%);
     }
 
@@ -22,8 +23,8 @@
     {
         content: "";
         position: absolute;
-        top: 20px;
-        bottom: 20px;
+        top: 28px;
+        bottom: 28px;
         left: 50%;
         border-left: 2px dashed var(--color-dark);
     }
@@ -32,18 +33,24 @@
     .anchor-link
     {
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        padding: 3px 6px;
+        min-height: 44px;
+        padding: 4px 8px;
         background-color: var(--color-background);
         color: var(--color-text);
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 400;
         text-align: center;
         touch-action: manipulation;
     }
 
-    .anchor-link:hover
+    .anchor-link:hover,
+    .anchor-link:focus-visible
     {
-        color: var(--color-primary-dark);
+        color: var(--color-primary);
     }
 
     .anchor-link.is-active
@@ -56,20 +63,28 @@
     .anchor-arrow
     {
         position: relative;
-        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 56px;
+        min-height: 56px;
+        padding: 0 12px;
         background-color: var(--color-background);
         color: var(--color-dark);
-        font-size: 36px;
+        font-size: 48px;
         line-height: 1;
         touch-action: manipulation;
     }
 
-    .anchor-arrow:hover
+    .anchor-arrow:hover,
+    .anchor-arrow:focus-visible
     {
         color: var(--color-primary);
     }
 
-    .anchor-link:active, .anchor-arrow:active
+    /* Touch feedback / Retour visuel tactile */
+    .anchor-link:active,
+    .anchor-arrow:active
     {
         color: var(--color-primary-dark);
         font-weight: 700;

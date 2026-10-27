@@ -4,8 +4,7 @@
 
     .home
     {
-        min-height: 900px;
-        padding: 300px 40px 80px;
+        padding: 135px 40px 50px;
     }
 
     .home-content
@@ -25,7 +24,7 @@
 
     .home-description
     {
-        margin-bottom: 45px;
+        margin-bottom: 35px;
         color: var(--color-text);
         font-size: 18px;
         line-height: 1.5;
@@ -37,14 +36,16 @@
 
     .home-card
     {
-        min-height: 300px;
-        padding: 25px 40px;
+        padding: 25px 40px 30px;
         background-color: var(--color-selection);
+        border: 1px solid transparent;
+        box-shadow: 0 5px 15px rgba(10, 17, 31, 0.10);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .home-card h2
     {
-        margin-bottom: 35px;
+        margin-bottom: 25px;
         color: var(--color-dark);
         font-size: 36px;
         font-weight: 700;
@@ -53,13 +54,16 @@
 
     .home-domains
     {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         color: var(--color-primary);
         font-size: 19px;
         font-weight: 700;
     }
 
-    /* Home button / Bouton accueil */
+/* ====================================================== */
+/*                 HOME BUTTON / BOUTON ACCUEIL           */
+/* ====================================================== */
+
     .home-button
     {
         display: inline-block;
@@ -68,17 +72,25 @@
         color: var(--color-white);
         font-size: 16px;
         font-weight: 700;
+        border: none;
+        box-shadow: 0 3px 8px rgba(10, 17, 31, 0.14);
+        transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
         touch-action: manipulation;
     }
 
     .home-button:hover
     {
         background-color: var(--color-primary-dark);
+        box-shadow: 0 7px 14px rgba(10, 17, 31, 0.18);
+        transform: translateY(-2px);
     }
 
+    /* Pressed button / Bouton maintenu appuyer */
     .home-button:active
     {
-        transform: scale(0.98);
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 1px 3px rgba(10, 17, 31, 0.16);
+        transform: translateY(1px);
     }
 
 /* ====================================================== */
@@ -87,8 +99,7 @@
 
     .home-section
     {
-        min-height: 900px;
-        padding: 200px 40px 80px;
+        padding: 60px 40px 70px;
     }
 
     .section-title
@@ -122,6 +133,8 @@
         background-color: var(--color-card);
         border: 1px solid var(--color-border);
         border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(10, 17, 31, 0.10);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
     .contact-text h3
@@ -138,7 +151,10 @@
         line-height: 1.5;
     }
 
-    /* Contact buttons / Boutons de contact */
+/* ====================================================== */
+/*             CONTACT BUTTONS / BOUTONS DE CONTACT       */
+/* ====================================================== */
+
     .contact-actions
     {
         display: flex;
@@ -155,6 +171,8 @@
         font-size: 18px;
         font-weight: 700;
         text-align: center;
+        box-shadow: 0 4px 10px rgba(10, 17, 31, 0.15);
+        transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
         touch-action: manipulation;
     }
 
@@ -174,10 +192,59 @@
     .contact-button:hover
     {
         color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(10, 17, 31, 0.20);
     }
 
     .contact-button:active
     {
         background-color: var(--color-primary-dark);
         color: var(--color-white);
+        transform: translateY(1px);
+        box-shadow: 0 2px 5px rgba(10, 17, 31, 0.16);
+    }
+
+/* ====================================================== */
+/*               HOVER EFFECTS / EFFETS DE SURVOL         */
+/* ====================================================== */
+
+    @media (hover: hover)
+    {
+        .home-card:hover,
+        .contact-card:hover
+        {
+            transform: translateY(-5px);
+            border-color: rgba(0, 181, 172, 0.40);
+            box-shadow: 0 15px 30px rgba(10, 17, 31, 0.18);
+        }
+    }
+
+    .home-card:focus-within,
+    .contact-card:focus-within
+    {
+        border-color: var(--color-primary);
+        box-shadow: 0 10px 24px rgba(10, 17, 31, 0.16);
+    }
+
+/* ====================================================== */
+/*             REDUCED MOTION / MOUVEMENT REDUIT          */
+/* ====================================================== */
+
+    @media (prefers-reduced-motion: reduce)
+    {
+        .home-button,
+        .contact-button,
+        .home-card,
+        .contact-card
+        {
+            transition: none;
+        }
+
+        .home-button:hover,
+        .contact-button:hover,
+        .home-card:hover,
+        .contact-card:hover
+        {
+            transform: none;
+        }
     }

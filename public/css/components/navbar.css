@@ -12,40 +12,21 @@
         list-style: none;
     }
 
-    /* Six navigation columns / Six colonnes de navigation */
+    /* Central navigation / Navigation centrale */
     .main-navigation .navigation-list
     {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 0;
-    }
-
-    .main-navigation .navigation-item
-    {
-        justify-self: center;
-    }
-
-    .main-navigation .navigation-item:first-child
-    {
-        justify-self: start;
-    }
-
-    .main-navigation .navigation-item:last-child
-    {
-        justify-self: end;
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - clamp(90px, 8vw, 240px));
+        gap: 20px;
     }
 
     /* Secondary navigation / Navigation secondaire */
     .secondary-navigation .navigation-list
     {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-    }
-
-    .secondary-navigation .navigation-item
-    {
-        justify-self: center;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 15px;
     }
 
     .account-navigation .navigation-list
@@ -77,6 +58,12 @@
     }
 
     .navigation-muted, .navigation-label
+    {
+        color: var(--color-disabled);
+    }
+
+    /* Disabled menu / Menu desactive */
+    .navigation-muted:hover
     {
         color: var(--color-disabled);
     }
@@ -115,14 +102,30 @@
         touch-action: manipulation;
     }
 
-    .dropdown-button:hover, .navigation-label:hover
+    /* Disabled arrows / Fleches desactivees */
+    .navigation-muted + .dropdown-button
+    {
+        color: var(--color-disabled);
+    }
+
+    .navigation-muted + .dropdown-button:hover,
+    .navigation-item.is-open > .navigation-muted + .dropdown-button
+    {
+        color: var(--color-disabled);
+    }
+
+    .dropdown-button:hover
     {
         color: var(--color-primary);
     }
 
+    .navigation-label:hover
+    {
+        color: var(--color-disabled);
+    }
+
     /* Open dropdown / Sous-menu ouvert */
-    .navigation-item.is-open > .dropdown-button,
-    .navigation-item.is-open > .navigation-label
+    .navigation-item.is-open > .dropdown-button
     {
         color: var(--color-primary);
     }
@@ -134,4 +137,17 @@
     {
         color: var(--color-white);
         background-color: var(--color-primary-dark);
+    }
+
+/* ====================================================== */
+/*           WIDE NAVIGATION / NAVIGATION LARGE           */
+/* ====================================================== */
+
+    @media (min-width: 1800px)
+    {
+        /* Move the first items / Decaler les premiers menus */
+        .main-navigation .navigation-list
+        {
+            padding-left: clamp(50px, 2.5vw, 90px);
+        }
     }
