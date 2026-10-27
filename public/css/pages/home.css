@@ -1,131 +1,191 @@
 
 /* ====================================================== */
-/*               HOME PAGE / PAGE ACCUEIL                 */
+/*                HOME PAGE / PAGE ACCUEIL                */
 /* ====================================================== */
 
-.home
-{
-    min-height: 900px;
-    padding: 300px 40px 80px;
-}
-
-.home-content
-{
-    max-width: 1080px;
-    margin: auto;
-}
-
-.home h1
-{
-    margin-bottom: 25px;
-    font-size: 44px;
-    font-weight: 700;
-}
-
-.home-description
-{
-    margin-bottom: 45px;
-    color: #263957;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-/* ====================================================== */
-/*              HOME CARD / CARTE D'ACCUEIL               */
-/* ====================================================== */
-
-.home-card
-{
-    min-height: 300px;
-    padding: 25px 40px;
-    background-color: var(--color-selection);
-}
-
-.home-card h2
-{
-    margin-bottom: 35px;
-    color: var(--color-dark);
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.home-domains
-{
-    margin-bottom: 25px;
-    color: var(--color-primary);
-    font-size: 19px;
-    font-weight: 700;
-}
-
-.home-button
-{
-    display: inline-block;
-    padding: 13px 25px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.home-button:hover
-{
-    background-color: var(--color-primary-dark);
-}
-
-/* ====================================================== */
-/*          TABLET AND MOBILE / TABLETTE ET MOBILE        */
-/* ====================================================== */
-
-@media (max-width: 900px)
-{
     .home
     {
-        min-height: 700px;
-        padding: 150px 25px 60px;
+        min-height: 900px;
+        padding: 300px 40px 80px;
     }
-    .home h1
-    {
-        font-size: 34px;
-    }
-    .home-card h2
-    {
-        font-size: 28px;
-    }
-}
 
-@media (max-width: 600px)
-{
-    .home
+    .home-content
     {
-        min-height: 600px;
-        padding: 100px 20px 50px;
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
     }
+
     .home h1
     {
-        font-size: 28px;
+        margin-bottom: 25px;
+        color: var(--color-dark);
+        font-size: 44px;
+        font-weight: 700;
     }
+
     .home-description
     {
-        font-size: 16px;
+        margin-bottom: 45px;
+        color: var(--color-text);
+        font-size: 18px;
+        line-height: 1.5;
     }
-    .home-description br,
-    .home-card h2 br
-    {
-        display: none;
-    }
+
+/* ====================================================== */
+/*                 HOME CARD / CARTE ACCUEIL              */
+/* ====================================================== */
+
     .home-card
     {
-        min-height: auto;
-        padding: 25px;
+        min-height: 300px;
+        padding: 25px 40px;
+        background-color: var(--color-selection);
     }
+
     .home-card h2
     {
-        font-size: 25px;
+        margin-bottom: 35px;
+        color: var(--color-dark);
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.15;
     }
+
     .home-domains
     {
-        font-size: 16px;
-        line-height: 1.6;
+        margin-bottom: 25px;
+        color: var(--color-primary);
+        font-size: 19px;
+        font-weight: 700;
     }
-}
+
+/* ====================================================== */
+/*                  HOME BUTTON / BOUTON                  */
+/* ====================================================== */
+
+    .home-button
+    {
+        display: inline-block;
+        padding: 13px 25px;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .home-button:hover
+    {
+        background-color: var(--color-primary-dark);
+    }
+
+/* ====================================================== */
+/*             LARGE SCREENS / GRANDS ECRANS              */
+/* ====================================================== */
+
+    @media (min-width: 2000px)
+    {
+        .home
+        {
+            min-height: 1440px;
+            padding-top: 380px;
+        }
+
+        .home-content
+        {
+            max-width: 1900px;
+        }
+
+        .home h1
+        {
+            font-size: 60px;
+        }
+
+        .home-description
+        {
+            font-size: 24px;
+        }
+
+        .home-card h2
+        {
+            font-size: 48px;
+        }
+
+        .home-domains
+        {
+            font-size: 25px;
+        }
+
+        .home-button
+        {
+            font-size: 20px;
+        }
+    }
+
+/* ====================================================== */
+/*             TABLET LAYOUT / VERSION TABLETTE           */
+/* ====================================================== */
+
+    @media (max-width: 900px)
+    {
+        .home
+        {
+            min-height: 700px;
+            padding: 150px 25px 60px;
+        }
+
+        .home h1
+        {
+            font-size: 34px;
+        }
+
+        .home-card h2
+        {
+            font-size: 28px;
+        }
+    }
+
+/* ====================================================== */
+/*             MOBILE LAYOUT / VERSION MOBILE             */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        .home
+        {
+            min-height: 600px;
+            padding: 100px 20px 50px;
+        }
+
+        .home h1
+        {
+            font-size: 28px;
+        }
+
+        .home-description
+        {
+            font-size: 16px;
+        }
+
+        .home-description br, .home-card h2 br
+        {
+            display: none;
+        }
+
+        .home-card
+        {
+            min-height: auto;
+            padding: 25px;
+        }
+
+        .home-card h2
+        {
+            font-size: 25px;
+        }
+
+        .home-domains
+        {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    }
