@@ -14,14 +14,16 @@
     .header-content
     {
         display: grid;
-        grid-template-columns: 180px 1fr;
+        grid-template-columns: minmax(0, 1fr) 1120px minmax(0, 1fr);
         align-items: center;
         min-height: 80px;
-        padding: 0 48px;
+        padding: 0 40px;
     }
 
     .site-logo
     {
+        grid-column: 1;
+        grid-row: 1;
         display: block;
         width: 150px;
     }
@@ -36,17 +38,39 @@
         object-position: left;
     }
 
+/* ====================================================== */
+/*           HEADER NAVIGATION / NAVIGATION EN-TETE       */
+/* ====================================================== */
+
     .header-navigation
     {
+        grid-column: 2 / 4;
+        grid-row: 1;
         display: grid;
-        grid-template-columns: 1fr 180px;
+        grid-template-columns: 1120px minmax(0, 1fr) 115px;
         align-items: center;
+        min-width: 0;
+    }
+
+    .main-navigation
+    {
+        grid-column: 1;
+    }
+
+    .secondary-navigation
+    {
+        grid-column: 2;
     }
 
     .account-navigation
     {
+        grid-column: 3;
         justify-self: end;
     }
+
+/* ====================================================== */
+/*                MOBILE BUTTON / BOUTON MOBILE           */
+/* ====================================================== */
 
     .mobile-menu-button
     {

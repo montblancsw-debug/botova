@@ -6,11 +6,26 @@
     {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 30px;
+        gap: 10px;
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    .main-navigation .navigation-list
+    {
+        justify-content: space-between;
+    }
+
+    .secondary-navigation .navigation-list
+    {
+        justify-content: center;
+        gap: 35px;
+    }
+
+    .account-navigation .navigation-list
+    {
+        justify-content: flex-end;
     }
 
     .navigation-item

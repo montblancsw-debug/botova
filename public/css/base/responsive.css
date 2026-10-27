@@ -4,6 +4,16 @@
 
     @media (min-width: 2000px)
     {
+        .header-content
+        {
+            grid-template-columns: minmax(0, 1fr) 1500px minmax(0, 1fr);
+        }
+
+        .header-navigation
+        {
+            grid-template-columns: 1500px minmax(0, 1fr) 115px;
+        }
+
         .home
         {
             min-height: calc(100vh - 80px);
@@ -41,11 +51,85 @@
         }
     }
 
+    @media (min-width: 2000px) and (max-width: 2250px)
+    {
+        .secondary-navigation .navigation-list
+        {
+            gap: 12px;
+        }
+
+        .secondary-navigation .navigation-link
+        {
+            font-size: 14px;
+        }
+    }
+
     @media (min-width: 2560px)
     {
+        .header-content
+        {
+            grid-template-columns: minmax(0, 1fr) 1900px minmax(0, 1fr);
+        }
+
+        .header-navigation
+        {
+            grid-template-columns: 1900px minmax(0, 1fr) 115px;
+        }
+
         .home-content
         {
             max-width: 1900px;
+        }
+    }
+
+/* ====================================================== */
+/*             STANDARD SCREENS / ECRANS STANDARDS        */
+/* ====================================================== */
+
+    @media (min-width: 1600px) and (max-width: 1799px)
+    {
+        .secondary-navigation .navigation-list
+        {
+            gap: 12px;
+        }
+
+        .secondary-navigation .navigation-link
+        {
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*             LAPTOP NAVIGATION / NAVIGATION PORTABLE    */
+/* ====================================================== */
+
+    @media (min-width: 1201px) and (max-width: 1599px)
+    {
+        .header-content
+        {
+            grid-template-columns: 160px minmax(0, 1fr);
+            padding: 0 24px;
+        }
+
+        .header-navigation
+        {
+            grid-column: 2;
+            grid-template-columns: minmax(0, 1fr) 165px 100px;
+        }
+
+        .main-navigation .navigation-list
+        {
+            gap: 10px;
+        }
+
+        .secondary-navigation .navigation-list
+        {
+            gap: 14px;
+        }
+
+        .navigation-link, .navigation-label
+        {
+            font-size: 14px;
         }
     }
 
@@ -67,7 +151,9 @@
             grid-column: 1 / 3;
             grid-row: 2;
             grid-template-columns: 1fr;
+            max-height: calc(100vh - 80px);
             padding: 10px 0 20px;
+            overflow-y: auto;
         }
 
         .site-header.is-mobile-open .header-navigation
@@ -75,13 +161,13 @@
             display: grid;
         }
 
-        .main-navigation, .account-navigation
+        .main-navigation, .secondary-navigation, .account-navigation
         {
             grid-column: 1;
             justify-self: stretch;
         }
 
-        .account-navigation
+        .secondary-navigation, .account-navigation
         {
             border-top: 1px solid var(--color-disabled);
         }
