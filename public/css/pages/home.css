@@ -59,10 +59,7 @@
         font-weight: 700;
     }
 
-/* ====================================================== */
-/*                 HOME BUTTON / BOUTON ACCUEIL           */
-/* ====================================================== */
-
+    /* Home button / Bouton accueil */
     .home-button
     {
         display: inline-block;
@@ -79,9 +76,108 @@
         background-color: var(--color-primary-dark);
     }
 
-    /* Pressed button / Bouton maintenu appuye */
     .home-button:active
     {
-        background-color: var(--color-primary-dark);
         transform: scale(0.98);
+    }
+
+/* ====================================================== */
+/*             HOME SECTIONS / SECTIONS ACCUEIL           */
+/* ====================================================== */
+
+    .home-section
+    {
+        min-height: 900px;
+        padding: 200px 40px 80px;
+    }
+
+    .section-title
+    {
+        margin-bottom: 15px;
+        color: var(--color-title);
+        font-size: 44px;
+        font-weight: 700;
+    }
+
+    .section-description
+    {
+        margin-bottom: 30px;
+        color: var(--color-text);
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+/* ====================================================== */
+/*                CONTACT CARD / CARTE CONTACT            */
+/* ====================================================== */
+
+    .contact-card
+    {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        min-height: 200px;
+        padding: 30px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .contact-text h3
+    {
+        margin-bottom: 10px;
+        color: var(--color-title);
+        font-size: 34px;
+    }
+
+    .contact-text p
+    {
+        color: var(--color-text);
+        font-size: 19px;
+        line-height: 1.5;
+    }
+
+    /* Contact buttons / Boutons de contact */
+    .contact-actions
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-width: 235px;
+    }
+
+    .contact-button
+    {
+        display: block;
+        padding: 14px 20px;
+        border-radius: 7px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        touch-action: manipulation;
+    }
+
+    .contact-button-primary
+    {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+    }
+
+    .contact-button-secondary
+    {
+        background-color: var(--color-white);
+        border: 1px solid var(--color-border);
+        color: var(--color-title);
+    }
+
+    .contact-button:hover
+    {
+        color: var(--color-primary);
+    }
+
+    .contact-button:active
+    {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
     }

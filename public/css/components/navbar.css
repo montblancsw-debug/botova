@@ -12,15 +12,40 @@
         list-style: none;
     }
 
+    /* Six navigation columns / Six colonnes de navigation */
     .main-navigation .navigation-list
     {
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
     }
 
+    .main-navigation .navigation-item
+    {
+        justify-self: center;
+    }
+
+    .main-navigation .navigation-item:first-child
+    {
+        justify-self: start;
+    }
+
+    .main-navigation .navigation-item:last-child
+    {
+        justify-self: end;
+    }
+
+    /* Secondary navigation / Navigation secondaire */
     .secondary-navigation .navigation-list
     {
-        justify-content: center;
-        gap: 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .secondary-navigation .navigation-item
+    {
+        justify-self: center;
     }
 
     .account-navigation .navigation-list
@@ -28,6 +53,7 @@
         justify-content: flex-end;
     }
 
+    /* Navigation items / Elements de navigation */
     .navigation-item
     {
         position: relative;
@@ -106,6 +132,6 @@
     .dropdown-button:active,
     .navigation-label:active
     {
-        background-color: var(--color-primary-dark);
         color: var(--color-white);
+        background-color: var(--color-primary-dark);
     }

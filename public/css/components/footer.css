@@ -1,0 +1,88 @@
+/* ====================================================== */
+/*                    FOOTER / PIED DE PAGE               */
+/* ====================================================== */
+
+    .site-footer
+    {
+        padding: 25px 45px;
+        background-color: var(--color-dark);
+        color: var(--color-white);
+    }
+
+    .footer-content
+    {
+        display: grid;
+        grid-template-columns: 350px 1fr 300px;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* Logo and description / Logo et description */
+    .footer-brand
+    {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .footer-brand img
+    {
+        width: 130px;
+        height: auto;
+    }
+
+    .footer-brand p
+    {
+        margin: 0;
+        color: #D0D5DF;
+        font-size: 14px;
+    }
+
+    /* Footer links / Liens du pied de page */
+    .footer-navigation
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-navigation a, .footer-navigation span
+    {
+        color: #D0D5DF;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .footer-navigation a:hover, .footer-navigation .footer-active
+    {
+        color: var(--color-primary);
+    }
+
+    /* Contact information / Informations de contact */
+    .footer-contact
+    {
+        text-align: right;
+    }
+
+    .footer-contact a
+    {
+        color: var(--color-white);
+        font-weight: 700;
+    }
+
+    .footer-contact p
+    {
+        margin: 5px 0;
+        color: #D0D5DF;
+        font-size: 14px;
+    }
+
+    .footer-contact small
+    {
+        color: #D0D5DF;
+        font-size: 13px;
+    }

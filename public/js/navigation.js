@@ -19,7 +19,6 @@
             {
                 currentPage = "bots";
             }
-
             for (const navigationLink of navigationLinks)
             {
                 navigationLink.classList.remove("is-active");
@@ -49,7 +48,6 @@
             siteHeader.classList.remove("is-mobile-open");
             document.body.classList.remove("mobile-menu-open");
             mobileMenuButton.setAttribute("aria-expanded", "false");
-            mobileMenuButton.setAttribute("aria-label", "Ouvrir la navigation");
             mobileMenuButton.textContent = "Menu ☰";
         }
 
@@ -59,7 +57,6 @@
             siteHeader.classList.add("is-mobile-open");
             document.body.classList.add("mobile-menu-open");
             mobileMenuButton.setAttribute("aria-expanded", "true");
-            mobileMenuButton.setAttribute("aria-label", "Fermer la navigation");
             mobileMenuButton.textContent = "Fermer ×";
         }
 
@@ -67,7 +64,6 @@
         mobileMenuButton.addEventListener("click", function()
         {
             const menuIsOpen = siteHeader.classList.contains("is-mobile-open");
-
             if (menuIsOpen)
             {
                 closeMobileMenu();
@@ -78,7 +74,7 @@
             }
         });
 
-        // Close after selecting a link / Fermer apres un lien
+        // Close after navigation / Fermer apres navigation
         for (const headerLink of headerLinks)
         {
             headerLink.addEventListener("click", function()
@@ -86,17 +82,6 @@
                 closeMobileMenu();
             });
         }
-
-        // Close outside the menu / Fermer en dehors du menu
-        document.addEventListener("click", function(event)
-        {
-            const menuIsOpen = siteHeader.classList.contains("is-mobile-open");
-
-            if (menuIsOpen && !siteHeader.contains(event.target))
-            {
-                closeMobileMenu();
-            }
-        });
 
         // Close with Escape / Fermer avec Echap
         document.addEventListener("keydown", function(event)
@@ -107,7 +92,7 @@
             }
         });
 
-        // Restore desktop navigation / Retablir la navigation PC
+        // Restore desktop menu / Retablir le menu ordinateur
         window.addEventListener("resize", function()
         {
             if (window.innerWidth > 1200)

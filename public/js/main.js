@@ -1,6 +1,8 @@
 import { initializeNavigation } from "./navigation.js";
 import { initializeDropdowns } from "./dropdown.js";
+import { initializeAnchors } from "./anchors.js";
 
-// Initialize menus / Initialiser les menus
+// Initialize navigation / Initialiser la navigation
 initializeNavigation();
 initializeDropdowns();
+initializeAnchors();

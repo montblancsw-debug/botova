@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +18,9 @@
     <link rel="stylesheet" href="css/components/header.css">
     <link rel="stylesheet" href="css/components/navbar.css">
     <link rel="stylesheet" href="css/components/dropdown.css">
+    <link rel="stylesheet" href="css/components/anchors.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/footer.css">
     <link rel="stylesheet" href="css/pages/home.css">
     <link rel="stylesheet" href="css/base/responsive.css">
 
@@ -137,11 +141,20 @@
         </div>
     </header>
 
+    <!-- Section navigation / Navigation par ancres -->
+    <nav class="anchor-navigation" aria-label="Navigation des sections">
+        <a class="anchor-arrow" href="#home" aria-label="Retour en haut de la page">↑</a>
+        <a class="anchor-link is-active" href="#home" aria-current="location">Accueil</a>
+        <a class="anchor-link" href="#expertises">Expertises</a>
+        <a class="anchor-link" href="#realisations">Réalisations</a>
+        <a class="anchor-link" href="#contact">Contact</a>
+        <a class="anchor-arrow" id="next-anchor" href="#expertises" aria-label="Section suivante">↓</a>
+    </nav>
+
     <!-- Main content / Contenu principal -->
     <main id="main-content">
-
         <!-- Home section / Section d'accueil -->
-        <section class="home" id="home" aria-labelledby="home-title">
+        <section class="home page-section" id="home" aria-labelledby="home-title">
             <div class="home-content">
                 <h1 id="home-title">Des idées aux solutions numériques.</h1>
                 <p class="home-description">
@@ -163,6 +176,130 @@
             </div>
         </section>
 
+        <!-- Expertise section / Section expertises -->
+        <section class="home-section page-section" id="expertises" aria-labelledby="expertises-title">
+            <div class="home-content">
+                <h2 class="section-title" id="expertises-title">Nos expertises :</h2>
+                <p class="section-description">
+                    Nous concevons des solutions numériques variées, du site web aux applications,<br>
+                    en passant par les bots, les outils et les créations graphiques.
+                </p>
+
+                <!-- Expertise cards / Cartes des expertises -->
+                <div class="expertise-grid">
+                    <article class="expertise-card">
+                        <h3>Développement web</h3>
+                        <p>Sites web, bases de données, maquettes, UI/UX, avec des interfaces responsive conçues sur mesure.</p>
+                        <span class="card-link card-link-disabled">Découvrir →</span>
+                    </article>
+
+                    <article class="expertise-card">
+                        <h3>Applications et logiciels</h3>
+                        <p>Applications, logiciels, widgets, plugins et scripts conçus pour simplifier vos usages au quotidien.</p>
+                        <span class="card-link card-link-disabled">Découvrir →</span>
+                    </article>
+
+                    <article class="expertise-card">
+                        <h3>Bots et automatisations</h3>
+                        <p>Bots Discord, outils communautaires et solutions personnalisées pour vos projets d'automatisation.</p>
+                        <a class="card-link" href="html/services.html#discord">Découvrir →</a>
+                    </article>
+
+                    <article class="expertise-card">
+                        <h3>Design et graphisme</h3>
+                        <p>Logos, overlays, flyers, affiches et supports graphiques, adaptés à l'identité de chacun de vos projets.</p>
+                        <span class="card-link card-link-disabled">Découvrir →</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects section / Section réalisations -->
+        <section class="home-section page-section" id="realisations" aria-labelledby="realisations-title">
+            <div class="home-content">
+                <h2 class="section-title" id="realisations-title">Nos réalisations :</h2>
+                <p class="section-description">
+                    Découvrez quelques-uns de nos projets et de nos solutions développés,<br>
+                    autour des applications, des bots et du streaming.<br>
+                    Chaque réalisation répond à un besoin concret.
+                </p>
+
+                <!-- Project cards / Cartes des réalisations -->
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-category">WIDGETS</div>
+                        <h3>Memova</h3>
+                        <p>Application Windows, de notes et d'Index, raccourcis clavier/souris, personnalisation complète, lecture de médias.</p>
+                        <span class="card-link card-link-disabled">Voir Memova →</span>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-category">BOTS</div>
+                        <h3>Bot</h3>
+                        <p>Bots Discord et solutions de gestion communautaire personnalisées selon vos besoins.</p>
+                        <a class="card-link" href="html/services.html#discord">Découvrir les Bots →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-category">STREAMING</div>
+                        <h3>Streaming &amp; OBS</h3>
+                        <p>Paramétrages pour vos lives, scripts OBS, plugins, intégrations Streamlabs, Twitch, YouTube, TikTok...</p>
+                        <span class="card-link card-link-disabled">Découvrir nos Outils →</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section / Section contact -->
+        <section class="home-section page-section" id="contact" aria-labelledby="contact-title">
+            <div class="home-content">
+                <h2 class="section-title" id="contact-title">Donnons vie à vos idées.</h2>
+                <p class="section-description">
+                    Vous avez un projet, une idée à développer ou un besoin spécifique ?<br>
+                    Botova vous accompagne dans sa conception et sa réalisation.
+                </p>
+
+                <!-- Contact card / Carte de contact -->
+                <div class="contact-card">
+                    <div class="contact-text">
+                        <h3>Parlons de votre projet :</h3>
+                        <p>Un site, une application, un bot ou un visuel en tête ?<br>Présentez-nous vos idées pour en discuter.</p>
+                    </div>
+                    <div class="contact-actions">
+                        <a class="contact-button contact-button-primary" href="html/contact.html">Nous contacter</a>
+                        <a class="contact-button contact-button-secondary" href="html/services.html#discord">Découvrir les bots</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Footer / Pied de page -->
+    <footer class="site-footer" id="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/logos/logo-botova.png" alt="Botova">
+                <p>Développement et création<br>de solutions numériques.</p>
+            </div>
+
+            <!-- Footer navigation / Navigation du pied de page -->
+            <nav class="footer-navigation" aria-label="Navigation du pied de page">
+                <a class="footer-active" href="#home">Accueil</a>
+                <a href="html/services.html">Services</a>
+                <span>Web</span>
+                <span>Outils</span>
+                <a href="html/services.html#platforms">Bots</a>
+                <span>Graphismes</span>
+                <a href="html/about.html">À propos</a>
+                <a href="html/contact.html">Contact</a>
+            </nav>
+
+            <div class="footer-contact">
+                <a href="html/contact.html">Nous contacter</a>
+                <p>Une idée ou un projet ? Parlons-en.</p>
+                <small>© 2026 Botova</small>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
