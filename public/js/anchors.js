@@ -1,23 +1,45 @@
 /* ====================================================== */
-/*           ANCHOR NAVIGATION / NAVIGATION PAR ANCRES    */
+/*       ANCHOR NAVIGATION / NAVIGATION PAR ANCRES        */
+/*       Desktop / Ordinateur : page continue             */
+/*       Mobile et tablette : largeur <= 1200 px          */
 /* ====================================================== */
 
     export function initializeAnchors()
     {
-        const anchorNavigation = document.querySelector(".anchor-navigation");
         const pageSections = document.querySelectorAll(".page-section");
         const anchorLinks = document.querySelectorAll(".anchor-link");
-        const topAnchor = document.querySelector(".anchor-arrow:first-child");
-        const bottomAnchor = document.querySelector(".anchor-arrow:last-child");
+        const topAnchor = document.querySelector(".anchor-navigation .anchor-arrow:first-child");
+        const bottomAnchor = document.querySelector(".anchor-navigation .anchor-arrow:last-child");
+        const footerHomeLink = document.querySelector(".site-footer a[href='#home']");
+        const mobileScreen = window.matchMedia("(max-width: 1200px)");
 
-        if (anchorNavigation === null || pageSections.length === 0)
+        if (pageSections.length === 0)
         {
             return;
         }
 
         let selectedSectionId = window.location.hash.replace("#", "");
 
-        // Update active links / Mettre a jour les liens actifs
+        // Verify section / Verifier que la section existe
+        function sectionExists(sectionId)
+        {
+            for (const pageSection of pageSections)
+            {
+                if (pageSection.id === sectionId)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        if (!sectionExists(selectedSectionId))
+        {
+            selectedSectionId = "home";
+        }
+
+        // Update active anchor / Mettre a jour l'ancre active
         function updateActiveLinks(sectionId)
         {
             for (const anchorLink of anchorLinks)
@@ -35,9 +57,43 @@
             }
         }
 
-        // Detect visible section / Detecter la section visible
-        function updateActiveSection()
+        // Apply screen mode / Appliquer le mode d'affichage
+        function updateScreenMode()
         {
+            if (mobileScreen.matches)
+            {
+                document.body.classList.add("section-mode");
+                document.body.dataset.activeSection = selectedSectionId;
+
+                // Display one section / Afficher une seule section
+                for (const pageSection of pageSections)
+                {
+                    pageSection.hidden = pageSection.id !== selectedSectionId;
+                }
+            }
+            else
+            {
+                document.body.classList.remove("section-mode");
+                document.body.removeAttribute("data-active-section");
+
+                // Restore all sections / Restaurer toutes les sections
+                for (const pageSection of pageSections)
+                {
+                    pageSection.hidden = false;
+                }
+            }
+
+            updateActiveLinks(selectedSectionId);
+        }
+
+        // Detect desktop section / Detecter la section sur ordinateur
+        function updateDesktopSection()
+        {
+            if (mobileScreen.matches)
+            {
+                return;
+            }
+
             const activationPosition = Math.max(180, Math.min(window.innerHeight * 0.3, 360));
             const documentHeight = document.documentElement.scrollHeight;
             const bottomReached = window.scrollY + window.innerHeight >= documentHeight - 5;
@@ -53,97 +109,177 @@
                 }
             }
 
-            // Last section / Derniere section
             if (bottomReached)
             {
                 activeSection = pageSections[pageSections.length - 1];
             }
 
-            // Respect selected anchor / Respecter l'ancre selectionnee
-            if (selectedSectionId !== "")
-            {
-                const selectedSection = document.getElementById(selectedSectionId);
-
-                if (selectedSection !== null && selectedSection.classList.contains("page-section"))
-                {
-                    activeSection = selectedSection;
-                }
-            }
-
-            updateActiveLinks(activeSection.id);
+            selectedSectionId = activeSection.id;
+            updateActiveLinks(selectedSectionId);
         }
 
-        // Anchor selection / Selection des ancres
+        // Open selected section / Ouvrir la section selectionnee
+        function openSection(sectionId, updateHistory = true)
+        {
+            if (!sectionExists(sectionId))
+            {
+                return;
+            }
+
+            selectedSectionId = sectionId;
+
+            if (updateHistory)
+            {
+                window.history.pushState(null, "", `#${sectionId}`);
+            }
+
+            if (mobileScreen.matches)
+            {
+                // Replace visible content / Remplacer le contenu visible
+                updateScreenMode();
+
+                // Reset previous scroll / Reinitialiser le defilement precedent
+                window.scrollTo({
+                    top: 0,
+                    behavior: "instant"
+                });
+            }
+            else
+            {
+                // Normal desktop navigation / Navigation desktop classique
+                const selectedSection = document.getElementById(sectionId);
+
+                selectedSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                updateActiveLinks(sectionId);
+            }
+        }
+
+        // Section links / Liens des sections
         for (const anchorLink of anchorLinks)
         {
-            anchorLink.addEventListener("click", function()
+            anchorLink.addEventListener("click", function(event)
             {
-                selectedSectionId = anchorLink.getAttribute("href").replace("#", "");
-                updateActiveLinks(selectedSectionId);
+                event.preventDefault();
+
+                const sectionId = anchorLink.getAttribute("href").replace("#", "");
+
+                openSection(sectionId);
             });
         }
 
-        // Return to top / Retour en haut de la page
+        // Top arrow / Fleche vers le haut
         if (topAnchor !== null)
         {
             topAnchor.addEventListener("click", function(event)
             {
                 event.preventDefault();
-                selectedSectionId = "home";
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-                updateActiveLinks("home");
+                openSection("home");
             });
         }
 
-        // Go to bottom / Aller en bas de la page
+        // Bottom arrow / Fleche vers le bas
         if (bottomAnchor !== null)
         {
-            bottomAnchor.addEventListener("click", function()
+            bottomAnchor.addEventListener("click", function(event)
             {
-                selectedSectionId = "contact";
-                updateActiveLinks("contact");
+                event.preventDefault();
+
+                if (mobileScreen.matches)
+                {
+                    // Show contact and footer / Afficher contact et footer
+                    openSection("contact");
+                }
+                else
+                {
+                    // Reach desktop footer / Atteindre le footer desktop
+                    const pageFooter = document.getElementById("site-footer");
+
+                    if (pageFooter !== null)
+                    {
+                        pageFooter.scrollIntoView({
+                            behavior: "smooth",
+                            block: "end"
+                        });
+                    }
+                }
             });
         }
 
-        // Manual scrolling / Defilement manuel
-        function resetSelectedSection()
+        // Footer home link / Lien accueil du footer
+        if (footerHomeLink !== null)
         {
-            selectedSectionId = "";
-            updateActiveSection();
+            footerHomeLink.addEventListener("click", function(event)
+            {
+                event.preventDefault();
+
+                openSection("home");
+            });
         }
 
-        window.addEventListener("wheel", resetSelectedSection, { passive: true });
-        window.addEventListener("touchstart", resetSelectedSection, { passive: true });
-
-        // Keyboard scrolling / Defilement au clavier
-        document.addEventListener("keydown", function(event)
+        // Browser history / Historique du navigateur
+        function restoreSection()
         {
-            const scrollKeys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
+            const sectionId = window.location.hash.replace("#", "");
 
-            if (scrollKeys.includes(event.key))
+            if (sectionExists(sectionId))
             {
-                resetSelectedSection();
+                openSection(sectionId, false);
+            }
+            else
+            {
+                openSection("home", false);
+            }
+        }
+
+        window.addEventListener("popstate", restoreSection);
+        window.addEventListener("hashchange", restoreSection);
+
+        // Screen resizing / Changement de dimensions
+        mobileScreen.addEventListener("change", function()
+        {
+            updateScreenMode();
+
+            if (mobileScreen.matches)
+            {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "instant"
+                });
+            }
+            else
+            {
+                const selectedSection = document.getElementById(selectedSectionId);
+
+                if (selectedSection !== null)
+                {
+                    selectedSection.scrollIntoView({
+                        behavior: "instant",
+                        block: "start"
+                    });
+                }
             }
         });
 
-        // Mouse scrollbar / Barre de defilement a la souris
-        document.addEventListener("pointerdown", function(event)
+        // Follow desktop scrolling / Suivre le defilement desktop
+        window.addEventListener("scroll", updateDesktopSection, { passive: true });
+
+        // Initial display / Affichage initial
+        updateScreenMode();
+
+        if (mobileScreen.matches)
         {
-            if (!anchorNavigation.contains(event.target))
-            {
-                selectedSectionId = "";
-            }
-        });
-
-        // Follow page scrolling / Suivre le defilement
-        window.addEventListener("scroll", updateActiveSection, { passive: true });
-        window.addEventListener("resize", updateActiveSection);
-        window.addEventListener("hashchange", updateActiveSection);
-
-        updateActiveSection();
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+        }
+        else
+        {
+            updateDesktopSection();
+        }
     }

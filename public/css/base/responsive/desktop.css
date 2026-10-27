@@ -1,0 +1,283 @@
+/* ====================================================== */
+/*       STANDARD SCREENS / ECRANS STANDARDS              */
+/*       Width / Largeur : 1800 a 1999 px                */
+/*       Reference : 1920 x 1080 px                       */
+/* ====================================================== */
+
+    @media (min-width: 1800px) and (max-width: 1999px)
+    {
+        .footer-brand
+        {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            padding: 8px 0;
+        }
+
+        .footer-brand p
+        {
+            width: 255px;
+            font-size: 12px;
+        }
+
+        .footer-secondary-list
+        {
+            gap: 25px;
+            padding-left: 35px;
+        }
+    }
+
+/* ====================================================== */
+/*       LARGE SCREENS / GRANDS ECRANS                    */
+/*       Width / Largeur : 2000 px et plus                */
+/* ====================================================== */
+
+    @media (min-width: 2000px)
+    {
+        .header-content,
+        .footer-content
+        {
+            grid-template-columns: minmax(0, 1fr) 1500px minmax(0, 1fr);
+        }
+
+        .header-navigation,
+        .footer-navigation
+        {
+            grid-template-columns: 1500px minmax(0, 1fr) 115px;
+        }
+
+        .home
+        {
+            padding-top: 155px;
+            padding-bottom: 55px;
+        }
+
+        .home-section
+        {
+            padding-top: 70px;
+            padding-bottom: 80px;
+        }
+
+        .home-content
+        {
+            max-width: 1500px;
+        }
+
+        .home h1,
+        .section-title
+        {
+            font-size: 60px;
+        }
+
+        .home-description,
+        .section-description
+        {
+            font-size: 24px;
+        }
+
+        .home-card h2
+        {
+            font-size: 48px;
+        }
+
+        .home-domains
+        {
+            font-size: 25px;
+        }
+
+        .home-button
+        {
+            font-size: 20px;
+        }
+
+        /* Anchor position / Position des ancres */
+        .anchor-navigation
+        {
+            right: max(20px, calc((100vw - 1500px) / 4 - 100px));
+        }
+
+        /* Footer height / Hauteur du pied de page */
+        .site-footer,
+        .footer-content
+        {
+            min-height: 120px;
+        }
+
+        /* Footer logo / Logo du pied de page */
+        .footer-brand
+        {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            min-width: 0;
+            padding: 0;
+        }
+
+        .footer-brand img
+        {
+            width: 255px;
+            height: 72px;
+            flex-shrink: 0;
+        }
+
+        /* Description below logo / Description sous le logo */
+        .footer-brand p
+        {
+            flex: none;
+            width: 255px;
+            max-width: 100%;
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* Independent footer grid / Grille propre au footer */
+        .footer-navigation
+        {
+            grid-template-columns: 1500px minmax(0, 1fr) 60px;
+        }
+
+        /* Secondary footer links / Liens secondaires du footer */
+        .footer-secondary-list
+        {
+            justify-content: center;
+            gap: 12px;
+            min-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .footer-secondary-list a
+        {
+            font-size: 14px;
+        }
+
+        /* Contact stays in its column / Contact dans sa colonne */
+        .footer-contact
+        {
+            max-width: 100%;
+            min-width: 0;
+            justify-self: end;
+            text-align: right;
+        }
+
+        .footer-contact p
+        {
+            line-height: 1.3;
+        }
+    }
+
+/* ====================================================== */
+/*       INTERMEDIATE SCREENS / ECRANS INTERMEDIAIRES     */
+/*       Width / Largeur : 2000 a 2250 px                */
+/* ====================================================== */
+
+    @media (min-width: 2000px) and (max-width: 2250px)
+    {
+        .header-navigation
+        {
+            grid-template-columns: 1410px minmax(0, 1fr) 115px;
+        }
+
+        .footer-navigation
+        {
+            grid-template-columns: 1410px minmax(0, 1fr) 60px;
+        }
+
+        .secondary-navigation .navigation-list
+        {
+            gap: 10px;
+        }
+
+        .secondary-navigation .navigation-link,
+        .footer-secondary-list a
+        {
+            font-size: 14px;
+        }
+
+        .footer-main-list
+        {
+            gap: 12px;
+        }
+    }
+
+/* ====================================================== */
+/*       ULTRAWIDE SCREENS / ECRANS ULTRALARGES           */
+/*       Width / Largeur : 2560 px et plus                */
+/*       Reference : 2560 x 1440 et 3440 x 1440 px        */
+/* ====================================================== */
+
+    @media (min-width: 2560px)
+    {
+        .header-content,
+        .footer-content
+        {
+            grid-template-columns: minmax(0, 1fr) 1900px minmax(0, 1fr);
+        }
+
+        .header-navigation
+        {
+            grid-template-columns: 1900px minmax(0, 1fr) 115px;
+        }
+
+        /* Preserve footer alignment / Conserver l'alignement du footer */
+        .footer-navigation
+        {
+            grid-template-columns: 1900px minmax(0, 1fr) 75px;
+        }
+
+        .home-content
+        {
+            max-width: 1900px;
+        }
+
+        .anchor-navigation
+        {
+            right: max(20px, calc((100vw - 1900px) / 4 - 100px));
+        }
+
+        /* Center secondary links / Centrer les liens secondaires */
+        .footer-secondary-list
+        {
+            justify-content: center;
+            gap: 18px;
+            padding-left: 0;
+        }
+
+        /* Keep contact readable / Garder le contact lisible */
+        .footer-contact p
+        {
+            font-size: 13px;
+        }
+
+        .footer-contact small
+        {
+            font-size: 12px;
+        }
+    }
+
+/* ====================================================== */
+/*       SHORT DESKTOP SCREENS / ECRANS PEU HAUTS         */
+/*       Width / Largeur : 1600 px et plus                */
+/*       Height / Hauteur : 760 px maximum                */
+/* ====================================================== */
+
+    @media (min-width: 1600px) and (max-height: 760px)
+    {
+        .anchor-navigation
+        {
+            height: calc(100vh - 140px);
+        }
+
+        .anchor-link
+        {
+            font-size: 17px;
+        }
+
+        .anchor-arrow
+        {
+            font-size: 35px;
+        }
+    }

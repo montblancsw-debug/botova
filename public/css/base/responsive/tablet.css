@@ -1,0 +1,171 @@
+/* ====================================================== */
+/*       LARGE TABLET FOOTER / FOOTER GRANDE TABLETTE     */
+/*       Width / Largeur : 821 a 1200 px                 */
+/*       Reference : 1024 x 1366 px                      */
+/* ====================================================== */
+
+    @media (min-width: 821px) and (max-width: 1200px)
+    {
+        /* Hide footer navigation / Masquer la navigation du footer */
+        .footer-navigation
+        {
+            display: none;
+        }
+
+        /* Keep brand and contact / Conserver le logo et le contact */
+        .footer-content
+        {
+            grid-template-columns: minmax(0, 1fr) 230px;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 30px;
+        }
+
+        .footer-brand
+        {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .footer-contact
+        {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: end;
+            text-align: right;
+        }
+    }
+
+/* ====================================================== */
+/*       TABLET LAYOUT / VERSION TABLETTE                 */
+/*       Width / Largeur : 601 a 1024 px                 */
+/*       Reference : 1024 x 1366 et 768 x 1024 px         */
+/* ====================================================== */
+
+    @media (min-width: 601px) and (max-width: 1024px)
+    {
+        /* Section content / Contenu des sections */
+        body.section-mode .page-section:not([hidden])
+        {
+            padding: 16px 26px;
+        }
+
+        .home h1
+        {
+            font-size: 32px;
+        }
+
+        .home-card h2
+        {
+            font-size: 27px;
+        }
+
+        /* Two-column projects / Projets sur deux colonnes */
+        .project-grid
+        {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .project-card:last-child
+        {
+            grid-column: 1 / -1;
+        }
+
+        .project-card
+        {
+            padding: 13px;
+        }
+
+        .project-category
+        {
+            min-height: 48px;
+            margin-bottom: 8px;
+        }
+
+        /* Contact buttons / Boutons de contact */
+        .contact-card
+        {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-actions
+        {
+            width: 100%;
+            flex-direction: row;
+        }
+
+        .contact-button
+        {
+            flex: 1;
+        }
+    }
+
+/* ====================================================== */
+/*       SMALL TABLETS / PETITES TABLETTES                */
+/*       Width / Largeur : 601 a 820 px                  */
+/*       Reference : 768 x 1024 et 820 x 1180 px          */
+/* ====================================================== */
+
+    @media (min-width: 601px) and (max-width: 820px)
+    {
+        .header-content
+        {
+            padding: 0 25px;
+        }
+
+        .home-content
+        {
+            max-width: 100%;
+        }
+
+        /* Smaller card text / Textes des cartes reduits */
+        .expertise-card h3,
+        .project-card h3
+        {
+            font-size: 18px;
+        }
+
+        .expertise-card p,
+        .project-card p
+        {
+            font-size: 12px;
+        }
+
+        /* Three footer rows / Footer sur trois lignes */
+        .footer-content
+        {
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding: 10px 20px;
+        }
+
+        .footer-brand
+        {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .footer-navigation
+        {
+            grid-column: 1;
+            grid-row: 2;
+            justify-content: flex-start;
+            gap: 8px 20px;
+        }
+
+        .footer-main-list,
+        .footer-secondary-list
+        {
+            justify-content: flex-start;
+            gap: 8px 17px;
+        }
+
+        .footer-contact
+        {
+            grid-column: 1;
+            grid-row: 3;
+            justify-self: start;
+            text-align: left;
+        }
+    }

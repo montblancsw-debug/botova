@@ -1,0 +1,496 @@
+/* ====================================================== */
+/*       HORIZONTAL ANCHORS / ANCRES HORIZONTALES         */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : smartphones et tablettes             */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .anchor-navigation
+        {
+            position: relative;
+            top: auto;
+            right: auto;
+            z-index: 90;
+            flex-direction: row;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            height: 56px;
+            padding: 4px 12px;
+            background-color: var(--color-background);
+            border-bottom: 1px solid var(--color-border);
+            transform: none;
+        }
+
+        .anchor-navigation::before
+        {
+            display: none;
+        }
+
+        .anchor-link
+        {
+            width: auto;
+            min-height: 40px;
+            padding: 7px;
+            font-size: 15px;
+        }
+
+        .anchor-arrow
+        {
+            min-width: 40px;
+            min-height: 40px;
+            padding: 0 5px;
+            font-size: 28px;
+        }
+    }
+
+/* ====================================================== */
+/*       MOBILE NAVIGATION / NAVIGATION MOBILE            */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : smartphones et tablettes             */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .header-content
+        {
+            grid-template-columns: 1fr auto;
+            padding: 0 30px;
+        }
+
+        .site-logo
+        {
+            width: 170px;
+        }
+
+        /* Dropdown panel / Panneau deroulant */
+        .header-navigation
+        {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            grid-template-columns: 1fr;
+            width: 100%;
+            max-height: calc(100dvh - 80px);
+            padding: 10px 30px 20px;
+            overflow-y: auto;
+            background-color: var(--color-dark);
+        }
+
+        .site-header.is-mobile-open .header-navigation
+        {
+            display: block;
+        }
+
+        .main-navigation,
+        .secondary-navigation,
+        .account-navigation
+        {
+            width: 100%;
+        }
+
+        .secondary-navigation,
+        .account-navigation
+        {
+            border-top: 1px solid var(--color-disabled);
+        }
+
+        .main-navigation .navigation-list,
+        .secondary-navigation .navigation-list,
+        .account-navigation .navigation-list
+        {
+            display: block;
+            width: 100%;
+        }
+
+        .navigation-item
+        {
+            flex-wrap: wrap;
+            min-height: auto;
+            padding: 4px 0;
+        }
+
+        /* Touch targets / Zones tactiles */
+        .navigation-link,
+        .navigation-label
+        {
+            display: flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 0 12px;
+        }
+
+        .dropdown-button
+        {
+            width: 44px;
+            height: 44px;
+            padding: 0;
+        }
+
+        .dropdown-menu
+        {
+            position: static;
+            left: auto;
+            width: 100%;
+            margin: 0 0 8px;
+            text-align: left;
+            transform: none;
+        }
+
+        .dropdown-account
+        {
+            right: auto;
+        }
+
+        .navigation-item:hover > .dropdown-menu,
+        .navigation-item:focus-within > .dropdown-menu
+        {
+            display: none;
+        }
+
+        .navigation-item.is-open > .dropdown-menu
+        {
+            display: block;
+        }
+
+        .mobile-menu-button
+        {
+            display: block;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        body.mobile-menu-open .anchor-navigation
+        {
+            visibility: hidden;
+        }
+    }
+
+/* ====================================================== */
+/*       SECTION DISPLAY / AFFICHAGE PAR SECTIONS         */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : mobiles et tablettes                 */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        /* Fixed viewport / Fenetre sans defilement */
+        body.section-mode
+        {
+            display: grid;
+            grid-template-rows: auto auto minmax(0, 1fr);
+            height: 100dvh;
+            overflow: hidden;
+        }
+
+        /* Contact includes footer / Contact inclut le footer */
+        body.section-mode[data-active-section="contact"]
+        {
+            grid-template-rows: auto auto minmax(0, 1fr) auto;
+        }
+
+        body.section-mode main
+        {
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        /* Hide unused sections / Masquer les autres sections */
+        body.section-mode .page-section[hidden]
+        {
+            display: none;
+        }
+
+        /* Center selected content / Centrer le contenu selectionne */
+        body.section-mode .page-section:not([hidden])
+        {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            padding: 14px 30px;
+            overflow: hidden;
+        }
+
+        body.section-mode .home-content
+        {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Footer displayed with contact / Footer affiche avec contact */
+        body.section-mode .site-footer
+        {
+            display: none;
+        }
+
+        body.section-mode[data-active-section="contact"] .site-footer
+        {
+            display: block;
+        }
+    }
+
+/* ====================================================== */
+/*       COMPACT HOME / ACCUEIL COMPACT                   */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : mobiles et tablettes                 */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .home h1
+        {
+            margin-bottom: 14px;
+            font-size: 34px;
+            line-height: 1.2;
+        }
+
+        .home-description
+        {
+            margin-bottom: 18px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .home-card
+        {
+            padding: 20px 25px;
+        }
+
+        .home-card h2
+        {
+            margin-bottom: 14px;
+            font-size: 28px;
+        }
+
+        .home-domains
+        {
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .home-button
+        {
+            padding: 10px 18px;
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*       COMPACT SECTIONS / SECTIONS COMPACTES            */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : mobiles et tablettes                 */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .section-title
+        {
+            margin-bottom: 10px;
+            font-size: 30px;
+            line-height: 1.2;
+        }
+
+        .section-description
+        {
+            margin-bottom: 14px;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        /* Natural text wrapping / Retour a la ligne naturel */
+        .home-description br,
+        .section-description br
+        {
+            display: none;
+        }
+
+        /* Expertise grid / Grille des expertises */
+        .expertise-grid
+        {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .expertise-card
+        {
+            min-height: 0;
+            padding: 14px;
+        }
+
+        /* Project grid / Grille des realisations */
+        .project-grid
+        {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .project-card
+        {
+            min-height: 0;
+            padding: 12px;
+        }
+
+        .project-category
+        {
+            min-height: 48px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        /* Card typography / Typographie des cartes */
+        .expertise-card h3,
+        .project-card h3
+        {
+            margin-bottom: 5px;
+            font-size: 19px;
+            line-height: 1.2;
+        }
+
+        .expertise-card p,
+        .project-card p
+        {
+            margin-bottom: 8px;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+
+        .card-link
+        {
+            min-height: 34px;
+            padding: 5px 10px;
+            font-size: 13px;
+        }
+
+        /* Contact layout / Mise en page du contact */
+        .contact-card
+        {
+            min-height: 0;
+            padding: 18px;
+            gap: 18px;
+        }
+
+        .contact-text h3
+        {
+            margin-bottom: 5px;
+            font-size: 25px;
+        }
+
+        .contact-text p
+        {
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .contact-actions
+        {
+            min-width: 190px;
+            gap: 8px;
+        }
+
+        .contact-button
+        {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*       COMPACT FOOTER / PIED DE PAGE COMPACT            */
+/*       Width / Largeur : 1200 px maximum                */
+/*       Reference : mobiles et tablettes                 */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .site-footer
+        {
+            min-height: 0;
+        }
+
+        .footer-content
+        {
+            grid-template-columns: minmax(0, 1fr) 230px;
+            gap: 8px 16px;
+            min-height: 0;
+            padding: 10px 24px;
+        }
+
+        .footer-brand
+        {
+            grid-column: 1;
+            grid-row: 1;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            padding: 0;
+        }
+
+        .footer-brand img
+        {
+            width: 140px;
+            height: 48px;
+        }
+
+        .footer-brand p
+        {
+            flex: 1;
+            width: auto;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .footer-navigation
+        {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 15px;
+        }
+
+        .footer-main-list,
+        .footer-secondary-list
+        {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px 15px;
+            width: auto;
+            padding: 0;
+        }
+
+        .footer-navigation a,
+        .footer-navigation span
+        {
+            font-size: 12px;
+        }
+
+        .footer-contact
+        {
+            grid-column: 2;
+            grid-row: 1;
+            justify-self: end;
+            text-align: right;
+        }
+
+        .footer-contact a
+        {
+            font-size: 13px;
+        }
+
+        .footer-contact p,
+        .footer-contact small
+        {
+            font-size: 11px;
+        }
+    }

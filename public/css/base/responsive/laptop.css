@@ -1,0 +1,179 @@
+/* ====================================================== */
+/*       LAPTOP NAVIGATION / NAVIGATION PORTABLE          */
+/*       Width / Largeur : 1201 a 1799 px                */
+/*       Reference : 1366 x 768 px                        */
+/* ====================================================== */
+
+    @media (min-width: 1201px) and (max-width: 1799px)
+    {
+        .header-content,
+        .footer-content
+        {
+            grid-template-columns: 160px minmax(0, 1fr);
+            padding: 0 24px;
+        }
+
+        .site-logo
+        {
+            width: 150px;
+        }
+
+        .header-navigation,
+        .footer-navigation
+        {
+            grid-column: 2;
+            grid-template-columns: minmax(0, 1fr) 165px 100px;
+        }
+
+        .main-navigation .navigation-list,
+        .footer-main-list
+        {
+            width: 100%;
+            gap: 12px;
+            padding-left: 0;
+        }
+
+        .secondary-navigation .navigation-list,
+        .footer-secondary-list
+        {
+            gap: 12px;
+        }
+
+        .footer-secondary-list
+        {
+            justify-content: center;
+            padding-left: 0;
+        }
+
+        .navigation-link,
+        .navigation-label,
+        .footer-navigation a,
+        .footer-navigation span
+        {
+            font-size: 14px;
+        }
+
+        /* Footer brand / Identite du pied de page */
+        .footer-brand
+        {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 12px 0;
+        }
+
+        .footer-brand img
+        {
+            width: 150px;
+            height: 72px;
+        }
+
+        .footer-brand p
+        {
+            flex: none;
+            width: 150px;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .footer-contact a
+        {
+            font-size: 14px;
+        }
+
+        .footer-contact p,
+        .footer-contact small
+        {
+            font-size: 12px;
+        }
+    }
+
+/* ====================================================== */
+/*       VERTICAL ANCHORS / ANCRES VERTICALES             */
+/*       Width / Largeur : 1201 a 1599 px                */
+/*       Reference : 1366 x 768 px                        */
+/* ====================================================== */
+
+    @media (min-width: 1201px) and (max-width: 1599px)
+    {
+        /* Space for anchors / Place reservee aux ancres */
+        .home-content
+        {
+            max-width: min(1000px, calc(100% - 230px));
+        }
+
+        /* Center within viewport / Centrer dans la zone visible */
+        .anchor-navigation
+        {
+            position: fixed;
+            top: 50%;
+            right: 16px;
+            z-index: 80;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0;
+            width: 140px;
+            height: min(480px, calc(100vh - 220px));
+            height: min(480px, calc(100dvh - 220px));
+            padding: 0;
+            background-color: transparent;
+            border-bottom: none;
+            transform: translateY(-50%);
+        }
+
+        /* Dashed line / Ligne pointillee */
+        .anchor-navigation::before
+        {
+            display: block;
+        }
+
+        .anchor-link
+        {
+            width: 100%;
+            min-height: 40px;
+            padding: 4px 8px;
+            font-size: 16px;
+        }
+
+        .anchor-arrow
+        {
+            min-width: 44px;
+            min-height: 44px;
+            font-size: 34px;
+        }
+
+        /* Header scroll offset / Decalage de l'en-tete */
+        .page-section
+        {
+            scroll-margin-top: 90px;
+        }
+    }
+
+/* ====================================================== */
+/*       SMALL LAPTOPS / PETITS ORDINATEURS PORTABLES     */
+/*       Width / Largeur : 1201 a 1450 px                */
+/*       Reference : 1366 x 768 px                        */
+/* ====================================================== */
+
+    @media (min-width: 1201px) and (max-width: 1450px)
+    {
+        /* Secondary links / Liens secondaires */
+        .header-navigation
+        {
+            grid-template-columns: minmax(0, 1fr) 210px 100px;
+        }
+
+        .secondary-navigation .navigation-list
+        {
+            justify-content: space-between;
+            gap: 18px;
+            padding-left: 28px;
+            padding-right: 10px;
+        }
+
+        /* Main links / Liens principaux */
+        .main-navigation .navigation-list
+        {
+            gap: 8px;
+        }
+    }

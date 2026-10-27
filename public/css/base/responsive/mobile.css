@@ -1,0 +1,370 @@
+/* ====================================================== */
+/*       MOBILE LAYOUT / VERSION SMARTPHONE               */
+/*       Width / Largeur : 600 px maximum                */
+/*       Reference : 390 x 844 et 430 x 932 px            */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        /* Screen layout / Organisation de l'ecran */
+        body.section-mode .page-section:not([hidden])
+        {
+            padding: 12px 20px;
+        }
+
+        /* Home typography / Typographie de l'accueil */
+        .home h1,
+        .section-title
+        {
+            margin-bottom: 12px;
+            font-size: 26px;
+        }
+
+        .home-description,
+        .section-description
+        {
+            margin-bottom: 15px;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .home-card
+        {
+            padding: 20px;
+        }
+
+        .home-card h2
+        {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .home-card h2 br
+        {
+            display: none;
+        }
+
+        .home-domains
+        {
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.45;
+        }
+
+        /* Two-column expertise grid / Expertises sur deux colonnes */
+        .expertise-grid
+        {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .expertise-card
+        {
+            padding: 11px;
+        }
+
+        .expertise-card h3
+        {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .expertise-card p
+        {
+            margin-bottom: 6px;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        /* Single-column projects / Projets sur une colonne */
+        .project-grid
+        {
+            grid-template-columns: 1fr;
+            gap: 9px;
+        }
+
+        .project-card,
+        .project-card:last-child
+        {
+            grid-column: auto;
+        }
+
+        .project-card
+        {
+            padding: 10px;
+        }
+
+        .project-category
+        {
+            min-height: 32px;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .project-card h3
+        {
+            margin-bottom: 4px;
+            font-size: 18px;
+        }
+
+        .project-card p
+        {
+            margin-bottom: 5px;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+
+        .card-link
+        {
+            min-height: 30px;
+            padding: 4px 8px;
+            font-size: 12px;
+        }
+
+        /* Contact card / Carte de contact */
+        .contact-card
+        {
+            flex-direction: column;
+            padding: 15px;
+            gap: 10px;
+        }
+
+        .contact-text h3
+        {
+            margin-bottom: 5px;
+            font-size: 21px;
+        }
+
+        .contact-text p
+        {
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 1.3;
+        }
+
+        .contact-actions
+        {
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            min-width: 0;
+        }
+
+        .contact-button
+        {
+            padding: 9px 12px;
+            font-size: 13px;
+        }
+
+        /* Touch-friendly anchors / Ancres tactiles */
+        .anchor-navigation
+        {
+            justify-content: space-around;
+            gap: 2px;
+            height: 56px;
+            padding: 5px;
+        }
+
+        .anchor-link
+        {
+            min-height: 38px;
+            padding: 6px 3px;
+            font-size: 12px;
+        }
+
+        .anchor-arrow
+        {
+            min-width: 30px;
+            min-height: 38px;
+            padding: 0 2px;
+            font-size: 24px;
+        }
+
+        /* Compact footer / Footer compact */
+        .footer-content
+        {
+            grid-template-columns: 1fr;
+            gap: 7px;
+            padding: 8px 15px;
+        }
+
+        .footer-brand
+        {
+            grid-column: 1;
+            grid-row: 1;
+            gap: 8px;
+        }
+
+        .footer-brand img
+        {
+            width: 120px;
+            height: 42px;
+        }
+
+        .footer-brand p
+        {
+            font-size: 10px;
+        }
+
+        .footer-navigation
+        {
+            grid-column: 1;
+            grid-row: 2;
+            justify-content: flex-start;
+            gap: 5px 12px;
+        }
+
+        .footer-main-list,
+        .footer-secondary-list
+        {
+            justify-content: flex-start;
+            gap: 5px 12px;
+        }
+
+        .footer-navigation a,
+        .footer-navigation span
+        {
+            font-size: 10px;
+        }
+
+        .footer-contact
+        {
+            grid-column: 1;
+            grid-row: 3;
+            justify-self: start;
+            text-align: left;
+        }
+
+        .footer-contact a
+        {
+            font-size: 12px;
+        }
+
+        .footer-contact p,
+        .footer-contact small
+        {
+            margin: 2px 0;
+            font-size: 10px;
+        }
+    }
+
+/* ====================================================== */
+/*       LARGE SMARTPHONES / GRANDS SMARTPHONES           */
+/*       Width / Largeur : 361 a 430 px                  */
+/*       Reference : 390 x 844 et 430 x 932 px            */
+/* ====================================================== */
+
+    @media (min-width: 361px) and (max-width: 430px)
+    {
+        .header-content
+        {
+            padding: 0 15px;
+        }
+
+        .header-navigation
+        {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .site-logo
+        {
+            width: 155px;
+        }
+
+        .footer-brand img
+        {
+            width: 120px;
+            height: 42px;
+        }
+    }
+
+/* ====================================================== */
+/*       SMALL SMARTPHONES / PETITS SMARTPHONES           */
+/*       Width / Largeur : 360 px maximum                */
+/*       Reference : 360 x 800 px                         */
+/* ====================================================== */
+
+    @media (max-width: 360px)
+    {
+        .header-content
+        {
+            padding: 0 12px;
+        }
+
+        .header-navigation
+        {
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+
+        .site-logo
+        {
+            width: 150px;
+        }
+
+        body.section-mode .page-section:not([hidden])
+        {
+            padding: 10px 15px;
+        }
+
+        .home h1,
+        .section-title
+        {
+            font-size: 24px;
+        }
+
+        .home-description,
+        .section-description
+        {
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .home-card
+        {
+            padding: 15px;
+        }
+
+        .home-card h2
+        {
+            font-size: 22px;
+        }
+
+        .home-domains
+        {
+            font-size: 14px;
+        }
+
+        .home-button
+        {
+            font-size: 13px;
+        }
+
+        .anchor-link
+        {
+            font-size: 10px;
+        }
+
+        .anchor-arrow
+        {
+            min-width: 25px;
+            font-size: 21px;
+        }
+
+        /* Smaller project cards / Cartes projets compactes */
+        .project-category
+        {
+            min-height: 30px;
+        }
+
+        .project-card p
+        {
+            font-size: 11px;
+        }
+
+        .contact-text h3
+        {
+            font-size: 20px;
+        }
+    }
