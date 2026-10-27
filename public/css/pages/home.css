@@ -71,9 +71,17 @@
         color: var(--color-white);
         font-size: 16px;
         font-weight: 700;
+        touch-action: manipulation;
     }
 
     .home-button:hover
     {
         background-color: var(--color-primary-dark);
+    }
+
+    /* Pressed button / Bouton maintenu appuye */
+    .home-button:active
+    {
+        background-color: var(--color-primary-dark);
+        transform: scale(0.98);
     }

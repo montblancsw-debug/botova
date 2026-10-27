@@ -42,6 +42,7 @@
         color: var(--color-white);
         font-size: 16px;
         white-space: nowrap;
+        touch-action: manipulation;
     }
 
     .navigation-link:hover
@@ -59,6 +60,7 @@
         font-weight: 700;
     }
 
+    /* Active page / Page active */
     .navigation-link.is-active
     {
         color: var(--color-primary);
@@ -73,6 +75,7 @@
         font-size: 16px;
         cursor: pointer;
         white-space: nowrap;
+        touch-action: manipulation;
     }
 
     .dropdown-button
@@ -83,9 +86,26 @@
         color: var(--color-white);
         font-size: 14px;
         cursor: pointer;
+        touch-action: manipulation;
     }
 
     .dropdown-button:hover, .navigation-label:hover
     {
         color: var(--color-primary);
+    }
+
+    /* Open dropdown / Sous-menu ouvert */
+    .navigation-item.is-open > .dropdown-button,
+    .navigation-item.is-open > .navigation-label
+    {
+        color: var(--color-primary);
+    }
+
+    /* Touch feedback / Retour visuel tactile */
+    .navigation-link:active,
+    .dropdown-button:active,
+    .navigation-label:active
+    {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
     }

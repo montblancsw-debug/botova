@@ -80,4 +80,21 @@
         background-color: transparent;
         border: 1px solid var(--color-disabled);
         cursor: pointer;
+        touch-action: manipulation;
+    }
+
+    /* Open menu / Menu ouvert */
+    .site-header.is-mobile-open .mobile-menu-button
+    {
+        background-color: var(--color-primary);
+        color: var(--color-dark);
+        border-color: var(--color-primary);
+    }
+
+    /* Pressed button / Bouton maintenu appuye */
+    .mobile-menu-button:active,
+    .site-header.is-mobile-open .mobile-menu-button:active
+    {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
     }
