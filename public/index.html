@@ -30,127 +30,10 @@
 <body data-page="home">
 
     <!-- Header / En-tête -->
-    <header class="site-header" id="site-header">
-        <div class="header-content">
-
-            <!-- Logo / Logo -->
-            <a class="site-logo" href="index.html" aria-label="Accueil Botova">
-                <img src="images/logos/logo-botova.png" alt="Botova">
-            </a>
-
-            <div class="header-navigation" id="header-navigation">
-
-                <!-- Main navigation / Navigation principale -->
-                <nav class="main-navigation" aria-label="Navigation principale">
-                    <ul class="navigation-list">
-                        <li class="navigation-item">
-                            <a class="navigation-link" data-navigation-page="home" href="index.html">Accueil</a>
-                        </li>
-
-                        <!-- Services / Services -->
-                        <li class="navigation-item">
-                            <a class="navigation-link navigation-muted" data-navigation-page="services" href="html/services.html">Services</a>
-                            <button class="dropdown-button" type="button" aria-label="Afficher les services" aria-controls="services-menu" aria-expanded="false">▾</button>
-                            <ul class="dropdown-menu" id="services-menu">
-                                <li><span class="dropdown-entry">Scripts OBS</span></li>
-                                <li><span class="dropdown-entry">Serveurs Discord</span></li>
-                                <li><span class="dropdown-entry">Scripts Logiciels</span></li>
-                                <li><span class="dropdown-entry">Automatisations</span></li>
-                            </ul>
-                        </li>
-
-                        <!-- Web / Web -->
-                        <li class="navigation-item">
-                            <button class="navigation-label" type="button" aria-controls="web-menu" aria-expanded="false">Web <span aria-hidden="true">▾</span></button>
-                            <ul class="dropdown-menu" id="web-menu">
-                                <li><span class="dropdown-entry">Sites web</span></li>
-                                <li><span class="dropdown-entry">Bases de données</span></li>
-                                <li><span class="dropdown-entry">Maquettes</span></li>
-                                <li><span class="dropdown-entry">UI/UX Design</span></li>
-                            </ul>
-                        </li>
-
-                        <!-- Tools / Outils -->
-                        <li class="navigation-item">
-                            <button class="navigation-label" type="button" aria-controls="tools-menu" aria-expanded="false">Outils <span aria-hidden="true">▾</span></button>
-                            <ul class="dropdown-menu" id="tools-menu">
-                                <li><span class="dropdown-entry">Applications</span></li>
-                                <li><span class="dropdown-entry">Logiciels</span></li>
-                                <li><span class="dropdown-entry">Widgets</span></li>
-                                <li><span class="dropdown-entry">Plugins</span></li>
-                            </ul>
-                        </li>
-
-                        <!-- Bots / Bots -->
-                        <li class="navigation-item">
-                            <a class="navigation-link navigation-bold" data-navigation-page="bots" href="html/bots/">Bots</a>
-                            <button class="dropdown-button" type="button" aria-label="Afficher les bots" aria-controls="bots-menu" aria-expanded="false">▾</button>
-                            <ul class="dropdown-menu" id="bots-menu">
-                                <li><a class="dropdown-entry" href="html/bots/#discord">Discord</a></li>
-                                <li><a class="dropdown-entry" href="html/bots/#carrousel">Twitch</a></li>
-                                <li><a class="dropdown-entry" href="html/bots/#carrousel">YouTube</a></li>
-                                <li><a class="dropdown-entry" href="html/bots/#carrousel">WhatsApp</a></li>
-                                <li><a class="dropdown-entry" href="html/bots/#carrousel">LinkedIn</a></li>
-                            </ul>
-                        </li>
-
-                        <!-- Graphics / Graphismes -->
-                        <li class="navigation-item">
-                            <button class="navigation-label" type="button" aria-controls="graphics-menu" aria-expanded="false">Graphismes <span aria-hidden="true">▾</span></button>
-                            <ul class="dropdown-menu" id="graphics-menu">
-                                <li><span class="dropdown-entry">Logos</span></li>
-                                <li><span class="dropdown-entry">Overlays</span></li>
-                                <li><span class="dropdown-entry">Flyers</span></li>
-                                <li><span class="dropdown-entry">Cartes de visite</span></li>
-                                <li><span class="dropdown-entry">Affiches</span></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- Other pages / Autres pages -->
-                <nav class="secondary-navigation" aria-label="Autres pages">
-                    <ul class="navigation-list">
-                        <li class="navigation-item">
-                            <a class="navigation-link" data-navigation-page="about" href="html/about.html">À propos</a>
-                        </li>
-                        <li class="navigation-item">
-                            <a class="navigation-link" data-navigation-page="contact" href="html/contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <!-- Account navigation / Navigation du compte -->
-                <nav class="account-navigation" aria-label="Navigation du compte">
-                    <ul class="navigation-list">
-                        <li class="navigation-item">
-                            <a class="navigation-link navigation-bold" data-navigation-page="account" href="html/login.html">Compte</a>
-                            <button class="dropdown-button" type="button" aria-label="Afficher le compte" aria-controls="account-menu" aria-expanded="false">▾</button>
-                            <ul class="dropdown-menu dropdown-account" id="account-menu">
-                                <li><a class="dropdown-entry" href="html/login.html">Connexion</a></li>
-                                <li><a class="dropdown-entry" href="html/register.html">Inscription</a></li>
-                                <li><a class="dropdown-entry" href="html/profile.html">Profil</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-
-            </div>
-
-            <!-- Mobile button / Bouton mobile -->
-            <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="header-navigation" aria-expanded="false">Menu ☰</button>
-        </div>
-    </header>
+    <header class="site-header" id="site-header" data-include="html/components/header.html"></header>
 
     <!-- Section navigation / Navigation par ancres -->
-    <nav class="anchor-navigation" aria-label="Navigation des sections">
-        <a class="anchor-arrow" href="#site-header" aria-label="Retour en haut de la page">↑</a>
-        <a class="anchor-link is-active" href="#home" aria-current="location">Accueil</a>
-        <a class="anchor-link" href="#expertises">Expertises</a>
-        <a class="anchor-link" href="#realisations">Réalisations</a>
-        <a class="anchor-link" href="#contact">Contact</a>
-        <a class="anchor-arrow" href="#site-footer" aria-label="Aller en bas de la page">↓</a>
-    </nav>
+    <nav class="anchor-navigation" aria-label="Navigation des sections" data-include="html/components/anchors/home.html"></nav>
 
     <!-- Main content / Contenu principal -->
     <main id="main-content">
@@ -175,7 +58,6 @@
                     </p>
                     <a class="home-button" href="html/bots/#discord">Découvrir les bots</a>
                 </div>
-
             </div>
         </section>
 
@@ -274,46 +156,11 @@
                         <a class="contact-button contact-button-secondary" href="html/bots/#discord">Découvrir les bots</a>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
 
     <!-- Footer / Pied de page -->
-    <footer class="site-footer" id="site-footer">
-        <div class="footer-content">
-
-            <!-- Logo and description / Logo et description -->
-            <div class="footer-brand">
-                <img src="images/logos/logo-botova.png" alt="Botova">
-                <p>Développement et création<br>de solutions numériques.</p>
-            </div>
-
-            <!-- Footer navigation / Navigation du pied de page -->
-            <nav class="footer-navigation" aria-label="Navigation du pied de page">
-                <ul class="footer-main-list">
-                    <li><a class="footer-active" href="#home">Accueil</a></li>
-                    <li><a href="html/services.html">Services</a></li>
-                    <li><span>Web</span></li>
-                    <li><span>Outils</span></li>
-                    <li><a href="html/bots/">Bots</a></li>
-                    <li><span>Graphismes</span></li>
-                </ul>
-
-                <ul class="footer-secondary-list">
-                    <li><a href="html/about.html">À propos</a></li>
-                    <li><a href="html/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Footer contact / Contact du pied de page -->
-            <div class="footer-contact">
-                <a href="html/contact.html">Nous contacter</a>
-                <p>Une idée ou un projet ? Parlons-en.</p>
-                <small>© 2026 Botova</small>
-            </div>
-
-        </div>
-    </footer>
+    <footer class="site-footer" id="site-footer" data-include="html/components/footer.html"></footer>
 </body>
 </html>

@@ -2,18 +2,11 @@
 /*             BOTS PAGE / INITIALISATION BOTS            */
 /* ====================================================== */
 
+import { loadHtmlComponents } from "../components/html-loader.js";
 import { initializeNavigation } from "../navigation.js";
 import { initializeDropdowns } from "../dropdown.js";
 import { initializeAnchors } from "../anchors.js";
 import { initializeBotsPanels } from "./bots-panels.js";
-
-// Shared navigation / Navigation commune
-initializeNavigation();
-initializeDropdowns();
-initializeAnchors();
-
-// Discord panels / Fiches Discord
-initializeBotsPanels();
 
 /* ====================================================== */
 /*            BOTS CAROUSEL / CARROUSEL DES BOTS          */
@@ -96,6 +89,49 @@ initializeBotsPanels();
                 }
             });
         }
+
+        // Platform from URL / Plateforme depuis l'adresse
+        const urlParameters = new URLSearchParams(window.location.search);
+        const requestedPlatform = urlParameters.get("platform");
+
+        if (requestedPlatform !== null)
+        {
+            const requestedIndex = carouselSlides.findIndex(function(carouselSlide)
+            {
+                return carouselSlide.dataset.slide === requestedPlatform;
+            });
+
+            if (requestedIndex !== -1)
+            {
+                displaySlide(requestedIndex);
+            }
+        }
     }
 
-initializeBotsCarousel();
+/* ====================================================== */
+/*             PAGE STARTUP / DEMARRAGE DE LA PAGE        */
+/* ====================================================== */
+
+    async function initializePage()
+    {
+        try
+        {
+            // Load HTML components / Charger les composants HTML
+            await loadHtmlComponents();
+
+            // Initialize navigation / Initialiser la navigation
+            initializeNavigation();
+            initializeDropdowns();
+            initializeAnchors();
+
+            // Initialize Bots / Initialiser les Bots
+            initializeBotsPanels();
+            initializeBotsCarousel();
+        }
+        catch (error)
+        {
+            console.error("Erreur de chargement de la page Bots :", error);
+        }
+    }
+
+initializePage();
