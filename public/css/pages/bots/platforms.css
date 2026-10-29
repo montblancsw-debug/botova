@@ -1,0 +1,233 @@
+
+/* ====================================================== */
+/*         PLATFORM PAGES / PAGES DES PLATEFORMES         */
+/* ====================================================== */
+
+    .platform-page
+    {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+    }
+
+    .platform-main
+    {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: calc(100dvh - 180px);
+        padding: 220px 40px 75px;
+    }
+
+    .platform-content
+    {
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    .platform-description
+    {
+        margin-bottom: 60px;
+    }
+
+/* ====================================================== */
+/*        PLATFORM CARDS / CARTES DES PLATEFORMES         */
+/* ====================================================== */
+
+    .platform-grid
+    {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 30px;
+    }
+
+    .platform-grid .bots-card
+    {
+        min-height: 170px;
+    }
+
+    .platform-grid .bots-card h2
+    {
+        font-size: 24px;
+    }
+
+    .platform-grid .bots-card p
+    {
+        font-size: 18px;
+    }
+
+    /* Center the last odd card / Centrer la derniere carte impaire */
+    .platform-grid .bots-card:last-child:nth-child(odd)
+    {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 15px);
+    }
+
+/* ====================================================== */
+/*          PLATFORM MENU / MENU DES PLATEFORMES          */
+/* ====================================================== */
+
+    /* Remove default Discord selection / Retirer la selection par defaut */
+    .platform-page #bots-menu li:first-child .dropdown-entry:not(.is-current):not(:hover):not(:focus-visible)
+    {
+        background-color: var(--color-white);
+        font-weight: 400;
+    }
+
+    /* Current platform / Plateforme actuelle */
+    .platform-page #bots-menu .dropdown-entry.is-current
+    {
+        background-color: var(--color-selection);
+        color: var(--color-title);
+        font-weight: 700;
+    }
+
+/* ====================================================== */
+/*             LARGE SCREENS / GRANDS ECRANS              */
+/*             Width / Largeur : 2000 px et plus          */
+/* ====================================================== */
+
+    @media (min-width: 2000px)
+    {
+        .platform-content
+        {
+            max-width: 1500px;
+        }
+
+        .platform-main
+        {
+            padding-top: 250px;
+        }
+
+        .platform-grid .bots-card
+        {
+            min-height: 190px;
+        }
+
+        .platform-grid .bots-card h2
+        {
+            font-size: 30px;
+        }
+
+        .platform-grid .bots-card p
+        {
+            font-size: 22px;
+        }
+    }
+
+/* ====================================================== */
+/*           COMPACT SCREENS / ECRANS COMPACTS            */
+/*           Width / Largeur : 1200 px maximum            */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .platform-main
+        {
+            min-height: calc(100dvh - 80px);
+            padding: 55px 26px 50px;
+        }
+
+        .platform-content
+        {
+            max-width: 900px;
+        }
+
+        .platform-content .bots-title
+        {
+            font-size: 30px;
+        }
+
+        .platform-description
+        {
+            margin-bottom: 28px;
+            font-size: 16px;
+        }
+
+        .platform-grid
+        {
+            gap: 12px;
+        }
+
+        .platform-grid .bots-card
+        {
+            min-height: 135px;
+            padding: 16px;
+        }
+
+        .platform-grid .bots-card h2
+        {
+            font-size: 20px;
+        }
+
+        .platform-grid .bots-card p
+        {
+            font-size: 14px;
+        }
+
+        .platform-grid .bots-card:last-child:nth-child(odd)
+        {
+            width: calc(50% - 6px);
+        }
+    }
+
+/* ====================================================== */
+/*               SMARTPHONES / SMARTPHONES                */
+/*               Width / Largeur : 600 px maximum         */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        .platform-main
+        {
+            min-height: 0;
+            padding: 35px 16px 40px;
+        }
+
+        .platform-content .bots-title
+        {
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        .platform-description
+        {
+            margin-bottom: 22px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .platform-grid
+        {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 12px;
+        }
+
+        .platform-grid .bots-card
+        {
+            min-height: 105px;
+            padding: 14px;
+        }
+
+        .platform-grid .bots-card h2
+        {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .platform-grid .bots-card p
+        {
+            margin-bottom: 0;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        /* Restore full card width / Retablir la largeur des cartes */
+        .platform-grid .bots-card:last-child:nth-child(odd)
+        {
+            grid-column: auto;
+            width: 100%;
+        }
+    }

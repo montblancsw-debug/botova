@@ -15,7 +15,6 @@ export function initializeBotsCarousel()
     const indicators = Array.from(document.querySelectorAll("[data-carousel-dot]"));
     const previousButton = document.querySelector("[data-carousel-prev]");
     const nextButton = document.querySelector("[data-carousel-next]");
-    const platformLinks = document.querySelectorAll("[data-slide-select]");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     if (slides.length === 0)
@@ -348,7 +347,7 @@ export function initializeBotsCarousel()
         event.preventDefault();
     });
 
-    // Prevent link activation after swipe / Eviter un clic apres le glissement
+    // Open platform pages / Ouvrir les pages des plateformes
     carousel.addEventListener("click", function(event)
     {
         if (preventNextClick)
@@ -356,7 +355,27 @@ export function initializeBotsCarousel()
             event.preventDefault();
             event.stopImmediatePropagation();
             preventNextClick = false;
+            return;
         }
+
+        const discoverLink = event.target.closest(".bots-slide-link");
+
+        if (discoverLink === null)
+        {
+            return;
+        }
+
+        const destination = discoverLink.getAttribute("href");
+
+        // Keep Discord anchor / Conserver l'ancre Discord
+        if (destination.startsWith("#"))
+        {
+            return;
+        }
+
+        // Open selected page / Ouvrir la page selectionnee
+        event.preventDefault();
+        window.location.assign(discoverLink.href);
     }, true);
 
     // Previous platform / Plateforme precedente
@@ -383,24 +402,6 @@ export function initializeBotsCarousel()
         indicator.addEventListener("click", function()
         {
             changeSlide(Number(indicator.dataset.carouselDot));
-        });
-    }
-
-    // Platform dropdown / Sous-menu des plateformes
-    for (const platformLink of platformLinks)
-    {
-        platformLink.addEventListener("click", function()
-        {
-            const selectedPlatform = platformLink.dataset.slideSelect;
-            const nextIndex = slides.findIndex(function(slide)
-            {
-                return slide.dataset.slide === selectedPlatform;
-            });
-
-            if (nextIndex !== -1)
-            {
-                changeSlide(nextIndex);
-            }
         });
     }
 

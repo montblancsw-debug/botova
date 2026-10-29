@@ -1,5 +1,5 @@
 /* ====================================================== */
-/*            HTML LOADER / CHARGEMENT DES HTML           */
+/*           HTML LOADER / CHARGEMENT DES HTML            */
 /* ====================================================== */
 
 const siteRootUrl = new URL("../../", import.meta.url);
@@ -49,6 +49,10 @@ function resolvePaths()
     }
 }
 
+/* ====================================================== */
+/*             PAGE LINKS / LIENS DES PAGES               */
+/* ====================================================== */
+
 // Adapt links to current page / Adapter les liens a la page
 function adaptPageLinks()
 {
@@ -57,7 +61,6 @@ function adaptPageLinks()
     const botsFooterLink = document.querySelector("[data-footer-bots]");
     const botsNavigationLink = document.querySelector('[data-navigation-page="bots"]');
     const discordMenuLink = document.querySelector("[data-bots-section]");
-    const platformMenuLinks = document.querySelectorAll("[data-slide-select]");
 
     if (currentPage === "home" && homeFooterLink !== null)
     {
@@ -82,14 +85,12 @@ function adaptPageLinks()
         {
             discordMenuLink.setAttribute("href", "#discord");
         }
-
-        // carousel links / Liens du carrousel
-        for (const platformMenuLink of platformMenuLinks)
-        {
-            platformMenuLink.setAttribute("href", "#carrousel");
-        }
     }
 }
+
+/* ====================================================== */
+/*         COMPONENT LOADING / CHARGEMENT COMPOSANTS      */
+/* ====================================================== */
 
 // Initialize components / Initialiser les composants
 export async function loadHtmlComponents()

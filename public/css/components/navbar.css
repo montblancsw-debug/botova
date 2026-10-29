@@ -1,5 +1,5 @@
 /* ====================================================== */
-/*          MAIN NAVIGATION / NAVIGATION PRINCIPALE       */
+/*        MAIN NAVIGATION / NAVIGATION PRINCIPALE         */
 /* ====================================================== */
 
     .navigation-list
@@ -114,6 +114,12 @@
         color: var(--color-disabled);
     }
 
+    /* Active arrow / Fleche du menu actif */
+    .navigation-link.is-active + .dropdown-button
+    {
+        color: var(--color-primary);
+    }
+
     .dropdown-button:hover
     {
         color: var(--color-primary);
@@ -140,7 +146,7 @@
     }
 
 /* ====================================================== */
-/*           WIDE NAVIGATION / NAVIGATION LARGE           */
+/*         WIDE NAVIGATION / NAVIGATION LARGE             */
 /* ====================================================== */
 
     @media (min-width: 1800px)
