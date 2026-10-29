@@ -78,15 +78,16 @@
                 accountText.textContent = "Compte";
             }
 
+            // Use visible label / Utiliser le libelle visible
+            accountLink.removeAttribute("aria-label");
+
             if (connected && profileLink !== null)
             {
                 accountLink.href = profileLink.href;
-                accountLink.setAttribute("aria-label", "Ouvrir mon profil");
             }
             else
             {
                 accountLink.href = new URL("../html/account/", import.meta.url).href;
-                accountLink.setAttribute("aria-label", "Ouvrir la connexion");
             }
         }
 
@@ -107,6 +108,48 @@
                 menuLink.classList.add("is-current");
                 menuLink.setAttribute("aria-current", "page");
             }
+        }
+
+        /* ====================================================== */
+        /*         ACCOUNT HOVER / SURVOL DU MENU COMPTE          */
+        /* ====================================================== */
+
+        const accountMenu = document.querySelector(".dropdown-account");
+
+        if (accountMenu !== null && document.body.classList.contains("account-page"))
+        {
+            const menuEntries = accountMenu.querySelectorAll(".dropdown-entry");
+            const currentEntry = accountMenu.querySelector(".dropdown-entry.is-current");
+
+            // Change visual selection / Modifier la selection visuelle
+            function selectAccountEntry(selectedEntry)
+            {
+                for (const menuEntry of menuEntries)
+                {
+                    menuEntry.classList.toggle("is-current", menuEntry === selectedEntry);
+                }
+            }
+
+            // Follow mouse position / Suivre la position de la souris
+            for (const menuEntry of menuEntries)
+            {
+                menuEntry.addEventListener("pointerenter", function(event)
+                {
+                    if (event.pointerType === "mouse")
+                    {
+                        selectAccountEntry(menuEntry);
+                    }
+                });
+            }
+
+            // Restore current page / Retablir la page courante
+            accountMenu.addEventListener("pointerleave", function(event)
+            {
+                if (event.pointerType === "mouse")
+                {
+                    selectAccountEntry(currentEntry);
+                }
+            });
         }
     }
 
