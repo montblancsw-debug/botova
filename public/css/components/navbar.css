@@ -57,7 +57,8 @@
         color: var(--color-primary);
     }
 
-    .navigation-muted, .navigation-label
+    .navigation-muted,
+    .navigation-label
     {
         color: var(--color-disabled);
     }
@@ -91,54 +92,59 @@
         touch-action: manipulation;
     }
 
-    .dropdown-button
+    /* Dropdown trigger / Declencheur du sous-menu */
+    .navigation-dropdown
+    {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .navigation-arrow
     {
         padding: 5px;
-        background: none;
-        border: none;
         color: var(--color-white);
         font-size: 14px;
-        cursor: pointer;
-        touch-action: manipulation;
+        font-weight: 400;
+        line-height: 1;
     }
 
     /* Disabled arrows / Fleches desactivees */
-    .navigation-muted + .dropdown-button
-    {
-        color: var(--color-disabled);
-    }
-
-    .navigation-muted + .dropdown-button:hover,
-    .navigation-item.is-open > .navigation-muted + .dropdown-button
+    .navigation-muted .navigation-arrow,
+    .navigation-muted:hover .navigation-arrow
     {
         color: var(--color-disabled);
     }
 
     /* Active arrow / Fleche du menu actif */
-    .navigation-link.is-active + .dropdown-button
+    .navigation-link.is-active .navigation-arrow
     {
         color: var(--color-primary);
     }
 
-    .dropdown-button:hover
+    .navigation-dropdown:hover .navigation-arrow
     {
         color: var(--color-primary);
     }
 
-    .navigation-label:hover
+    .navigation-muted:hover .navigation-arrow
     {
         color: var(--color-disabled);
     }
 
     /* Open dropdown / Sous-menu ouvert */
-    .navigation-item.is-open > .dropdown-button
+    .navigation-item.is-open > .navigation-dropdown .navigation-arrow
     {
         color: var(--color-primary);
     }
 
+    .navigation-item.is-open > .navigation-muted .navigation-arrow
+    {
+        color: var(--color-disabled);
+    }
+
     /* Touch feedback / Retour visuel tactile */
     .navigation-link:active,
-    .dropdown-button:active,
     .navigation-label:active
     {
         color: var(--color-white);
@@ -151,9 +157,24 @@
 
     @media (min-width: 1800px)
     {
-        /* Move the first items / Decaler les premiers menus */
         .main-navigation .navigation-list
         {
             padding-left: clamp(50px, 2.5vw, 90px);
+        }
+    }
+
+/* ====================================================== */
+/*       COMPACT MENUS / MENUS COMPACTS                   */
+/*       Width / Largeur : 1200 px maximum                */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        /* Single touch target / Zone tactile unique */
+        .navigation-dropdown
+        {
+            justify-content: flex-start;
+            width: 100%;
+            cursor: pointer;
         }
     }

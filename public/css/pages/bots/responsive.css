@@ -35,7 +35,7 @@
     }
 
 /* ====================================================== */
-/*          HIDDEN CARDS / CARTES INVISIBLES             */
+/*          HIDDEN CARDS / CARTES INVISIBLES              */
 /* ====================================================== */
 
     .bots-card-placeholder
@@ -377,5 +377,20 @@
         .bots-slide-layout img
         {
             max-height: 78px;
+        }
+    }
+
+/* ====================================================== */
+/*       BOTS LAPTOP / BOTS ORDINATEURS PORTABLES         */
+/*       Width / Largeur : 1201 a 1450 px                 */
+/*       Reference : 1366 x 768 px                        */
+/* ====================================================== */
+
+    @media (min-width: 1201px) and (max-width: 1450px)
+    {
+        /* Adjust section spacing / Ajuster les sections */
+        body[data-page="bots"] .bots-section
+        {
+            padding-top: 70px;
         }
     }

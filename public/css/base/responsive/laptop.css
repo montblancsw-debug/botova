@@ -114,23 +114,24 @@
 
 /* ====================================================== */
 /*       VERTICAL ANCHORS / ANCRES VERTICALES             */
-/*       Width / Largeur : 1201 a 1599 px                */
+/*       Width / Largeur : 1201 a 1599 px                 */
 /*       Reference : 1366 x 768 px                        */
 /* ====================================================== */
 
     @media (min-width: 1201px) and (max-width: 1599px)
     {
         /* Reserve room for anchors / Reserver la place aux ancres */
-        .home-content
+        .home-content,
+        .bots-section .bots-content
         {
             max-width: min(1000px, calc(100% - 230px));
         }
 
-        /* Keep anchors above footer / Ancres au-dessus du footer */
+        /* Keep home anchors / Conserver les ancres Accueil */
         .anchor-navigation
         {
             position: fixed;
-            top: calc(50% - 65px);
+            top: calc(50% - 45px);
             right: 16px;
             z-index: 80;
             flex-direction: column;
@@ -142,6 +143,12 @@
             background-color: transparent;
             border-bottom: none;
             transform: translateY(-50%);
+        }
+
+        /* Adjust Bots anchors / Ajuster les ancres Bots */
+        body[data-page="bots"] .anchor-navigation
+        {
+            top: calc(50% + 40px);
         }
 
         /* Dashed line / Ligne pointillee */
@@ -174,7 +181,7 @@
 
 /* ====================================================== */
 /*       SMALL LAPTOPS / PETITS ORDINATEURS PORTABLES     */
-/*       Width / Largeur : 1201 a 1450 px                */
+/*       Width / Largeur : 1201 a 1450 px                 */
 /*       Reference : 1366 x 768 px                        */
 /* ====================================================== */
 

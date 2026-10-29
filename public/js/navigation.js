@@ -71,7 +71,12 @@
         // Update the account link / Actualiser le lien Compte
         if (accountLink !== null)
         {
-            accountLink.textContent = "Compte";
+            const accountText = accountLink.querySelector(".navigation-text");
+
+            if (accountText !== null)
+            {
+                accountText.textContent = "Compte";
+            }
 
             if (connected && profileLink !== null)
             {
@@ -226,6 +231,14 @@
         {
             headerLink.addEventListener("click", function()
             {
+                const isDropdownLink = headerLink.classList.contains("navigation-dropdown");
+                const isCompactScreen = window.innerWidth <= 1200;
+
+                if (isDropdownLink && isCompactScreen)
+                {
+                    return;
+                }
+
                 closeMobileMenu();
             });
         }

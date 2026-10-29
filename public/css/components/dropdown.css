@@ -50,6 +50,14 @@
         font-weight: 700;
     }
 
+    /* Hovered entry / Element survole */
+    .dropdown-menu:hover li:first-child .dropdown-entry:not(:hover),
+    .dropdown-menu:focus-within li:first-child .dropdown-entry:not(:focus-visible)
+    {
+        background-color: var(--color-white);
+        font-weight: 400;
+    }
+
     /* Selected entry / Element selectionne */
     .dropdown-entry:hover,
     .dropdown-entry:focus-visible,
@@ -98,11 +106,5 @@
         .navigation-item:focus-within > .dropdown-menu
         {
             display: block;
-        }
-
-        .dropdown-menu:hover li:first-child .dropdown-entry:not(:hover)
-        {
-            background-color: var(--color-white);
-            font-weight: 400;
         }
     }
