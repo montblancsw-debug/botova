@@ -1,6 +1,6 @@
 /* ====================================================== */
-/*               FOOTER / PIED DE PAGE                    */
-/*               All widths / Toutes largeurs             */
+/*                 FOOTER / PIED DE PAGE                  */
+/*                 All widths / Toutes largeurs           */
 /* ====================================================== */
 
     .site-footer
@@ -138,6 +138,16 @@
     .footer-navigation .footer-active
     {
         font-weight: 700;
+    }
+
+    /* Grey links / Liens grises */
+    .footer-navigation a.footer-muted,
+    .footer-navigation a.footer-muted:hover,
+    .footer-navigation a.footer-muted:focus-visible,
+    .footer-navigation a.footer-muted:active
+    {
+        color: var(--color-disabled);
+        cursor: pointer;
     }
 
     /* Pressed link / Lien maintenu appuye */

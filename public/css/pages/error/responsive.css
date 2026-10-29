@@ -1,0 +1,79 @@
+/* ====================================================== */
+/*            ERROR RESPONSIVE / ERREUR RESPONSIVE        */
+/*            Width / Largeur : 1200 px maximum           */
+/* ====================================================== */
+    @media (max-width: 1200px)
+    {
+        .error-main
+        {
+            padding: 35px 26px;
+        }
+
+        .error-card
+        {
+            max-width: 900px;
+            padding: 50px 30px;
+        }
+
+        .error-number
+        {
+            font-size: 110px;
+        }
+
+        .error-card h1
+        {
+            font-size: 36px;
+        }
+
+        .error-description
+        {
+            font-size: 20px;
+        }
+
+        .error-button
+        {
+            min-height: 50px;
+            font-size: 18px;
+        }
+    }
+
+/* ====================================================== */
+/*            ERROR MOBILE / ERREUR SMARTPHONE            */
+/*            Width / Largeur : 600 px maximum            */
+/* ====================================================== */
+    @media (max-width: 600px)
+    {
+        .error-main
+        {
+            padding: 30px 16px;
+        }
+
+        .error-card
+        {
+            padding: 40px 16px;
+        }
+
+        .error-number
+        {
+            font-size: 85px;
+        }
+
+        .error-card h1
+        {
+            font-size: 27px;
+        }
+
+        .error-description
+        {
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .error-button
+        {
+            min-width: 0;
+            width: 100%;
+            min-height: 44px;
+            font-size: 15px;
+        }
+    }

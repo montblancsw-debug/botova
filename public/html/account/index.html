@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ====================================================== -->
+<!--                  HEAD / EN-TETE HTML                   -->
+<!-- ====================================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connectez-vous à votre espace personnel Botova.">
+    <title>Connexion - Botova.dev</title>
+
+    <!-- Fonts / Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets / Feuilles de style -->
+    <link rel="stylesheet" href="../../css/base/global.css">
+    <link rel="stylesheet" href="../../css/components/header.css">
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../css/components/footer.css">
+    <link rel="stylesheet" href="../../css/pages/account/account.css">
+    <link rel="stylesheet" href="../../css/base/responsive.css">
+    <link rel="stylesheet" href="../../css/pages/account/responsive.css">
+
+    <!-- JavaScript / Scripts -->
+    <script type="module" src="../../js/account/account-page.js"></script>
+</head>
+<body class="account-page" data-page="account" data-account-page="login">
+    <!-- ====================================================== -->
+    <!--                HEADER / EN-TETE DU SITE                -->
+    <!-- ====================================================== -->
+    <header class="site-header" id="site-header" data-include="html/components/header.html"></header>
+
+    <!-- ====================================================== -->
+    <!--               LOGIN / PAGE DE CONNEXION               -->
+    <!-- ====================================================== -->
+    <main class="account-main" id="main-content">
+        <section class="account-content" aria-labelledby="login-title">
+            <h1 class="account-title" id="login-title">Connexion</h1>
+            <p class="account-description">Connectez-vous pour accéder à votre espace personnel Botova.</p>
+
+            <!-- ====================================================== -->
+            <!--            LOGIN FORM / FORMULAIRE CONNEXION           -->
+            <!-- ====================================================== -->
+            <form class="account-form" data-account-form="login" novalidate>
+                <div class="account-grid">
+                    <div class="account-field">
+                        <label for="login-email">Adresse e-mail</label>
+                        <input id="login-email" name="email" type="email" placeholder="Saisissez votre adresse e-mail" autocomplete="email" maxlength="254" required>
+                    </div>
+
+                    <div class="account-field">
+                        <label for="login-password">Mot de passe</label>
+                        <input id="login-password" name="password" type="password" placeholder="••••••••••••" autocomplete="current-password" minlength="8" required>
+                    </div>
+
+                    <div class="account-field">
+                        <label class="account-muted-label">Mot de passe oublié ?</label>
+                        <div class="account-link-box">
+                            <a class="account-muted-link" href="../404/">Demander un lien de réinitialisation</a>
+                        </div>
+                    </div>
+
+                    <div class="account-field">
+                        <label>Nouveau sur Botova ?</label>
+                        <div class="account-link-box">
+                            <a class="account-text-link" href="register/">Créer un compte pour accéder à votre profil</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====================================================== -->
+                <!--                LOGIN ACTION / CONNEXION                -->
+                <!-- ====================================================== -->
+                <h2 class="account-subtitle">Retrouver votre espace</h2>
+                <p class="account-description account-intro">Connectez-vous pour retrouver votre profil et les informations de votre compte.</p>
+
+                <div class="account-action-card">
+                    <div class="account-action-text">
+                        <h3>Votre prochaine étape</h3>
+                        <p>Connectez-vous ou retrouvez l'accès à votre compte.</p>
+                    </div>
+
+                    <div class="account-action-buttons">
+                        <button class="account-button account-button-primary" type="submit">Se connecter</button>
+                        <a class="account-button account-button-secondary" href="profile/">Voir mon profil</a>
+                    </div>
+                </div>
+
+                <p class="account-status" data-account-status role="status" aria-live="polite" tabindex="-1" hidden></p>
+            </form>
+        </section>
+    </main>
+
+    <!-- ====================================================== -->
+    <!--                 FOOTER / PIED DE PAGE                  -->
+    <!-- ====================================================== -->
+    <footer class="site-footer" id="site-footer" data-include="html/components/footer.html"></footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* ====================================================== */
+/*           ACCOUNT RESPONSIVE / COMPTE RESPONSIVE       */
+/*           Width / Largeur : 1200 px maximum            */
+/* ====================================================== */
+    @media (max-width: 1200px)
+    {
+        .account-content
+        {
+            max-width: 900px;
+            padding: 55px 26px 45px;
+        }
+
+        .account-title
+        {
+            font-size: 30px;
+            margin-bottom: 14px;
+        }
+
+        .account-description
+        {
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .account-grid
+        {
+            gap: 18px;
+        }
+
+        .account-field label
+        {
+            font-size: 15px;
+        }
+
+        .account-field input,
+        .account-link-box
+        {
+            min-height: 48px;
+            padding: 11px 13px;
+            font-size: 14px;
+        }
+
+        .account-subtitle
+        {
+            font-size: 29px;
+        }
+
+        .account-action-card
+        {
+            min-height: 150px;
+            padding: 20px;
+        }
+
+        .account-action-text h2,
+        .account-action-text h3
+        {
+            font-size: 23px;
+        }
+
+        .account-action-text p
+        {
+            font-size: 15px;
+        }
+
+        .account-action-buttons
+        {
+            width: 190px;
+            gap: 10px;
+        }
+
+        .account-button
+        {
+            min-height: 44px;
+            font-size: 15px;
+        }
+
+        .account-profile-grid
+        {
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .account-profile-card
+        {
+            min-height: 135px;
+            padding: 16px;
+        }
+
+        .account-profile-card h2
+        {
+            font-size: 20px;
+        }
+
+        .account-profile-card p,
+        .account-profile-card .account-muted-link
+        {
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*           ACCOUNT MOBILE / COMPTE SMARTPHONE           */
+/*           Width / Largeur : 600 px maximum             */
+/* ====================================================== */
+    @media (max-width: 600px)
+    {
+        .account-content
+        {
+            padding: 30px 16px 35px;
+        }
+
+        .account-title
+        {
+            font-size: 26px;
+        }
+
+        .account-description
+        {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .account-grid,
+        .account-profile-grid
+        {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 14px;
+        }
+
+        .account-field
+        {
+            gap: 6px;
+        }
+
+        .account-field label
+        {
+            font-size: 14px;
+        }
+
+        .account-subtitle
+        {
+            font-size: 25px;
+        }
+
+        .account-action-card
+        {
+            flex-direction: column;
+            gap: 15px;
+            padding: 16px;
+        }
+
+        .account-action-text h2,
+        .account-action-text h3
+        {
+            font-size: 20px;
+        }
+
+        .account-action-text p
+        {
+            font-size: 13px;
+        }
+
+        .account-action-buttons
+        {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .account-button
+        {
+            font-size: 14px;
+        }
+
+        .account-register-card
+        {
+            margin-top: 25px;
+        }
+
+        .account-profile-grid
+        {
+            margin-top: 20px;
+        }
+
+        .account-profile-card
+        {
+            min-height: 105px;
+            padding: 14px;
+        }
+
+        .account-profile-card h2
+        {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .account-status
+        {
+            font-size: 13px;
+        }
+    }
+
+/* ====================================================== */
+/*             SMALL MOBILE / PETIT SMARTPHONE            */
+/*             Width / Largeur : 360 px maximum           */
+/* ====================================================== */
+    @media (max-width: 360px)
+    {
+        .account-content
+        {
+            padding: 22px 12px 30px;
+        }
+
+        .account-title
+        {
+            font-size: 23px;
+        }
+
+        .account-subtitle
+        {
+            font-size: 22px;
+        }
+    }

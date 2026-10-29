@@ -101,14 +101,14 @@
         touch-action: manipulation;
     }
 
-    /* Disabled links / Liens desactives */
+    /* Grey links / Liens grises */
     .card-link-disabled
     {
         background-color: var(--color-selection);
         border-color: var(--color-border);
         box-shadow: 0 2px 5px rgba(10, 17, 31, 0.06);
         color: var(--color-disabled);
-        cursor: default;
+        cursor: pointer;
     }
 
     /* Pressed links / Liens maintenus appuyes */
@@ -140,6 +140,19 @@
             box-shadow: 0 7px 14px rgba(10, 17, 31, 0.18);
             color: var(--color-primary);
         }
+    }
+
+    /* Preserve grey buttons / Conserver les boutons gris */
+    a.card-link.card-link-disabled,
+    a.card-link.card-link-disabled:hover,
+    a.card-link.card-link-disabled:focus-visible,
+    a.card-link.card-link-disabled:active
+    {
+        background-color: var(--color-selection);
+        border-color: var(--color-border);
+        box-shadow: 0 2px 5px rgba(10, 17, 31, 0.06);
+        color: var(--color-disabled);
+        transform: none;
     }
 
     .expertise-card:focus-within,

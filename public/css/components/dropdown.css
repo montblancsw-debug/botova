@@ -66,6 +66,15 @@
         background-color: #DCE8ED;
     }
 
+    /* Grey links / Liens grises */
+    .dropdown-entry.dropdown-muted,
+    .dropdown-entry.dropdown-muted:hover,
+    .dropdown-entry.dropdown-muted:focus-visible,
+    .dropdown-entry.dropdown-muted:active
+    {
+        color: var(--color-disabled);
+    }
+
     /* Open dropdown / Afficher le sous-menu */
     .navigation-item.is-open > .dropdown-menu
     {
@@ -80,7 +89,7 @@
     }
 
 /* ====================================================== */
-/*             MOUSE NAVIGATION / NAVIGATION SOURIS       */
+/*           MOUSE NAVIGATION / NAVIGATION SOURIS         */
 /* ====================================================== */
 
     @media (hover: hover) and (min-width: 1201px)

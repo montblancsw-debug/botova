@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ====================================================== -->
+<!--                  HEAD / EN-TETE HTML                   -->
+<!-- ====================================================== -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consultez votre profil et les informations de votre espace Botova.">
+    <title>Mon profil - Botova.dev</title>
+
+    <!-- Fonts / Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets / Feuilles de style -->
+    <link rel="stylesheet" href="../../../css/base/global.css">
+    <link rel="stylesheet" href="../../../css/components/header.css">
+    <link rel="stylesheet" href="../../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../../css/components/dropdown.css">
+    <link rel="stylesheet" href="../../../css/components/footer.css">
+    <link rel="stylesheet" href="../../../css/pages/account/account.css">
+    <link rel="stylesheet" href="../../../css/base/responsive.css">
+    <link rel="stylesheet" href="../../../css/pages/account/responsive.css">
+
+    <!-- JavaScript / Scripts -->
+    <script type="module" src="../../../js/account/account-page.js"></script>
+</head>
+<body class="account-page" data-page="account" data-account-page="profile">
+    <!-- ====================================================== -->
+    <!--                HEADER / EN-TETE DU SITE                -->
+    <!-- ====================================================== -->
+    <header class="site-header" id="site-header" data-include="html/components/header.html"></header>
+
+    <!-- ====================================================== -->
+    <!--              PROFILE / PAGE DU PROFIL                  -->
+    <!-- ====================================================== -->
+    <main class="account-main" id="main-content">
+        <section class="account-content" aria-labelledby="profile-title">
+            <h1 class="account-title" id="profile-title">Votre Profil</h1>
+            <p class="account-description">Retrouvez vos informations personnelles et les préférences de votre compte Botova.</p>
+
+            <!-- ====================================================== -->
+            <!--              PROFILE CARDS / CARTES DU PROFIL          -->
+            <!-- ====================================================== -->
+            <div class="account-profile-grid">
+                <article class="account-profile-card">
+                    <h2>Informations du profil</h2>
+                    <p>Identifiant : <span data-profile-identifier>—</span></p>
+                    <p>Nom : <span>—</span></p>
+                    <p>Prénom : <span>—</span></p>
+                </article>
+
+                <article class="account-profile-card">
+                    <h2>Adresse e-mail</h2>
+                    <p>Adresse e-mail : <span data-profile-email>—</span></p>
+                </article>
+
+                <article class="account-profile-card">
+                    <h2>Sécurité du compte</h2>
+                    <a class="account-muted-link" href="../../404/">Modifier votre mot de passe</a>
+                </article>
+
+                <article class="account-profile-card">
+                    <h2>Préférences</h2>
+                    <a class="account-muted-link" href="../../404/">Gérer les préférences de votre compte</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====================================================== -->
+    <!--                 FOOTER / PIED DE PAGE                  -->
+    <!-- ====================================================== -->
+    <footer class="site-footer" id="site-footer" data-include="html/components/footer.html"></footer>
+</body>
+</html>

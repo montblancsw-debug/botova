@@ -1,7 +1,6 @@
 <!-- ====================================================== -->
 <!--                HEADER / EN-TETE DU SITE                -->
 <!-- ====================================================== -->
-
 <div class="header-content">
 
     <!-- Logo / Logo -->
@@ -10,11 +9,9 @@
     </a>
 
     <div class="header-navigation" id="header-navigation">
-
         <!-- ====================================================== -->
         <!--        MAIN NAVIGATION / NAVIGATION PRINCIPALE         -->
         <!-- ====================================================== -->
-
         <nav class="main-navigation" aria-label="Navigation principale">
             <ul class="navigation-list">
                 <li class="navigation-item">
@@ -23,20 +20,22 @@
 
                 <!-- Services / Services -->
                 <li class="navigation-item">
-                    <a class="navigation-link navigation-muted" data-navigation-page="services" data-root-href="html/services.html">Services</a>
+                    <a class="navigation-link navigation-muted" data-navigation-page="services" data-root-href="html/404/">Services</a>
                     <button class="dropdown-button" type="button" aria-label="Afficher les services" aria-controls="services-menu" aria-expanded="false">▾</button>
                     <ul class="dropdown-menu" id="services-menu" data-include="html/components/menus/services/dropdown.html"></ul>
                 </li>
 
                 <!-- Web / Web -->
                 <li class="navigation-item">
-                    <button class="navigation-label" type="button" aria-controls="web-menu" aria-expanded="false">Web <span aria-hidden="true">▾</span></button>
+                    <a class="navigation-link navigation-muted" data-root-href="html/404/">Web</a>
+                    <button class="dropdown-button" type="button" aria-label="Afficher le menu Web" aria-controls="web-menu" aria-expanded="false">▾</button>
                     <ul class="dropdown-menu" id="web-menu" data-include="html/components/menus/web/dropdown.html"></ul>
                 </li>
 
                 <!-- Tools / Outils -->
                 <li class="navigation-item">
-                    <button class="navigation-label" type="button" aria-controls="tools-menu" aria-expanded="false">Outils <span aria-hidden="true">▾</span></button>
+                    <a class="navigation-link navigation-muted" data-root-href="html/404/">Outils</a>
+                    <button class="dropdown-button" type="button" aria-label="Afficher les outils" aria-controls="tools-menu" aria-expanded="false">▾</button>
                     <ul class="dropdown-menu" id="tools-menu" data-include="html/components/menus/tools/dropdown.html"></ul>
                 </li>
 
@@ -49,7 +48,8 @@
 
                 <!-- Graphics / Graphismes -->
                 <li class="navigation-item">
-                    <button class="navigation-label" type="button" aria-controls="graphics-menu" aria-expanded="false">Graphismes <span aria-hidden="true">▾</span></button>
+                    <a class="navigation-link navigation-muted" data-root-href="html/404/">Graphismes</a>
+                    <button class="dropdown-button" type="button" aria-label="Afficher les graphismes" aria-controls="graphics-menu" aria-expanded="false">▾</button>
                     <ul class="dropdown-menu" id="graphics-menu" data-include="html/components/menus/graphics/dropdown.html"></ul>
                 </li>
             </ul>
@@ -58,7 +58,6 @@
         <!-- ====================================================== -->
         <!--           OTHER PAGES / AUTRES PAGES DU SITE           -->
         <!-- ====================================================== -->
-
         <nav class="secondary-navigation" aria-label="Autres pages">
             <ul class="navigation-list">
                 <li class="navigation-item">
@@ -74,11 +73,10 @@
         <!-- ====================================================== -->
         <!--         ACCOUNT NAVIGATION / NAVIGATION COMPTE         -->
         <!-- ====================================================== -->
-
         <nav class="account-navigation" aria-label="Navigation du compte">
             <ul class="navigation-list">
                 <li class="navigation-item">
-                    <a class="navigation-link navigation-bold" data-navigation-page="account" data-root-href="html/login.html">Compte</a>
+                    <a class="navigation-link navigation-bold" data-navigation-page="account" data-root-href="html/account/">Compte</a>
                     <button class="dropdown-button" type="button" aria-label="Afficher le compte" aria-controls="account-menu" aria-expanded="false">▾</button>
                     <ul class="dropdown-menu dropdown-account" id="account-menu" data-include="html/components/menus/account/dropdown.html"></ul>
                 </li>
@@ -89,6 +87,5 @@
     <!-- ====================================================== -->
     <!--               MOBILE MENU / MENU MOBILE                -->
     <!-- ====================================================== -->
-
     <button class="mobile-menu-button" id="mobile-menu-button" type="button" aria-controls="header-navigation" aria-expanded="false">Menu ☰</button>
 </div>

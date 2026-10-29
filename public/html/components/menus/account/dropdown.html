@@ -1,7 +1,8 @@
 <!-- ====================================================== -->
-<!--             ACCOUNT MENU / MENU COMPTE                 -->
+<!--               ACCOUNT MENU / MENU COMPTE               -->
 <!-- ====================================================== -->
 
-<li><a class="dropdown-entry" data-root-href="html/login.html">Connexion</a></li>
-<li><a class="dropdown-entry" data-root-href="html/register.html">Inscription</a></li>
-<li><a class="dropdown-entry" data-root-href="html/profile.html">Profil</a></li>
+<li data-account-guest><a class="dropdown-entry" data-account-link="login" data-root-href="html/account/">Connexion</a></li>
+<li data-account-guest><a class="dropdown-entry" data-account-link="register" data-root-href="html/account/register/">Inscription</a></li>
+<li data-account-profile hidden><a class="dropdown-entry" data-account-link="profile" data-root-href="html/account/profile/">Mon Profil</a></li>
+<li data-account-profile hidden><a class="dropdown-entry dropdown-muted" data-root-href="html/404/">Déconnexion</a></li>
