@@ -7,13 +7,41 @@
     {
         .bots-section
         {
-            padding: 60px 40px;
+            padding: 135px 40px 0;
+        }
+
+        .bots-section:last-child
+        {
+            padding-bottom: 60px;
         }
 
         .bots-content
         {
             max-width: 1120px;
         }
+    }
+
+/* ====================================================== */
+/*         BOTS LARGE SCREENS / GRANDS ECRANS BOTS        */
+/*         Width / Largeur : 2000 px et plus              */
+/* ====================================================== */
+
+    @media (min-width: 2000px)
+    {
+        .bots-section
+        {
+            padding-top: 155px;
+        }
+    }
+
+/* ====================================================== */
+/*          HIDDEN CARDS / CARTES INVISIBLES             */
+/* ====================================================== */
+
+    .bots-card-placeholder
+    {
+        visibility: hidden;
+        pointer-events: none;
     }
 
 /* ====================================================== */

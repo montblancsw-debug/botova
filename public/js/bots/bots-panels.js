@@ -8,6 +8,22 @@
         const panelButtons = document.querySelectorAll("[data-panel-target]");
         const cardGrids = document.querySelectorAll("[data-paginate]");
         const currentPages = new Map();
+        const pluginGrid = document.querySelector("#plugins [data-paginate]");
+
+        // Empty plugin cards / Cartes vides des plugins
+        if (pluginGrid !== null)
+        {
+            for (let index = 0; index < 2; index++)
+            {
+                const emptyCard = document.createElement("article");
+
+                emptyCard.classList.add("bots-card", "bots-card-placeholder");
+                emptyCard.setAttribute("aria-hidden", "true");
+                emptyCard.hidden = true;
+
+                pluginGrid.appendChild(emptyCard);
+            }
+        }
 
         // Card count / Nombre de cartes par ecran
         function getCardsPerPage()
@@ -16,13 +32,19 @@
             {
                 return 2;
             }
+
             return 4;
         }
 
         // Display cards / Afficher les cartes
         function updateCardGrid(cardGrid)
         {
-            const cards = Array.from(cardGrid.children);
+            const cards = Array.from(cardGrid.children).filter(function(card)
+            {
+                return !card.classList.contains("bots-card-placeholder");
+            });
+
+            const emptyCards = cardGrid.querySelectorAll(".bots-card-placeholder");
             const controls = cardGrid.nextElementSibling;
             const cardsPerPage = getCardsPerPage();
             const totalPages = Math.ceil(cards.length / cardsPerPage);
@@ -35,11 +57,22 @@
 
             currentPages.set(cardGrid, currentPage);
 
+            // Show current page / Afficher la page actuelle
             for (let cardIndex = 0; cardIndex < cards.length; cardIndex++)
             {
                 const firstCardIndex = currentPage * cardsPerPage;
                 const lastCardIndex = firstCardIndex + cardsPerPage;
+
                 cards[cardIndex].hidden = cardIndex < firstCardIndex || cardIndex >= lastCardIndex;
+            }
+
+            // Fill the last row / Completer la derniere rangee
+            const remainingCards = cards.length - currentPage * cardsPerPage;
+            const missingCards = Math.max(0, cardsPerPage - remainingCards);
+
+            for (let index = 0; index < emptyCards.length; index++)
+            {
+                emptyCards[index].hidden = currentPage !== totalPages - 1 || index >= missingCards;
             }
 
             if (controls === null || !controls.hasAttribute("data-pagination-controls"))
@@ -72,6 +105,7 @@
                 previousButton.addEventListener("click", function()
                 {
                     const currentPage = currentPages.get(cardGrid) || 0;
+
                     currentPages.set(cardGrid, Math.max(0, currentPage - 1));
                     updateCardGrid(cardGrid);
                 });
@@ -79,10 +113,12 @@
                 nextButton.addEventListener("click", function()
                 {
                     const currentPage = currentPages.get(cardGrid) || 0;
+
                     currentPages.set(cardGrid, currentPage + 1);
                     updateCardGrid(cardGrid);
                 });
             }
+
             updateCardGrid(cardGrid);
         }
 

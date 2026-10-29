@@ -1,0 +1,256 @@
+
+/* ====================================================== */
+/*          ABOUT RESPONSIVE / RESPONSIVE A PROPOS        */
+/*          Width / Largeur : 1200 px maximum             */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        body.section-mode .about-section:not([hidden])
+        {
+            min-height: 0;
+            height: 100%;
+            padding: 14px 24px;
+            overflow-y: auto;
+        }
+
+        .about-content
+        {
+            max-width: 900px;
+        }
+
+        .about-title
+        {
+            margin-bottom: 12px;
+            font-size: 30px;
+        }
+
+        .about-description
+        {
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.35;
+        }
+
+        .about-grid
+        {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .about-card
+        {
+            min-height: 130px;
+            padding: 16px;
+        }
+
+        .about-card h2
+        {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .about-card p
+        {
+            font-size: 14px;
+        }
+
+        /* Anchor spacing / Espacement des ancres */
+        .about-page .anchor-navigation
+        {
+            justify-content: space-evenly;
+        }
+
+        .about-page .anchor-link
+        {
+            width: auto;
+        }
+
+        /* Projects card / Carte des projets */
+        .about-projects .about-description
+        {
+            margin-bottom: 18px;
+        }
+
+        .about-project-card
+        {
+            min-height: 150px;
+            gap: 18px;
+            padding: 20px;
+        }
+
+        .about-project-text h3
+        {
+            font-size: 23px;
+        }
+
+        .about-project-text p
+        {
+            font-size: 15px;
+        }
+
+        .about-project-actions
+        {
+            min-width: 170px;
+            margin-top: 12px;
+        }
+
+        .about-contact-button
+        {
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+
+        /* Footer on last section / Footer sur la derniere section */
+        body.section-mode[data-page="about"][data-active-section="projects"]
+        {
+            grid-template-rows: auto auto minmax(0, 1fr) auto;
+        }
+
+        body.section-mode[data-page="about"][data-active-section="projects"] .site-footer
+        {
+            display: block;
+        }
+    }
+
+/* ====================================================== */
+/*            ABOUT MOBILE / A PROPOS SMARTPHONES         */
+/*            Width / Largeur : 600 px maximum            */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        body.section-mode .about-section:not([hidden])
+        {
+            padding: 12px 15px;
+        }
+
+        .about-title
+        {
+            margin-bottom: 10px;
+            font-size: 26px;
+        }
+
+        .about-description
+        {
+            margin-bottom: 16px;
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .about-grid
+        {
+            gap: 9px;
+        }
+
+        .about-card
+        {
+            min-height: 0;
+            padding: 11px;
+        }
+
+        .about-card h2
+        {
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .about-card p
+        {
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .about-page .anchor-link
+        {
+            padding: 5px 3px;
+            font-size: 12px;
+        }
+
+        /* Projects card / Carte des projets */
+        .about-projects .about-description
+        {
+            margin-bottom: 14px;
+        }
+
+        .about-projects .about-description br
+        {
+            display: none;
+        }
+
+        .about-project-card
+        {
+            flex-direction: column;
+            min-height: 0;
+            gap: 15px;
+            padding: 16px;
+        }
+
+        .about-project-text h3
+        {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .about-project-text p
+        {
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        .about-project-text p br
+        {
+            display: none;
+        }
+
+        .about-project-actions
+        {
+            width: 100%;
+            min-width: 0;
+            margin-top: 0;
+        }
+
+        .about-contact-button
+        {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+
+/* ====================================================== */
+/*              SMALL SCREENS / PETITS ECRANS             */
+/*              Width / Largeur : 360 px maximum          */
+/* ====================================================== */
+
+    @media (max-width: 360px)
+    {
+        .about-title
+        {
+            font-size: 23px;
+        }
+
+        .about-description
+        {
+            font-size: 12px;
+        }
+
+        .about-card
+        {
+            padding: 9px;
+        }
+
+        .about-card h2
+        {
+            font-size: 15px;
+        }
+
+        .about-card p
+        {
+            font-size: 11px;
+        }
+
+        .about-page .anchor-link
+        {
+            font-size: 10px;
+        }
+    }
