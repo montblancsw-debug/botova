@@ -1,6 +1,8 @@
 /* ====================================================== */
-/*            ACCOUNT FORMS / FORMULAIRES COMPTE          */
+/*           ACCOUNT FORMS / FORMULAIRES COMPTE           */
 /* ====================================================== */
+
+import { getDemoAccounts, getDemoAccount } from "../navigation.js";
 
 export function initializeAccountForms()
 {
@@ -14,7 +16,11 @@ export function initializeAccountForms()
     const emailField = accountForm.querySelector('input[name="email"]');
     const passwordField = accountForm.querySelector('input[name="password"]');
     const formStatus = accountForm.querySelector("[data-account-status]");
+    const requiredFields = accountForm.querySelectorAll("[required]");
     const emailPattern = /^[^\s@]+@[^.\s@]+(?:\.[^.\s@]+)*\.[a-zA-Z]{2,}$/;
+    const isRegistration = accountForm.dataset.accountForm === "register";
+
+    let isSubmitting = false;
 
     if (emailField === null || passwordField === null || formStatus === null)
     {
@@ -22,7 +28,7 @@ export function initializeAccountForms()
     }
 
     /* ====================================================== */
-    /*              FORM MESSAGES / MESSAGES FORMULAIRE       */
+    /*          FORM MESSAGES / MESSAGES FORMULAIRE           */
     /* ====================================================== */
 
     function clearStatus()
@@ -41,97 +47,174 @@ export function initializeAccountForms()
     }
 
     /* ====================================================== */
-    /*             FIELD CHECKS / CONTROLE DES CHAMPS         */
+    /*           FIELD CHECKS / CONTROLE DES CHAMPS           */
     /* ====================================================== */
 
-    function validateEmail()
+    function validateField(field)
     {
-        emailField.value = emailField.value.trim();
-        emailField.setCustomValidity("");
+        field.setCustomValidity("");
 
-        if (emailField.value === "")
+        if (field.type !== "password")
         {
-            emailField.setCustomValidity("Veuillez saisir votre adresse e-mail.");
-        }
-        else if (!emailPattern.test(emailField.value))
-        {
-            emailField.setCustomValidity("Saisissez une adresse e-mail valide, avec un domaine comme .fr ou .com.");
+            field.value = field.value.trim();
         }
 
-        return emailField.checkValidity();
-    }
-
-    function validatePassword()
-    {
-        passwordField.setCustomValidity("");
-
-        if (passwordField.value === "")
+        if (field.value === "")
         {
-            passwordField.setCustomValidity("Veuillez saisir votre mot de passe.");
+            field.setCustomValidity("Veuillez remplir ce champ.");
         }
-        else if (passwordField.value.length < 8)
+        else if (field.type === "email" && !emailPattern.test(field.value))
         {
-            passwordField.setCustomValidity("Le mot de passe doit contenir au moins 8 caractères.");
+            field.setCustomValidity("Saisissez une adresse e-mail valide, avec un domaine comme .fr ou .com.");
+        }
+        else if (field.type === "password" && field.value.length < 8)
+        {
+            field.setCustomValidity("Le mot de passe doit contenir au moins 8 caractères.");
         }
 
-        return passwordField.checkValidity();
+        return field.checkValidity();
     }
 
     // Clear errors / Effacer les erreurs
-    emailField.addEventListener("input", function()
+    for (const field of requiredFields)
     {
-        emailField.setCustomValidity("");
-        clearStatus();
-    });
-
-    passwordField.addEventListener("input", function()
-    {
-        passwordField.setCustomValidity("");
-        clearStatus();
-    });
+        field.addEventListener("input", function()
+        {
+            field.setCustomValidity("");
+            clearStatus();
+        });
+    }
 
     /* ====================================================== */
-    /*           FORM SUBMISSION / VALIDATION FORMULAIRE      */
+    /*            PASSWORD CHECK / CONTROLE DU MOT DE PASSE   */
     /* ====================================================== */
 
-    accountForm.addEventListener("submit", function(event)
+    function generateSalt()
+    {
+        const randomValues = crypto.getRandomValues(new Uint8Array(16));
+
+        return Array.from(randomValues, function(value)
+        {
+            return value.toString(16).padStart(2, "0");
+        }).join("");
+    }
+
+    async function hashPassword(password, salt)
+    {
+        const passwordBytes = new TextEncoder().encode(salt + ":" + password);
+        const passwordHash = await crypto.subtle.digest("SHA-256", passwordBytes);
+
+        return Array.from(new Uint8Array(passwordHash), function(value)
+        {
+            return value.toString(16).padStart(2, "0");
+        }).join("");
+    }
+
+    /* ====================================================== */
+    /*        FORM SUBMISSION / VALIDATION FORMULAIRE         */
+    /* ====================================================== */
+
+    accountForm.addEventListener("submit", async function(event)
     {
         event.preventDefault();
 
-        const emailIsValid = validateEmail();
-        const passwordIsValid = validatePassword();
-
-        if (!emailIsValid || !passwordIsValid)
+        if (isSubmitting)
         {
-            const invalidField = !emailIsValid ? emailField : passwordField;
-
-            showStatus(invalidField.validationMessage, "is-error");
-            invalidField.focus();
-            invalidField.reportValidity();
             return;
         }
 
-        // Save demo email / Conserver l'e-mail de demonstration
+        let firstInvalidField = null;
+
+        for (const field of requiredFields)
+        {
+            if (!validateField(field) && firstInvalidField === null)
+            {
+                firstInvalidField = field;
+            }
+        }
+
+        if (firstInvalidField !== null)
+        {
+            showStatus(firstInvalidField.validationMessage, "is-error");
+            firstInvalidField.focus();
+            firstInvalidField.reportValidity();
+            return;
+        }
+
+        const email = emailField.value.toLowerCase();
+        const existingAccount = getDemoAccount(email);
+
+        // Check account existence / Verifier si le compte existe
+        if (!isRegistration && existingAccount === null)
+        {
+            showStatus("Connexion impossible, compte inexistant. Veuillez vous inscrire.", "is-error");
+            emailField.focus();
+            return;
+        }
+
+        if (isRegistration && existingAccount !== null)
+        {
+            showStatus("Cette adresse e-mail possède déjà un compte. Veuillez vous connecter.", "is-error");
+            emailField.focus();
+            return;
+        }
+
+        isSubmitting = true;
+
         try
         {
-            sessionStorage.setItem("botova-demo-email", emailField.value);
+            if (isRegistration)
+            {
+                // Create account / Creer le compte fictif
+                const firstNameField = accountForm.querySelector('input[name="firstName"]');
+                const lastNameField = accountForm.querySelector('input[name="lastName"]');
+                const accounts = getDemoAccounts();
+                const salt = generateSalt();
+                const passwordHash = await hashPassword(passwordField.value, salt);
+
+                accounts.push(
+                {
+                    email: email,
+                    firstName: firstNameField.value,
+                    lastName: lastNameField.value,
+                    salt: salt,
+                    passwordHash: passwordHash
+                });
+
+                localStorage.setItem("botova-demo-accounts", JSON.stringify(accounts));
+            }
+            else
+            {
+                // Check password / Verifier le mot de passe
+                const passwordHash = await hashPassword(passwordField.value, existingAccount.salt);
+
+                if (passwordHash !== existingAccount.passwordHash)
+                {
+                    showStatus("Connexion impossible, mot de passe incorrect.", "is-error");
+                    passwordField.focus();
+                    return;
+                }
+            }
+
+            // Open the session / Ouvrir la session fictive
+            sessionStorage.setItem("botova-demo-email", email);
+            sessionStorage.setItem("botova-demo-connected", "true");
+            sessionStorage.setItem("botova-demo-notice", isRegistration ? "register" : "login");
+
+            // Clear password / Effacer le mot de passe
+            passwordField.value = "";
+
+            // Open profile / Ouvrir le profil
+            const profilePath = isRegistration ? "../profile/" : "profile/";
+            window.location.assign(new URL(profilePath, window.location.href).href);
         }
         catch (error)
         {
-            console.warn("La session du navigateur n'est pas disponible.");
+            showStatus("Impossible d'enregistrer le compte ou d'ouvrir la session sur ce navigateur.", "is-error");
         }
-
-        if (accountForm.dataset.accountForm === "register")
+        finally
         {
-            showStatus("Compte créé avec succès.", "is-success");
+            isSubmitting = false;
         }
-        else
-        {
-            showStatus("Connexion réussie.", "is-success");
-        }
-
-        // Clear password / Effacer le mot de passe
-        passwordField.value = "";
-        formStatus.focus();
     });
 }

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -31,24 +30,38 @@
     <script type="module" src="../../../js/account/account-page.js"></script>
 </head>
 <body class="account-page" data-page="account" data-account-page="register">
+
     <!-- ====================================================== -->
     <!--                HEADER / EN-TETE DU SITE                -->
     <!-- ====================================================== -->
+
     <header class="site-header" id="site-header" data-include="html/components/header.html"></header>
 
     <!-- ====================================================== -->
-    <!--            REGISTER / PAGE D'INSCRIPTION               -->
+    <!--             REGISTER / PAGE D'INSCRIPTION              -->
     <!-- ====================================================== -->
+
     <main class="account-main" id="main-content">
         <section class="account-content" aria-labelledby="register-title">
             <h1 class="account-title" id="register-title">Rejoindre Botova</h1>
             <p class="account-description">Créez votre compte pour accéder à votre espace personnel.</p>
 
             <!-- ====================================================== -->
-            <!--           REGISTER FORM / FORMULAIRE INSCRIPTION       -->
+            <!--        REGISTER FORM / FORMULAIRE INSCRIPTION          -->
             <!-- ====================================================== -->
+
             <form class="account-form" data-account-form="register" novalidate>
                 <div class="account-grid">
+                    <div class="account-field">
+                        <label for="register-last-name">Nom</label>
+                        <input id="register-last-name" name="lastName" type="text" placeholder="Saisissez votre nom" autocomplete="family-name" maxlength="80" required>
+                    </div>
+
+                    <div class="account-field">
+                        <label for="register-first-name">Prénom</label>
+                        <input id="register-first-name" name="firstName" type="text" placeholder="Saisissez votre prénom" autocomplete="given-name" maxlength="80" required>
+                    </div>
+
                     <div class="account-field">
                         <label for="register-email">Adresse e-mail</label>
                         <input id="register-email" name="email" type="email" placeholder="Saisissez votre adresse e-mail" autocomplete="email" maxlength="254" required>
@@ -61,8 +74,9 @@
                 </div>
 
                 <!-- ====================================================== -->
-                <!--            REGISTER ACTION / CREATION DU COMPTE        -->
+                <!--         REGISTER ACTION / CREATION DU COMPTE           -->
                 <!-- ====================================================== -->
+
                 <div class="account-action-card account-register-card">
                     <div class="account-action-text">
                         <h2>Votre prochaine étape</h2>
@@ -83,6 +97,7 @@
     <!-- ====================================================== -->
     <!--                 FOOTER / PIED DE PAGE                  -->
     <!-- ====================================================== -->
+
     <footer class="site-footer" id="site-footer" data-include="html/components/footer.html"></footer>
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -31,28 +30,32 @@
     <script type="module" src="../../../js/account/account-page.js"></script>
 </head>
 <body class="account-page" data-page="account" data-account-page="profile">
+
     <!-- ====================================================== -->
     <!--                HEADER / EN-TETE DU SITE                -->
     <!-- ====================================================== -->
+
     <header class="site-header" id="site-header" data-include="html/components/header.html"></header>
 
     <!-- ====================================================== -->
-    <!--              PROFILE / PAGE DU PROFIL                  -->
+    <!--                PROFILE / PAGE DU PROFIL                -->
     <!-- ====================================================== -->
+
     <main class="account-main" id="main-content">
         <section class="account-content" aria-labelledby="profile-title">
             <h1 class="account-title" id="profile-title">Votre Profil</h1>
             <p class="account-description">Retrouvez vos informations personnelles et les préférences de votre compte Botova.</p>
 
             <!-- ====================================================== -->
-            <!--              PROFILE CARDS / CARTES DU PROFIL          -->
+            <!--             PROFILE CARDS / CARTES DU PROFIL           -->
             <!-- ====================================================== -->
+
             <div class="account-profile-grid">
                 <article class="account-profile-card">
                     <h2>Informations du profil</h2>
                     <p>Identifiant : <span data-profile-identifier>—</span></p>
-                    <p>Nom : <span>—</span></p>
-                    <p>Prénom : <span>—</span></p>
+                    <p>Nom : <span data-profile-last-name>—</span></p>
+                    <p>Prénom : <span data-profile-first-name>—</span></p>
                 </article>
 
                 <article class="account-profile-card">
@@ -70,12 +73,15 @@
                     <a class="account-muted-link" href="../../404/">Gérer les préférences de votre compte</a>
                 </article>
             </div>
+
+            <p class="account-status" data-account-status role="status" aria-live="polite" tabindex="-1" hidden></p>
         </section>
     </main>
 
     <!-- ====================================================== -->
     <!--                 FOOTER / PIED DE PAGE                  -->
     <!-- ====================================================== -->
+
     <footer class="site-footer" id="site-footer" data-include="html/components/footer.html"></footer>
 </body>
 </html>
