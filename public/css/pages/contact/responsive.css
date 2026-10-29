@@ -1,0 +1,188 @@
+/* ====================================================== */
+/*         CONTACT RESPONSIVE / RESPONSIVE CONTACT        */
+/*         Width / Largeur : 1200 px maximum              */
+/* ====================================================== */
+
+    @media (max-width: 1200px)
+    {
+        .contact-section
+        {
+            max-width: 900px;
+            padding: 55px 26px 45px;
+        }
+
+        .contact-title
+        {
+            margin-bottom: 14px;
+            font-size: 30px;
+        }
+
+        .contact-description
+        {
+            margin-bottom: 22px;
+            font-size: 16px;
+        }
+
+        .contact-fields
+        {
+            gap: 20px;
+        }
+
+        .contact-field label
+        {
+            font-size: 15px;
+        }
+
+        .contact-field input,
+        .contact-field textarea
+        {
+            padding: 11px 13px;
+            font-size: 14px;
+        }
+
+        .contact-subtitle
+        {
+            font-size: 29px;
+        }
+
+        .contact-send-card
+        {
+            min-height: 150px;
+            padding: 20px;
+        }
+
+        .contact-send-text h3
+        {
+            font-size: 23px;
+        }
+
+        .contact-send-text p
+        {
+            font-size: 15px;
+        }
+
+        .contact-send-button
+        {
+            font-size: 15px;
+        }
+    }
+
+/* ====================================================== */
+/*             MOBILE / VERSION SMARTPHONE                */
+/*             Width / Largeur : 600 px maximum           */
+/* ====================================================== */
+
+    @media (max-width: 600px)
+    {
+        .contact-section
+        {
+            padding: 30px 16px 35px;
+        }
+
+        .contact-title
+        {
+            margin-bottom: 12px;
+            font-size: 26px;
+        }
+
+        .contact-description
+        {
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .contact-description br
+        {
+            display: none;
+        }
+
+        .contact-fields
+        {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .contact-field
+        {
+            gap: 6px;
+        }
+
+        .contact-field label
+        {
+            font-size: 14px;
+        }
+
+        .contact-field input
+        {
+            min-height: 44px;
+        }
+
+        .contact-field textarea
+        {
+            min-height: 110px;
+        }
+
+        .contact-subtitle
+        {
+            margin-bottom: 12px;
+            font-size: 25px;
+        }
+
+        .contact-send-card
+        {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+            min-height: 0;
+            padding: 16px;
+        }
+
+        .contact-send-text h3
+        {
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .contact-send-text p
+        {
+            font-size: 13px;
+        }
+
+        .contact-send-button
+        {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .contact-form-status
+        {
+            font-size: 13px;
+        }
+    }
+
+/* ====================================================== */
+/*           SMALL MOBILE / PETITS SMARTPHONES            */
+/*           Width / Largeur : 360 px maximum             */
+/* ====================================================== */
+
+    @media (max-width: 360px)
+    {
+        .contact-section
+        {
+            padding: 22px 12px 30px;
+        }
+
+        .contact-subtitle
+        {
+            font-size: 22px;
+        }
+
+        .contact-field input,
+        .contact-field textarea
+        {
+            font-size: 13px;
+        }
+    }

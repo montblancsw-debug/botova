@@ -1,0 +1,248 @@
+/* ====================================================== */
+/*             CONTACT PAGE / PAGE CONTACT                */
+/* ====================================================== */
+
+    .contact-page
+    {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+    }
+
+    .contact-main
+    {
+        flex: 1;
+        width: 100%;
+    }
+
+    .contact-section
+    {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 135px 40px 55px;
+    }
+
+    .contact-title
+    {
+        margin-bottom: 20px;
+        color: var(--color-title);
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .contact-description
+    {
+        margin-bottom: 22px;
+        color: var(--color-text);
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+/* ====================================================== */
+/*           CONTACT FIELDS / CHAMPS CONTACT              */
+/* ====================================================== */
+
+    .contact-fields
+    {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+        gap: 28px 30px;
+        margin-bottom: 12px;
+    }
+
+    .contact-field
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .contact-field label
+    {
+        color: var(--color-title);
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .contact-field input,
+    .contact-field textarea
+    {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+        color: var(--color-title);
+        font-size: 16px;
+        line-height: 1.4;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .contact-field input
+    {
+        min-height: 54px;
+    }
+
+    .contact-field textarea
+    {
+        min-height: 112px;
+        resize: vertical;
+    }
+
+    .contact-field input::placeholder,
+    .contact-field textarea::placeholder
+    {
+        color: var(--color-text);
+        opacity: 1;
+    }
+
+    .contact-field input:focus,
+    .contact-field textarea:focus
+    {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 181, 172, 0.15);
+    }
+
+/* ====================================================== */
+/*             SEND MESSAGE / ENVOI MESSAGE               */
+/* ====================================================== */
+
+    .contact-subtitle
+    {
+        margin-bottom: 12px;
+        color: var(--color-title);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .contact-send-card
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        min-height: 200px;
+        padding: 26px;
+        background-color: var(--color-card);
+        border: 1px solid var(--color-border);
+        border-radius: 8px;
+    }
+
+    .contact-send-text
+    {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .contact-send-text h3
+    {
+        margin-bottom: 15px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .contact-send-text p
+    {
+        margin-bottom: 0;
+        color: var(--color-text);
+        font-size: 19px;
+        line-height: 1.4;
+    }
+
+    .contact-send-button
+    {
+        flex-shrink: 0;
+        min-height: 48px;
+        padding: 10px 22px;
+        background-color: var(--color-dark);
+        border: 1px solid var(--color-dark);
+        border-radius: 7px;
+        color: var(--color-white);
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(10, 17, 31, 0.15);
+        transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        touch-action: manipulation;
+    }
+
+    .contact-send-button:hover,
+    .contact-send-button:focus-visible
+    {
+        color: var(--color-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(10, 17, 31, 0.20);
+    }
+
+    .contact-send-button:active
+    {
+        background-color: var(--color-primary-dark);
+        color: var(--color-white);
+        transform: translateY(1px);
+    }
+
+/* ====================================================== */
+/*          FORM MESSAGE / MESSAGE DU FORMULAIRE          */
+/* ====================================================== */
+
+    .contact-form-status
+    {
+        margin: 16px 0 0;
+        padding: 14px 16px;
+        background-color: var(--color-selection);
+        border: 1px solid var(--color-border);
+        border-radius: 7px;
+        color: var(--color-title);
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .contact-form-status[hidden]
+    {
+        display: none;
+    }
+
+    .contact-form-status.is-error
+    {
+        border-color: #B74444;
+        color: #922E2E;
+    }
+
+    .contact-form-status.is-success
+    {
+        border-color: var(--color-primary);
+        color: var(--color-primary-dark);
+    }
+
+    .contact-page .footer-secondary-list a[data-root-href="html/contact/"]
+    {
+        color: var(--color-primary);
+        font-weight: 700;
+    }
+
+/* ====================================================== */
+/*            REDUCED MOTION / MOUVEMENT REDUIT           */
+/* ====================================================== */
+
+    @media (prefers-reduced-motion: reduce)
+    {
+        .contact-send-button,
+        .contact-field input,
+        .contact-field textarea
+        {
+            transition: none;
+        }
+
+        .contact-send-button:hover,
+        .contact-send-button:active
+        {
+            transform: none;
+        }
+    }
